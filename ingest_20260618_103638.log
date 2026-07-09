@@ -1,0 +1,22 @@
+2026-06-18 10:36:38,024 [INFO] Iniciando ingestão: 1 tabela(s)
+2026-06-18 10:36:38,024 [INFO] Destino: campinas.cidades.gov.br/corporativo schema=se_api_transferencias_especiais
+2026-06-18 10:36:38,024 [INFO] Workers: 1 (sequencial)
+2026-06-18 10:36:38,024 [INFO] Testando conexao com o banco...
+2026-06-18 10:36:38,126 [INFO] Conexao com o banco estabelecida.
+2026-06-18 10:36:38,162 [INFO] Nivel 1/1: programa_especial
+2026-06-18 10:36:38,162 [INFO] ============================================================
+2026-06-18 10:36:38,162 [INFO] Processando tabela: programa_especial
+2026-06-18 10:36:38,162 [INFO] ============================================================
+2026-06-18 10:36:38,162 [INFO]   Iniciando fetch de 'programa_especial' (carga completa)...
+2026-06-18 10:36:38,836 [INFO]   Total de registros em 'programa_especial': 15
+2026-06-18 10:36:38,836 [INFO]   Carregados 15 registros de 'programa_especial'...
+2026-06-18 10:36:38,836 [INFO]   Fetch concluído: 15 registros de 'programa_especial'.
+2026-06-18 10:36:38,845 [INFO]   Lote 1: 15 registros processados.
+2026-06-18 10:36:38,845 [INFO]   OK 'programa_especial': 15 registros na API, 15 upserted no banco.
+2026-06-18 10:36:38,849 [INFO] 
+============================================================
+2026-06-18 10:36:38,849 [INFO] RESUMO DA INGESTÃO
+2026-06-18 10:36:38,849 [INFO] ============================================================
+2026-06-18 10:36:38,850 [INFO]   programa_especial: OK
+2026-06-18 10:36:38,850 [INFO] 
+Total: 1/1 tabelas com sucesso.

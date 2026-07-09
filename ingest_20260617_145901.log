@@ -1,0 +1,10 @@
+2026-06-17 14:59:01,589 [INFO] Iniciando ingest�o: 1 tabela(s)
+2026-06-17 14:59:01,589 [INFO] Destino: campinas.cidades.gov.br/corporativo schema=se_api_transferencias_especiais
+2026-06-17 14:59:01,738 [INFO] Conex�o com o banco estabelecida.
+2026-06-17 14:59:01,738 [INFO] ============================================================
+2026-06-17 14:59:01,738 [INFO] Processando tabela: programa_especial
+2026-06-17 14:59:01,738 [INFO] ============================================================
+2026-06-17 14:59:01,738 [INFO]   Iniciando fetch de 'programa_especial'...
+2026-06-17 14:59:02,534 [INFO]   Total de registros em 'programa_especial': 15
+2026-06-17 14:59:02,534 [INFO]   Carregados 15 registros de 'programa_especial'...
+2026-06-17 14:59:02,535 [INFO]   Fetch conclu�do: 15 registros de 'programa_especial'.

@@ -1,0 +1,4371 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "A modalidade de transfer\u00eancia especial foi concebida por meio da edi\u00e7\u00e3o da Emenda Constitucional n\u00ba 105, de 12 de dezembro de 2019 (EC n\u00ba 105, de 2019), a qual criou uma nova modalidade de transfer\u00eancia, exclusivamente para o repasse de recursos das emendas parlamentares individuais a Estados, Distrito Federal ou Munic\u00edpios. A Emenda Constitucional n\u00ba 105, de 12 de dezembro de 2019, incluiu na Constitui\u00e7\u00e3o Federal o <a href=\"https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art166a\">art. 166-A</a>.\n\nA API oferece diversos operadores para filtrar e ordenar dados, conforme descrito na <a href=\"https://postgrest.org/en/v11/api.html#operators\"> documenta\u00e7\u00e3o oficial do PostgREST</a>. \u00c9 necess\u00e1rio especificar o operador correspondente no input do campo na requisi\u00e7\u00e3o. Por exemplo: Para um valor igual a 10, digita-se <i>eq.10</i>\n",
+        "title": "API de dados abertos do m\u00f3dulo de Transfer\u00eancias Especiais do Transferegov",
+        "version": "11.2.0"
+    },
+    "host": "api.transferegov.dth.api.gov.br",
+    "basePath": "/transferenciasespeciais/",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json",
+        "application/vnd.pgrst.object+json;nulls=stripped",
+        "application/vnd.pgrst.object+json",
+        "text/csv"
+    ],
+    "produces": [
+        "application/json",
+        "application/vnd.pgrst.object+json;nulls=stripped",
+        "application/vnd.pgrst.object+json",
+        "text/csv"
+    ],
+    "paths": {
+        "/programa_especial": {
+            "get": {
+                "tags": [
+                    "programa_especial"
+                ],
+                "summary": "Programa especial",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.id_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.ano_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.modalidade_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.codigo_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.id_orgao_superior_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.sigla_orgao_superior_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.nome_orgao_superior_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.id_orgao_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.sigla_orgao_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.nome_orgao_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.id_unidade_gestora_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.documentos_origem_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.id_unidade_orcamentaria_responsavel_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.data_inicio_ciencia_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.data_fim_ciencia_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.valor_necessidade_financeira_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.valor_total_disponibilizado_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.valor_impedido_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.valor_a_disponibilizar_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.valor_documentos_habeis_gerados_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.valor_obs_geradas_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.programa_especial.valor_disponibilidade_atual_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/programa_especial"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                }
+            }
+        },
+        "/plano_acao_especial": {
+            "get": {
+                "tags": [
+                    "plano_acao_especial"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.id_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.codigo_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.ano_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.modalidade_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.situacao_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.cnpj_beneficiario_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.nome_beneficiario_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.uf_beneficiario_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.codigo_banco_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.codigo_situacao_dado_bancario_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.nome_banco_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.numero_agencia_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.dv_agencia_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.numero_conta_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.dv_conta_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.nome_parlamentar_emenda_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.ano_emenda_parlamentar_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.codigo_parlamentar_emenda_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.sequencial_emenda_parlamentar_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.numero_emenda_parlamentar_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.codigo_emenda_parlamentar_formatado_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.codigo_descricao_areas_politicas_publicas_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.descricao_programacao_orcamentaria_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.motivo_impedimento_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.valor_custeio_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.valor_investimento_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_acao_especial.id_programa"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/plano_acao_especial"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                }
+            }
+        },
+        "/empenho_especial": {
+            "get": {
+                "tags": [
+                    "empenho_especial"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.id_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.id_minuta_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.numero_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.situacao_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.descricao_situacao_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.tipo_documento_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.descricao_tipo_documento_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.status_processamento_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.ug_responsavel_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.ug_emitente_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.descricao_ug_emitente_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.fonte_recurso_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.plano_interno_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.ptres_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.grupo_natureza_despesa_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.natureza_despesa_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.subitem_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.categoria_despesa_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.modalidade_despesa_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.cnpj_beneficiario_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.nome_beneficiario_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.uf_beneficiario_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.numero_ro_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.data_emissao_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.prioridade_desbloqueio_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.valor_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.empenho_especial.id_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/empenho_especial"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                }
+            }
+        },
+        "/documento_habil_especial": {
+            "get": {
+                "tags": [
+                    "documento_habil_especial"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.id_dh"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.id_minuta_documento_habil"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.numero_documento_habil"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.situacao_dh"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.descricao_situacao_dh"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.tipo_documento_dh"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.ug_emitente_dh"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.descricao_ug_emitente_dh"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.data_vencimento_dh"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.data_emissao_dh"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.ug_pagadora_dh"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.descricao_ug_pagadora_dh"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.variacao_patrimonial_diminuta_dh"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.passivo_transferencia_constitucional_legal_dh"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.centro_custo_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.codigo_siorg_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.mes_referencia_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.ano_referencia_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.ug_beneficiada_dh"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.descricao_ug_beneficiada_dh"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.valor_dh"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.valor_rateio_dh"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.documento_habil_especial.id_empenho"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/documento_habil_especial"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                }
+            }
+        },
+        "/ordem_pagamento_ordem_bancaria_especial": {
+            "get": {
+                "tags": [
+                    "ordem_pagamento_ordem_bancaria_especial"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.ordem_pagamento_ordem_bancaria_especial.id_op_ob"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ordem_pagamento_ordem_bancaria_especial.data_emissao_op"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ordem_pagamento_ordem_bancaria_especial.numero_ordem_pagamento"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ordem_pagamento_ordem_bancaria_especial.vinculacao_op"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ordem_pagamento_ordem_bancaria_especial.situacao_op"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ordem_pagamento_ordem_bancaria_especial.descricao_situacao_op"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ordem_pagamento_ordem_bancaria_especial.data_situacao_op"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ordem_pagamento_ordem_bancaria_especial.data_emissao_ob"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ordem_pagamento_ordem_bancaria_especial.numero_ordem_bancaria"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ordem_pagamento_ordem_bancaria_especial.numero_ordem_lancamento"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ordem_pagamento_ordem_bancaria_especial.data_assinatura_ordenador_despesa_ob"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ordem_pagamento_ordem_bancaria_especial.data_assinatura_gestor_financeiro_ob"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ordem_pagamento_ordem_bancaria_especial.id_dh"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/ordem_pagamento_ordem_bancaria_especial"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                }
+            }
+        },
+        "/historico_pagamento_especial": {
+            "get": {
+                "tags": [
+                    "historico_pagamento_especial"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.historico_pagamento_especial.id_historico_op_ob"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.historico_pagamento_especial.data_hora_historico_op"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.historico_pagamento_especial.historico_situacao_op"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.historico_pagamento_especial.descricao_historico_situacao_op"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.historico_pagamento_especial.id_op_ob"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/historico_pagamento_especial"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                }
+            }
+        },
+        "/relatorio_gestao_especial": {
+            "get": {
+                "tags": [
+                    "relatorio_gestao_especial"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.relatorio_gestao_especial.id_relatorio_gestao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.relatorio_gestao_especial.situacao_relatorio_gestao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.relatorio_gestao_especial.parecer_relatorio_gestao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.relatorio_gestao_especial.id_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/relatorio_gestao_especial"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                }
+            }
+        },
+        "/relatorio_gestao_novo_especial": {
+            "get": {
+                "tags": [
+                    "relatorio_gestao_novo_especial"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.relatorio_gestao_novo_especial.id_relatorio_gestao_novo"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.relatorio_gestao_novo_especial.data_e_hora_relatorio_gestao_novo"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.relatorio_gestao_novo_especial.tipo_relatorio_gestao_novo"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.relatorio_gestao_novo_especial.valor_executado_relatorio_gestao_novo"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.relatorio_gestao_novo_especial.valor_pendente_relatorio_gestao_novo"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.relatorio_gestao_novo_especial.situacao_relatorio_gestao_novo"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.relatorio_gestao_novo_especial.id_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/relatorio_gestao_novo_especial"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                }
+            }
+        },
+        "/meta_especial": {
+            "get": {
+                "tags": [
+                    "meta_especial"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.meta_especial.id_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.meta_especial.id_meta"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.meta_especial.sequencial_meta"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.meta_especial.nome_meta"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.meta_especial.desc_meta"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.meta_especial.un_medida_meta"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.meta_especial.qt_uniade_meta"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.meta_especial.vl_custeio_emenda_especial_meta"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.meta_especial.vl_investimento_emenda_especial_meta"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.meta_especial.vl_custeio_recursos_proprios_meta"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.meta_especial.vl_investimento_recursos_proprios_meta"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.meta_especial.vl_custeio_rendimento_meta"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.meta_especial.vl_investimento_rendimento_meta"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.meta_especial.vl_custeio_doacao_meta"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.meta_especial.vl_investimento_doacao_meta"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.meta_especial.qt_meses_meta"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/meta_especial"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                }
+            }
+        },
+        "/executor_especial": {
+            "get": {
+                "tags": [
+                    "executor_especial"
+                ],
+                "summary": "Informa\u00e7\u00f5es dos executores especiais",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.executor_especial.id_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.executor_especial.id_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.executor_especial.cnpj_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.executor_especial.nome_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.executor_especial.objeto_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.executor_especial.vl_custeio_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.executor_especial.vl_investimento_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.executor_especial.ind_recursos_gerenciados_conta_especifica_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.executor_especial.codigo_banco_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.executor_especial.nome_banco_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.executor_especial.numero_agencia_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.executor_especial.dv_agencia_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.executor_especial.nome_agencia_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.executor_especial.numero_conta_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.executor_especial.dv_conta_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.executor_especial.codigo_situacao_dado_bancario_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.executor_especial.descricao_situacao_dado_bancario_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/executor_especial"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                }
+            }
+        },
+        "/plano_trabalho_especial": {
+            "get": {
+                "tags": [
+                    "plano_trabalho_especial"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_especial.id_plano_trabalho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_especial.situacao_plano_trabalho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_especial.ind_orcamento_proprio_plano_trabalho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_especial.data_inicio_execucao_plano_trabalho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_especial.data_fim_execucao_plano_trabalho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_especial.prazo_execucao_meses_plano_trabalho"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_especial.id_plano_acao"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_especial.classificacao_orcamentaria_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_especial.ind_justificativa_prorrogacao_atraso_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_especial.ind_justificativa_prorrogacao_paralizacao_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_especial.justificativa_prorrogacao_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/plano_trabalho_especial"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                }
+            }
+        },
+        "/finalidade_especial": {
+            "get": {
+                "tags": [
+                    "finalidade_especial"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.finalidade_especial.id_executor"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.finalidade_especial.cd_area_politica_publica_tipo_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.finalidade_especial.area_politica_publica_tipo_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.finalidade_especial.cd_area_politica_publica_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.finalidade_especial.area_politica_publica_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/finalidade_especial"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                }
+            }
+        },
+        "/plano_trabalho_analise_especial": {
+            "get": {
+                "tags": [
+                    "plano_trabalho_analise_especial"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_analise_especial.id_plano_trabalho_analise"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_analise_especial.codigo_siorg_orgao_analise_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_analise_especial.nome_orgao_analise_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_analise_especial.situacao_planejamento_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_analise_especial.situacao_parecer_analise_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_analise_especial.texto_parecer_analise_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_analise_especial.situacao_analise_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_analise_especial.data_analise_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_analise_especial.valor_reprovado_analise_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_analise_especial.id_plano_trabalho"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/plano_trabalho_analise_especial"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                }
+            }
+        },
+        "/orgao_analise_pendente_especial": {
+            "get": {
+                "tags": [
+                    "orgao_analise_pendente_especial"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.orgao_analise_pendente_especial.id_analise_pendente"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.orgao_analise_pendente_especial.id_orgao_analise_pendente_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.orgao_analise_pendente_especial.nome_orgao_analise_pendente_pt"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.orgao_analise_pendente_especial.id_plano_trabalho"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/orgao_analise_pendente_especial"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                }
+            }
+        },
+        "/plano_trabalho_historico_especial": {
+            "get": {
+                "tags": [
+                    "plano_trabalho_historico_especial"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_historico_especial.id_plano_trabalho_hist"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_historico_especial.data_plano_trabalho_hist"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_historico_especial.cpf_responsavel_plano_trabalho_hist"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_historico_especial.situacao_plano_trabalho_hist"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_historico_especial.id_plano_trabalho"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/plano_trabalho_historico_especial"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                }
+            }
+        },
+        "/plano_trabalho_analise_historico_especial": {
+            "get": {
+                "tags": [
+                    "plano_trabalho_analise_historico_especial"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_analise_historico_especial.codigo_siorg_orgao_analise_pt_hist"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_analise_historico_especial.nome_orgao_analise_pt_hist"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_analise_historico_especial.situacao_parecer_analise_pt_hist"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_analise_historico_especial.data_analise_pt_hist"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_analise_historico_especial.situacao_analise_pt_hist"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_analise_historico_especial.responsaveis_analise_pt_hist"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.plano_trabalho_analise_historico_especial.id_plano_trabalho_analise"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/plano_trabalho_analise_historico_especial"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "programa_especial": {
+            "description": "Programa especial",
+            "required": [
+                "id_programa"
+            ],
+            "properties": {
+                "id_programa": {
+                    "description": "Identificador \u00danico do Programa\n\nNote:\nThis is a Primary Key.<pk/>",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "ano_programa": {
+                    "description": "Ano do Programa",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "modalidade_programa": {
+                    "description": "Modalidade do Programa",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "codigo_programa": {
+                    "description": "C\u00f3digo do Programa",
+                    "format": "character varying",
+                    "maxLength": 2000,
+                    "type": "string"
+                },
+                "id_orgao_superior_programa": {
+                    "description": "C\u00f3digo SIORG do \u00d3rg\u00e3o Repassador do Programa",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "sigla_orgao_superior_programa": {
+                    "description": "Sigla do \u00d3rg\u00e3o Repassador do Programa",
+                    "format": "character varying",
+                    "maxLength": 50,
+                    "type": "string"
+                },
+                "nome_orgao_superior_programa": {
+                    "description": "Nome do \u00d3rg\u00e3o Repassador do Programa",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "id_orgao_programa": {
+                    "description": "C\u00f3digo SIORG do \u00d3rg\u00e3o do Programa",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "sigla_orgao_programa": {
+                    "description": "Sigla do \u00d3rg\u00e3o do Programa",
+                    "format": "character varying",
+                    "maxLength": 50,
+                    "type": "string"
+                },
+                "nome_orgao_programa": {
+                    "description": "Nome do \u00d3rg\u00e3o do Programa",
+                    "format": "character varying",
+                    "maxLength": 200,
+                    "type": "string"
+                },
+                "id_unidade_gestora_programa": {
+                    "description": "C\u00f3digo da Unidade Gestora do \u00d3rg\u00e3o do Programa",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "documentos_origem_programa": {
+                    "description": "Concatena\u00e7\u00e3o dos C\u00f3digos \u00danicos para Identifica\u00e7\u00e3o dos Dados Financeiros Disponibilizados",
+                    "format": "text",
+                    "type": "string"
+                },
+                "id_unidade_orcamentaria_responsavel_programa": {
+                    "description": "Identificador \u00danico da Unidade Or\u00e7ament\u00e1ria Respons\u00e1vel pelo Programa",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "data_inicio_ciencia_programa": {
+                    "description": "Data de In\u00edcio para o Registro de Ci\u00eancia",
+                    "format": "date",
+                    "type": "string"
+                },
+                "data_fim_ciencia_programa": {
+                    "description": "Data Final para o Registro de Ci\u00eancia",
+                    "format": "date",
+                    "type": "string"
+                },
+                "valor_necessidade_financeira_programa": {
+                    "description": "Valor da Necessidade Financeira do Programa, resultado do somat\u00f3rio das minutas de empenho",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "valor_total_disponibilizado_programa": {
+                    "description": "Valor Total Disponibilizado para o Programa",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "valor_impedido_programa": {
+                    "description": "Valor Impedido",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "valor_a_disponibilizar_programa": {
+                    "description": "Valor a ser Disponibilizado",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "valor_documentos_habeis_gerados_programa": {
+                    "description": "Valor dos Documentos H\u00e1beis Gerados",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "valor_obs_geradas_programa": {
+                    "description": "Valor das Ordens Banc\u00e1rias Geradas",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "valor_disponibilidade_atual_programa": {
+                    "description": "Valor do Saldo Dispon\u00edvel para o registro atual de disponibiliza\u00e7\u00e3o",
+                    "format": "numeric",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "plano_acao_especial": {
+            "required": [
+                "id_plano_acao"
+            ],
+            "properties": {
+                "id_plano_acao": {
+                    "description": "Identificador \u00danico do Plano de A\u00e7\u00e3o (PA)\n\nNote:\nThis is a Primary Key.<pk/>",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "codigo_plano_acao": {
+                    "description": "C\u00f3digo do Programa concatenado com o ID do Plano de A\u00e7\u00e3o",
+                    "format": "text",
+                    "type": "string"
+                },
+                "ano_plano_acao": {
+                    "description": "Ano de Cria\u00e7\u00e3o do Plano de A\u00e7\u00e3o",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "modalidade_plano_acao": {
+                    "description": "Modalidade de Transfer\u00eancia do Plano de A\u00e7\u00e3o",
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "situacao_plano_acao": {
+                    "description": "Situa\u00e7\u00e3o do Plano de A\u00e7\u00e3o",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "cnpj_beneficiario_plano_acao": {
+                    "description": "CNPJ \u2013 Cadastro Nacional de Pessoa Jur\u00eddica do Benefici\u00e1rio do Plano de A\u00e7\u00e3o",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "nome_beneficiario_plano_acao": {
+                    "description": "Nome do Benefici\u00e1rio do Plano de A\u00e7\u00e3o",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "uf_beneficiario_plano_acao": {
+                    "description": "Sigla da Unidade de Federa\u00e7\u00e3o",
+                    "format": "character varying",
+                    "maxLength": 2,
+                    "type": "string"
+                },
+                "codigo_banco_plano_acao": {
+                    "description": "C\u00f3digo do Banco do PA",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "codigo_situacao_dado_bancario_plano_acao": {
+                    "description": "C\u00f3digo da Situa\u00e7\u00e3o da Conta Corrente do PA",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "nome_banco_plano_acao": {
+                    "description": "Nome do Banco do PA",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "numero_agencia_plano_acao": {
+                    "description": "N\u00famero da Ag\u00eancia Banc\u00e1ria da Conta Corrente do PA",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "dv_agencia_plano_acao": {
+                    "description": "D\u00edgito Verificador da Ag\u00eancia Banc\u00e1ria da Conta Corrente do PA",
+                    "format": "character varying",
+                    "maxLength": 2,
+                    "type": "string"
+                },
+                "numero_conta_plano_acao": {
+                    "description": "N\u00famero da Conta Corrente do PA",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "dv_conta_plano_acao": {
+                    "description": "D\u00edgito Verificador da Conta Corrente do PA",
+                    "format": "character varying",
+                    "maxLength": 2,
+                    "type": "string"
+                },
+                "nome_parlamentar_emenda_plano_acao": {
+                    "description": "Nome do Parlamentar Autor da Emenda",
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "ano_emenda_parlamentar_plano_acao": {
+                    "description": "Ano da Emenda Parlamentar",
+                    "format": "character",
+                    "maxLength": 4,
+                    "type": "string"
+                },
+                "codigo_parlamentar_emenda_plano_acao": {
+                    "description": "C\u00f3digo do Parlamentar Autor da Emenda",
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "sequencial_emenda_parlamentar_plano_acao": {
+                    "description": "Sequencial da Emenda Por Parlamentar no Ano",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "numero_emenda_parlamentar_plano_acao": {
+                    "description": "Concatena\u00e7\u00e3o do Ano, C\u00f3digo e Sequencial do Parlamentar",
+                    "format": "text",
+                    "type": "string"
+                },
+                "codigo_emenda_parlamentar_formatado_plano_acao": {
+                    "description": "C\u00f3digo Formatado da Emenda Parlamentar",
+                    "format": "character varying",
+                    "maxLength": 2000,
+                    "type": "string"
+                },
+                "codigo_descricao_areas_politicas_publicas_plano_acao": {
+                    "description": "Concatena\u00e7\u00e3o dos C\u00f3digos e Descri\u00e7\u00f5es dos Tipos da \u00c1reas das Pol\u00edticas P\u00fablicas com os C\u00f3digos e Descri\u00e7\u00f5es das \u00c1reas das Pol\u00edticas P\u00fablicas",
+                    "format": "text",
+                    "type": "string"
+                },
+                "descricao_programacao_orcamentaria_plano_acao": {
+                    "description": "Concatena\u00e7\u00e3o das Programa\u00e7\u00f5es Or\u00e7ament\u00e1rias constantes da Lei Or\u00e7ament\u00e1ria do ente beneficiado na qual o recurso ser\u00e1 apropriado",
+                    "format": "text",
+                    "type": "string"
+                },
+                "motivo_impedimento_plano_acao": {
+                    "description": "Motivo do Impedimento do Plano de A\u00e7\u00e3o",
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "valor_custeio_plano_acao": {
+                    "description": "Valor Consolidado de Custeio das Emendas Parlamentares do Plano de A\u00e7\u00e3o",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "valor_investimento_plano_acao": {
+                    "description": "Valor Consolidado de Investimento das Emendas Parlamentares do Plano de A\u00e7\u00e3o",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "id_programa": {
+                    "description": "Identificador \u00danico do Programa",
+                    "format": "bigint",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "empenho_especial": {
+            "required": [
+                "id_empenho"
+            ],
+            "properties": {
+                "id_empenho": {
+                    "description": "Identificador \u00danico da Nota de Empenho (NE)",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "id_minuta_empenho": {
+                    "description": "N\u00famero da Minuta gerado para Nota de Empenho, utiliza o N\u00famero Interno e Ano de Emiss\u00e3o",
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "numero_empenho": {
+                    "description": "N\u00famero da Nota de Empenho gerada e enviada pelo SIAFI (Sistema Integrado de Administra\u00e7\u00e3o Financeira)",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "situacao_empenho": {
+                    "description": "Situa\u00e7\u00e3o da Nota de Empenho",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "descricao_situacao_empenho": {
+                    "description": "Descri\u00e7\u00e3o da Situa\u00e7\u00e3o da Nota de Empenho",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "tipo_documento_empenho": {
+                    "description": "Tipo da Nota de Empenho",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "descricao_tipo_documento_empenho": {
+                    "description": "Descri\u00e7\u00e3o do Tipo da Nota de Empenho",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "status_processamento_empenho": {
+                    "description": "Indica o status do processamento em lote da Nota de Empenho",
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "ug_responsavel_empenho": {
+                    "description": "C\u00f3digo da Unidade Gestora Respons\u00e1vel da Nota de Empenho",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "ug_emitente_empenho": {
+                    "description": "C\u00f3digo da Unidade Gestora Emitente da Nota de Empenho",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "descricao_ug_emitente_empenho": {
+                    "description": "Nome da Unidade Gestora Emitente da Nota de Empenho",
+                    "format": "character varying",
+                    "maxLength": 1024,
+                    "type": "string"
+                },
+                "fonte_recurso_empenho": {
+                    "description": "Fonte de Recurso da Nota de Empenho no SIAFI (Sistema Integrado de Administra\u00e7\u00e3o Financeira)",
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "plano_interno_empenho": {
+                    "description": "Instrumento de planejamento e de acompanhamento da a\u00e7\u00e3o planejada, usado como forma de detalhamento desta, de uso exclusivo de cada Minist\u00e9rio/\u00f3rg\u00e3o, com as seguintes caracter\u00edsticas: - H\u00e1 um atributo na tabela de \u00f3rg\u00e3o para indicar se o \u00f3rg\u00e3o utiliza ou n\u00e3o o Plano Interno (PI). Este atributo \u00e9 mantido pela STN decorrente da solicita\u00e7\u00e3o do \u00f3rg\u00e3o. - A unidade setorial de or\u00e7amento do \u00f3rg\u00e3o \u00e9 respons\u00e1vel por registrar na tabela os c\u00f3digos de PI. - O SIAFI (Sistema Integrado de Administra\u00e7\u00e3o Financeira), de acordo com o cadastramento previsto acima, s\u00f3 aceitar\u00e1 a emiss\u00e3o de nota de empenho com o c\u00f3digo de PI existente. - Os c\u00f3digos de PI poder\u00e3o ter at\u00e9 11 (onze) posi\u00e7\u00f5es alfa-num\u00e9ricas",
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "ptres_empenho": {
+                    "description": "N\u00famero do Programa de Trabalho Resumido",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "grupo_natureza_despesa_empenho": {
+                    "description": "Primeiro d\u00edgito do C\u00f3digo da Natureza de Despesa no SIAFI",
+                    "format": "text",
+                    "type": "string"
+                },
+                "natureza_despesa_empenho": {
+                    "description": "C\u00f3digo da Natureza de Despesa no SIAFI (Sistema Integrado de Administra\u00e7\u00e3o Financeira)",
+                    "format": "text",
+                    "type": "string"
+                },
+                "subitem_empenho": {
+                    "description": "Valor do Sub-item da Natureza de Despesa no SIAFI (Sistema Integrado de Administra\u00e7\u00e3o Financeira)",
+                    "format": "text",
+                    "type": "string"
+                },
+                "categoria_despesa_empenho": {
+                    "description": "C\u00f3digo da Categoria de Despesa associada \u00e0 Nota de Empenho",
+                    "format": "character varying",
+                    "maxLength": 2000,
+                    "type": "string"
+                },
+                "modalidade_despesa_empenho": {
+                    "description": "C\u00f3digo da Modalidade de Despesa",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "cnpj_beneficiario_empenho": {
+                    "description": "CNPJ do Benefici\u00e1rio",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "nome_beneficiario_empenho": {
+                    "description": "Nome do Benefici\u00e1rio",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "uf_beneficiario_empenho": {
+                    "description": "Sigla da Unidade da Federa\u00e7\u00e3o do Benefici\u00e1rio",
+                    "format": "character",
+                    "maxLength": 2,
+                    "type": "string"
+                },
+                "numero_ro_empenho": {
+                    "description": "N\u00famero da lista gerado e enviado pelo SIAFI (Sistema Integrado de Administra\u00e7\u00e3o Financeira)",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "data_emissao_empenho": {
+                    "description": "Data de envio ao SIAFI (Sistema Integrado de Administra\u00e7\u00e3o Financeira)",
+                    "format": "date",
+                    "type": "string"
+                },
+                "prioridade_desbloqueio_empenho": {
+                    "description": "Indicador de prioridade no desbloqueio de recursos",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "valor_empenho": {
+                    "description": "Valor Total da Nota de Empenho",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "id_plano_acao": {
+                    "description": "Identificador \u00danico do Plano de A\u00e7\u00e3o (PA)",
+                    "format": "bigint",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "documento_habil_especial": {
+            "required": [
+                "id_dh"
+            ],
+            "properties": {
+                "id_dh": {
+                    "description": "Identificador \u00danico do Documento H\u00e1bil (DH)\n\nNote:\nThis is a Primary Key.<pk/>",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "id_minuta_documento_habil": {
+                    "description": "Padrao de Minuta de DH do tipo 2020MDH000001",
+                    "format": "character varying",
+                    "maxLength": 15,
+                    "type": "string"
+                },
+                "numero_documento_habil": {
+                    "description": "N\u00famero do DH no formato: YYYYTTNNNNNN (Ex.: 2020TF000001)",
+                    "format": "character varying",
+                    "maxLength": 13,
+                    "type": "string"
+                },
+                "situacao_dh": {
+                    "description": "C\u00f3digo da Situa\u00e7\u00e3o do DH",
+                    "format": "smallint",
+                    "type": "integer"
+                },
+                "descricao_situacao_dh": {
+                    "description": "Descri\u00e7\u00e3o da Situa\u00e7\u00e3o do DH",
+                    "format": "text",
+                    "type": "string"
+                },
+                "tipo_documento_dh": {
+                    "description": "C\u00f3digo do tipo do Documento H\u00e1bil",
+                    "format": "character varying",
+                    "maxLength": 2000,
+                    "type": "string"
+                },
+                "ug_emitente_dh": {
+                    "description": "C\u00f3digo da Unidade Gestora Emitente do Documento H\u00e1bil",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "descricao_ug_emitente_dh": {
+                    "description": "Nome da Unidade Gestora Emitente do Documento H\u00e1bil",
+                    "format": "character varying",
+                    "maxLength": 1024,
+                    "type": "string"
+                },
+                "data_vencimento_dh": {
+                    "description": "Data de Vencimento do Documento H\u00e1bil",
+                    "format": "date",
+                    "type": "string"
+                },
+                "data_emissao_dh": {
+                    "description": "Data de Emiss\u00e3o do Documento H\u00e1bil",
+                    "format": "date",
+                    "type": "string"
+                },
+                "ug_pagadora_dh": {
+                    "description": "C\u00f3digo da Unidade de Gest\u00e3o Pagadora do Documento H\u00e1bil",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "descricao_ug_pagadora_dh": {
+                    "description": "Nome da Unidade de Gest\u00e3o Pagadora do Documento H\u00e1bil",
+                    "format": "character varying",
+                    "maxLength": 1024,
+                    "type": "string"
+                },
+                "variacao_patrimonial_diminuta_dh": {
+                    "description": "Varia\u00e7\u00e3o Patrimonial Diminutiva",
+                    "format": "character varying",
+                    "maxLength": 9,
+                    "type": "string"
+                },
+                "passivo_transferencia_constitucional_legal_dh": {
+                    "description": "Passivo de Transfer\u00eancia Legal ou Constitucional",
+                    "format": "character varying",
+                    "maxLength": 9,
+                    "type": "string"
+                },
+                "centro_custo_empenho": {
+                    "description": "C\u00f3digo do Centro de Custo",
+                    "format": "character varying",
+                    "maxLength": 50,
+                    "type": "string"
+                },
+                "codigo_siorg_empenho": {
+                    "description": "C\u00f3digo SIORG do Centro de Custo",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "mes_referencia_empenho": {
+                    "description": "M\u00eas de Refer\u00eancia do Centro do Custo",
+                    "format": "text",
+                    "type": "string"
+                },
+                "ano_referencia_empenho": {
+                    "description": "Ano de Refer\u00eancia do Centro de Custo",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "ug_beneficiada_dh": {
+                    "description": "C\u00f3digo da Unidade Gestora Beneficada do Documento H\u00e1bil",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "descricao_ug_beneficiada_dh": {
+                    "description": "Nome da Unidade Gestora Beneficiada do Documento H\u00e1bil",
+                    "format": "character varying",
+                    "maxLength": 1024,
+                    "type": "string"
+                },
+                "valor_dh": {
+                    "description": "Valor do Documento H\u00e1bil. OBS: Se a Disponibilidade Financeira for menor que o valor do Empenho, mais de um Documento H\u00e1bil pode ser criado",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "valor_rateio_dh": {
+                    "description": "Valor do Rateio",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "id_empenho": {
+                    "description": "Identificador \u00danico da Nota de Empenho (NE)",
+                    "format": "bigint",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "ordem_pagamento_ordem_bancaria_especial": {
+            "required": [
+                "id_op_ob"
+            ],
+            "properties": {
+                "id_op_ob": {
+                    "description": "Identificador \u00danico da Opera\u00e7\u00e3o de Ordem Banc\u00e1ria\n\nNote:\nThis is a Primary Key.<pk/>",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "data_emissao_op": {
+                    "description": "Data da Emiss\u00e3o da Ordem de Pagamento",
+                    "format": "date",
+                    "type": "string"
+                },
+                "numero_ordem_pagamento": {
+                    "description": "N\u00famero da Ordem de Pagamento, no formato AAAAOPNNNNNN, exemplo \u201c2020OP146800\u201d",
+                    "format": "character varying",
+                    "maxLength": 12,
+                    "type": "string"
+                },
+                "vinculacao_op": {
+                    "description": "C\u00f3digo da vincula\u00e7\u00e3o da Ordem de Pagamento no SIAFI (Padr\u00e3o: 405)",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "situacao_op": {
+                    "description": "C\u00f3digo da Situa\u00e7\u00e3o da Ordem de Pagamento/Banc\u00e1ria",
+                    "format": "smallint",
+                    "type": "integer"
+                },
+                "descricao_situacao_op": {
+                    "description": "Descri\u00e7\u00e3o da Situa\u00e7\u00e3o da Ordem de Pagamento/Banc\u00e1ria",
+                    "format": "text",
+                    "type": "string"
+                },
+                "data_situacao_op": {
+                    "description": "Data da Situa\u00e7\u00e3o da Ordem de Pagamento/Banc\u00e1ria",
+                    "format": "date",
+                    "type": "string"
+                },
+                "data_emissao_ob": {
+                    "description": "Data da Emiss\u00e3o da OB no SIAFI",
+                    "format": "date",
+                    "type": "string"
+                },
+                "numero_ordem_bancaria": {
+                    "description": "N\u00famero da Ordem Banc\u00e1ria, no formato AAAAOBNNNNNN, exemplo \u201c2020OB146800\u201d",
+                    "format": "character varying",
+                    "maxLength": 12,
+                    "type": "string"
+                },
+                "numero_ordem_lancamento": {
+                    "description": "N\u00famero da Nota de Lan\u00e7amento no sistema, no formato AAAANSNNNNNN, exemplo \u201c2020NS146800\u201d",
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "data_assinatura_ordenador_despesa_ob": {
+                    "description": "Data de Assinatura do Ordenador de Despesa",
+                    "format": "date",
+                    "type": "string"
+                },
+                "data_assinatura_gestor_financeiro_ob": {
+                    "description": "Data de Assinatura do Gestor Financeiro",
+                    "format": "date",
+                    "type": "string"
+                },
+                "id_dh": {
+                    "description": "Identificador \u00danico do Documento H\u00e1bil (DH)",
+                    "format": "bigint",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "historico_pagamento_especial": {
+            "required": [
+                "id_historico_op_ob"
+            ],
+            "properties": {
+                "id_historico_op_ob": {
+                    "description": "Identificador \u00danico tabela opob_hist\n\nNote:\nThis is a Primary Key.<pk/>",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "data_hora_historico_op": {
+                    "description": "Controle de data e hora da inser\u00e7\u00e3o ou atualiza\u00e7\u00e3o do registro, conforme hora do sistema",
+                    "format": "timestamp without time zone",
+                    "type": "string"
+                },
+                "historico_situacao_op": {
+                    "description": "Eventos da OP",
+                    "format": "smallint",
+                    "type": "integer"
+                },
+                "descricao_historico_situacao_op": {
+                    "description": "Descri\u00e7\u00e3o dos Eventos da OP",
+                    "format": "text",
+                    "type": "string"
+                },
+                "id_op_ob": {
+                    "description": "Identificador \u00danico da Opera\u00e7\u00e3o de Ordem Banc\u00e1ria",
+                    "format": "bigint",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "relatorio_gestao_especial": {
+            "required": [
+                "id_relatorio_gestao"
+            ],
+            "properties": {
+                "id_relatorio_gestao": {
+                    "description": "Identificador \u00danico do Relatorio de Gest\u00e3o\n\nNote:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "situacao_relatorio_gestao": {
+                    "description": "Situa\u00e7\u00e3o do Relat\u00f3rio de Gest\u00e3o",
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "parecer_relatorio_gestao": {
+                    "description": "Parecer do Relat\u00f3rio de Gest\u00e3o",
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "id_plano_acao": {
+                    "description": "Identificador \u00danico do Plano de A\u00e7\u00e3o (PA)",
+                    "format": "bigint",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "relatorio_gestao_novo_especial": {
+            "required": [
+                "id_relatorio_gestao_novo"
+            ],
+            "properties": {
+                "id_relatorio_gestao_novo": {
+                    "description": "Identificador \u00danico do Relatorio de Gest\u00e3o Novo\n\nNote:\nThis is a Primary Key.<pk/>",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "data_e_hora_relatorio_gestao_novo": {
+                    "description": "Data e Hora do Relat\u00f3rio de Gest\u00e3o Novo",
+                    "format": "timestamp without time zone",
+                    "type": "string"
+                },
+                "tipo_relatorio_gestao_novo": {
+                    "description": "Tipo do Relat\u00f3rio de Gest\u00e3o Novo",
+                    "format": "text",
+                    "type": "string"
+                },
+                "valor_executado_relatorio_gestao_novo": {
+                    "description": "Valor Executado do Relat\u00f3rio de Gest\u00e3o Novo",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "valor_pendente_relatorio_gestao_novo": {
+                    "description": "Valor Pendente do Relat\u00f3rio de Gest\u00e3o Novo",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "situacao_relatorio_gestao_novo": {
+                    "description": "Situa\u00e7\u00e3o do Relat\u00f3rio de Gest\u00e3o Novo",
+                    "format": "text",
+                    "type": "string"
+                },
+                "id_plano_acao": {
+                    "description": "Identificador \u00danico do Plano de A\u00e7\u00e3o (PA)",
+                    "format": "bigint",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "meta_especial": {
+            "properties": {
+                "id_executor": {
+                    "description": "Identificador Unico do Executor do Planejamento",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "id_meta": {
+                    "description": "Identifica\u00e7\u00e3o \u00danica da Meta do Executor",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "sequencial_meta": {
+                    "description": "Sequencial usado para ordena\u00e7\u00e3o",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "nome_meta": {
+                    "description": "Nome da Meta do Executor",
+                    "format": "character varying",
+                    "maxLength": 50,
+                    "type": "string"
+                },
+                "desc_meta": {
+                    "description": "Descri\u00e7\u00e3o da Meta do Executor",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "un_medida_meta": {
+                    "description": "Unidade Medida da Meta do Executor",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "qt_uniade_meta": {
+                    "description": "Quantidade estipulada para a meta",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "vl_custeio_emenda_especial_meta": {
+                    "description": "Valor de Custeio de Emenda Especial",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "vl_investimento_emenda_especial_meta": {
+                    "description": "Valor de Investimento de Emenda Especial",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "vl_custeio_recursos_proprios_meta": {
+                    "description": "Valor de Custeio de Recursos Proprios",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "vl_investimento_recursos_proprios_meta": {
+                    "description": "Valor de Investimento de Recursos Proprios",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "vl_custeio_rendimento_meta": {
+                    "description": "Valor de Custeio de Rendimentos",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "vl_investimento_rendimento_meta": {
+                    "description": "Valor de Investimento de Rendimentos",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "vl_custeio_doacao_meta": {
+                    "description": "Valor de Custeio de Doa\u00e7\u00f5es",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "vl_investimento_doacao_meta": {
+                    "description": "Valor de Investimento de Doa\u00e7\u00f5es",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "qt_meses_meta": {
+                    "description": "Quantidade de meses para execucao da meta",
+                    "format": "smallint",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "executor_especial": {
+            "description": "Informa\u00e7\u00f5es dos executores especiais",
+            "required": [
+                "id_plano_acao",
+                "id_executor",
+                "cnpj_executor",
+                "nome_executor"
+            ],
+            "properties": {
+                "id_plano_acao": {
+                    "description": "Identificador do Plano de Acao da Proposta",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "id_executor": {
+                    "description": "Identificador Unico do Executor do Planejamento",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "cnpj_executor": {
+                    "description": "CNPJ do Executor",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "nome_executor": {
+                    "description": "Nome do Executor",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "objeto_executor": {
+                    "description": "Texto detalhado informando o Objeto da Execucao",
+                    "format": "text",
+                    "type": "string"
+                },
+                "vl_custeio_executor": {
+                    "description": "Valor de Custeio do objeto a ser atendido pelo executor",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "vl_investimento_executor": {
+                    "description": "Valor de Investimento do objeto a ser atendido pelo executor",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "ind_recursos_gerenciados_conta_especifica_executor": {
+                    "description": "Indica se os recursos ser\u00e3o gerenciados por conta espec\u00edfica do executor",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "codigo_banco_executor": {
+                    "description": "C\u00f3digo do Banco do Executor",
+                    "format": "character varying",
+                    "maxLength": 10,
+                    "type": "string"
+                },
+                "nome_banco_executor": {
+                    "description": "Nome do Banco do Executor",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "numero_agencia_executor": {
+                    "description": "N\u00famero da Ag\u00eancia Banc\u00e1ria do Executor",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "dv_agencia_executor": {
+                    "description": "D\u00edgito Verificador da Ag\u00eancia Banc\u00e1ria do Executor",
+                    "format": "character varying",
+                    "maxLength": 10,
+                    "type": "string"
+                },
+                "nome_agencia_executor": {
+                    "description": "Nome da Ag\u00eancia Banc\u00e1ria do Executor",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "numero_conta_executor": {
+                    "description": "N\u00famero da Conta Banc\u00e1ria do Executor",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "dv_conta_executor": {
+                    "description": "D\u00edgito Verificador da Conta Banc\u00e1ria do Executor",
+                    "format": "character varying",
+                    "maxLength": 10,
+                    "type": "string"
+                },
+                "codigo_situacao_dado_bancario_executor": {
+                    "description": "C\u00f3digo da Situa\u00e7\u00e3o da Conta Banc\u00e1ria do Executor",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "descricao_situacao_dado_bancario_executor": {
+                    "description": "Descri\u00e7\u00e3o da Situa\u00e7\u00e3o da Conta Banc\u00e1ria do Executor",
+                    "format": "character varying",
+                    "maxLength": 255,
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "plano_trabalho_especial": {
+            "properties": {
+                "id_plano_trabalho": {
+                    "description": "Identificador Unico do Planejamento",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "situacao_plano_trabalho": {
+                    "description": "Identificador da Situacao do Planejamento",
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "ind_orcamento_proprio_plano_trabalho": {
+                    "description": "Indicador de que os recursos do Plano de Acao foram indicados no orcamento proprio do Beneficiario",
+                    "format": "text",
+                    "type": "string"
+                },
+                "data_inicio_execucao_plano_trabalho": {
+                    "description": "Data da Emiss\u00e3o da OB no Siafi",
+                    "format": "timestamp without time zone",
+                    "type": "string"
+                },
+                "data_fim_execucao_plano_trabalho": {
+                    "description": "Data prevista para o fim da execu\u00e7\u00e3o do Plano de Trabalho Especial com base no Prazo de Execucao",
+                    "format": "timestamp without time zone",
+                    "type": "string"
+                },
+                "prazo_execucao_meses_plano_trabalho": {
+                    "description": "Prazo de Execucao em meses",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "id_plano_acao": {
+                    "description": "Identificador do Plano de Acao da Proposta",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "classificacao_orcamentaria_pt": {
+                    "description": "Texto com classifica\u00e7\u00e3o or\u00e7ament\u00e1ria da despesa informado quando indicado no orcamento proprio",
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "ind_justificativa_prorrogacao_atraso_pt": {
+                    "description": "Indica atraso na liberacao dos recursos",
+                    "format": "boolean",
+                    "type": "boolean"
+                },
+                "ind_justificativa_prorrogacao_paralizacao_pt": {
+                    "description": "Indica paralizacao da execucao do objeto",
+                    "format": "boolean",
+                    "type": "boolean"
+                },
+                "justificativa_prorrogacao_pt": {
+                    "description": "Detalhamento da Justificativa da Prorrogacao de Prazo",
+                    "format": "character varying",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "finalidade_especial": {
+            "properties": {
+                "id_executor": {
+                    "description": "Identificador Unico do Executor do Planejamento",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "cd_area_politica_publica_tipo_pt": {
+                    "description": "Codigo do Tipo da Area de Politica Publica",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "area_politica_publica_tipo_pt": {
+                    "description": "Nome do Tipo da Area de Politica Publica",
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "cd_area_politica_publica_pt": {
+                    "description": "Codigo da Area de Politica Publica. Deve ser exibido apos do codigo do tipo da area",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "area_politica_publica_pt": {
+                    "description": "Nome da Area de Politica Publica",
+                    "format": "character varying",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "plano_trabalho_analise_especial": {
+            "properties": {
+                "id_plano_trabalho_analise": {
+                    "description": "Identificador \u00danico da An\u00e1lise do Plano de Trabalho",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "codigo_siorg_orgao_analise_pt": {
+                    "description": "SIORG do \u00f3rg\u00e3o respons\u00e1vel pela an\u00e1lise do plano de trabalho",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "nome_orgao_analise_pt": {
+                    "description": "Nome do \u00f3rg\u00e3o respons\u00e1vel pela an\u00e1lise do plano de trabalho",
+                    "format": "character varying",
+                    "maxLength": 500,
+                    "type": "string"
+                },
+                "situacao_planejamento_pt": {
+                    "description": "Identificador da Situa\u00e7\u00e3o do Planejamento",
+                    "format": "character varying",
+                    "maxLength": 20,
+                    "type": "string"
+                },
+                "situacao_parecer_analise_pt": {
+                    "description": "Status do parecer da an\u00e1lise do Plano de Trabalho",
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "texto_parecer_analise_pt": {
+                    "description": "Texto do parecer da an\u00e1lise do Plano de Trabalho",
+                    "format": "character varying",
+                    "maxLength": 65535,
+                    "type": "string"
+                },
+                "situacao_analise_pt": {
+                    "description": "Status da an\u00e1lise do Plano de Trabalho",
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "data_analise_pt": {
+                    "description": "Data da an\u00e1lise do Plano de Trabalho",
+                    "format": "timestamp without time zone",
+                    "type": "string"
+                },
+                "valor_reprovado_analise_pt": {
+                    "description": "Valor reprovado na an\u00e1lise do plano de trabalho",
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "id_plano_trabalho": {
+                    "description": "Identificador \u00danico do Plano de Trabalho",
+                    "format": "bigint",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "orgao_analise_pendente_especial": {
+            "properties": {
+                "id_analise_pendente": {
+                    "description": "Identificador \u00danico do Plano de Trabalho concatenado com o Identificador do \u00f3rg\u00e3o que possui an\u00e1lises pendentes",
+                    "format": "text",
+                    "type": "string"
+                },
+                "id_orgao_analise_pendente_pt": {
+                    "description": "Identificador do \u00f3rg\u00e3o que possui an\u00e1lises pendentes",
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "nome_orgao_analise_pendente_pt": {
+                    "description": "Nome do \u00f3rg\u00e3o que possui an\u00e1lises pendentes",
+                    "format": "character varying",
+                    "maxLength": 200,
+                    "type": "string"
+                },
+                "id_plano_trabalho": {
+                    "description": "Identificador \u00danico do Plano de Trabalho",
+                    "format": "bigint",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "plano_trabalho_historico_especial": {
+            "properties": {
+                "id_plano_trabalho_hist": {
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "data_plano_trabalho_hist": {
+                    "format": "timestamp without time zone",
+                    "type": "string"
+                },
+                "cpf_responsavel_plano_trabalho_hist": {
+                    "format": "character varying",
+                    "maxLength": 200,
+                    "type": "string"
+                },
+                "situacao_plano_trabalho_hist": {
+                    "format": "character varying",
+                    "maxLength": 200,
+                    "type": "string"
+                },
+                "id_plano_trabalho": {
+                    "format": "bigint",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "plano_trabalho_analise_historico_especial": {
+            "properties": {
+                "codigo_siorg_orgao_analise_pt_hist": {
+                    "format": "bigint",
+                    "type": "integer"
+                },
+                "nome_orgao_analise_pt_hist": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "situacao_parecer_analise_pt_hist": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "data_analise_pt_hist": {
+                    "format": "timestamp without time zone",
+                    "type": "string"
+                },
+                "situacao_analise_pt_hist": {
+                    "format": "character varying",
+                    "type": "string"
+                },
+                "responsaveis_analise_pt_hist": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "id_plano_trabalho_analise": {
+                    "format": "bigint",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "parameters": {
+        "preferParams": {
+            "name": "Prefer",
+            "description": "Preference",
+            "required": false,
+            "enum": [
+                "params=single-object"
+            ],
+            "in": "header",
+            "type": "string"
+        },
+        "preferReturn": {
+            "name": "Prefer",
+            "description": "Preference",
+            "required": false,
+            "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+            ],
+            "in": "header",
+            "type": "string"
+        },
+        "preferCount": {
+            "name": "Prefer",
+            "description": "Preference",
+            "required": false,
+            "enum": [
+                "count=none"
+            ],
+            "in": "header",
+            "type": "string"
+        },
+        "preferPost": {
+            "name": "Prefer",
+            "description": "Preference",
+            "required": false,
+            "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+            ],
+            "in": "header",
+            "type": "string"
+        },
+        "select": {
+            "name": "select",
+            "description": "Filtering Columns",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "on_conflict": {
+            "name": "on_conflict",
+            "description": "On Conflict",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "order": {
+            "name": "order",
+            "description": "Ordering",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "range": {
+            "name": "Range",
+            "description": "Limiting and Pagination",
+            "required": false,
+            "in": "header",
+            "type": "string"
+        },
+        "rangeUnit": {
+            "name": "Range-Unit",
+            "description": "Limiting and Pagination",
+            "required": false,
+            "default": "items",
+            "in": "header",
+            "type": "string"
+        },
+        "offset": {
+            "name": "offset",
+            "description": "Limiting and Pagination",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "limit": {
+            "name": "limit",
+            "description": "Limiting and Pagination",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.relatorio_gestao_especial": {
+            "name": "relatorio_gestao_especial",
+            "description": "relatorio_gestao_especial",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/relatorio_gestao_especial"
+            }
+        },
+        "rowFilter.relatorio_gestao_especial.id_relatorio_gestao": {
+            "name": "id_relatorio_gestao",
+            "description": "Identificador \u00danico do Relatorio de Gest\u00e3o",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.relatorio_gestao_especial.situacao_relatorio_gestao": {
+            "name": "situacao_relatorio_gestao",
+            "description": "Situa\u00e7\u00e3o do Relat\u00f3rio de Gest\u00e3o",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.relatorio_gestao_especial.parecer_relatorio_gestao": {
+            "name": "parecer_relatorio_gestao",
+            "description": "Parecer do Relat\u00f3rio de Gest\u00e3o",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.relatorio_gestao_especial.id_plano_acao": {
+            "name": "id_plano_acao",
+            "description": "Identificador \u00danico do Plano de A\u00e7\u00e3o (PA)",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "body.meta_especial": {
+            "name": "meta_especial",
+            "description": "meta_especial",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/meta_especial"
+            }
+        },
+        "rowFilter.meta_especial.id_executor": {
+            "name": "id_executor",
+            "description": "Identificador Unico do Executor do Planejamento",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.meta_especial.id_meta": {
+            "name": "id_meta",
+            "description": "Identifica\u00e7\u00e3o \u00danica da Meta do Executor",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.meta_especial.sequencial_meta": {
+            "name": "sequencial_meta",
+            "description": "Sequencial usado para ordena\u00e7\u00e3o",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.meta_especial.nome_meta": {
+            "name": "nome_meta",
+            "description": "Nome da Meta do Executor",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.meta_especial.desc_meta": {
+            "name": "desc_meta",
+            "description": "Descri\u00e7\u00e3o da Meta do Executor",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.meta_especial.un_medida_meta": {
+            "name": "un_medida_meta",
+            "description": "Unidade Medida da Meta do Executor",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.meta_especial.qt_uniade_meta": {
+            "name": "qt_uniade_meta",
+            "description": "Quantidade estipulada para a meta",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.meta_especial.vl_custeio_emenda_especial_meta": {
+            "name": "vl_custeio_emenda_especial_meta",
+            "description": "Valor de Custeio de Emenda Especial",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.meta_especial.vl_investimento_emenda_especial_meta": {
+            "name": "vl_investimento_emenda_especial_meta",
+            "description": "Valor de Investimento de Emenda Especial",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.meta_especial.vl_custeio_recursos_proprios_meta": {
+            "name": "vl_custeio_recursos_proprios_meta",
+            "description": "Valor de Custeio de Recursos Proprios",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.meta_especial.vl_investimento_recursos_proprios_meta": {
+            "name": "vl_investimento_recursos_proprios_meta",
+            "description": "Valor de Investimento de Recursos Proprios",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.meta_especial.vl_custeio_rendimento_meta": {
+            "name": "vl_custeio_rendimento_meta",
+            "description": "Valor de Custeio de Rendimentos",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.meta_especial.vl_investimento_rendimento_meta": {
+            "name": "vl_investimento_rendimento_meta",
+            "description": "Valor de Investimento de Rendimentos",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.meta_especial.vl_custeio_doacao_meta": {
+            "name": "vl_custeio_doacao_meta",
+            "description": "Valor de Custeio de Doa\u00e7\u00f5es",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.meta_especial.vl_investimento_doacao_meta": {
+            "name": "vl_investimento_doacao_meta",
+            "description": "Valor de Investimento de Doa\u00e7\u00f5es",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.meta_especial.qt_meses_meta": {
+            "name": "qt_meses_meta",
+            "description": "Quantidade de meses para execucao da meta",
+            "required": false,
+            "format": "smallint",
+            "in": "query",
+            "type": "string"
+        },
+        "body.programa_especial": {
+            "name": "programa_especial",
+            "description": "programa_especial",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/programa_especial"
+            }
+        },
+        "rowFilter.programa_especial.id_programa": {
+            "name": "id_programa",
+            "description": "Identificador \u00danico do Programa",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.ano_programa": {
+            "name": "ano_programa",
+            "description": "Ano do Programa",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.modalidade_programa": {
+            "name": "modalidade_programa",
+            "description": "Modalidade do Programa",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.codigo_programa": {
+            "name": "codigo_programa",
+            "description": "C\u00f3digo do Programa",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.id_orgao_superior_programa": {
+            "name": "id_orgao_superior_programa",
+            "description": "C\u00f3digo SIORG do \u00d3rg\u00e3o Repassador do Programa",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.sigla_orgao_superior_programa": {
+            "name": "sigla_orgao_superior_programa",
+            "description": "Sigla do \u00d3rg\u00e3o Repassador do Programa",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.nome_orgao_superior_programa": {
+            "name": "nome_orgao_superior_programa",
+            "description": "Nome do \u00d3rg\u00e3o Repassador do Programa",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.id_orgao_programa": {
+            "name": "id_orgao_programa",
+            "description": "C\u00f3digo SIORG do \u00d3rg\u00e3o do Programa",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.sigla_orgao_programa": {
+            "name": "sigla_orgao_programa",
+            "description": "Sigla do \u00d3rg\u00e3o do Programa",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.nome_orgao_programa": {
+            "name": "nome_orgao_programa",
+            "description": "Nome do \u00d3rg\u00e3o do Programa",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.id_unidade_gestora_programa": {
+            "name": "id_unidade_gestora_programa",
+            "description": "C\u00f3digo da Unidade Gestora do \u00d3rg\u00e3o do Programa",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.documentos_origem_programa": {
+            "name": "documentos_origem_programa",
+            "description": "Concatena\u00e7\u00e3o dos C\u00f3digos \u00danicos para Identifica\u00e7\u00e3o dos Dados Financeiros Disponibilizados",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.id_unidade_orcamentaria_responsavel_programa": {
+            "name": "id_unidade_orcamentaria_responsavel_programa",
+            "description": "Identificador \u00danico da Unidade Or\u00e7ament\u00e1ria Respons\u00e1vel pelo Programa",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.data_inicio_ciencia_programa": {
+            "name": "data_inicio_ciencia_programa",
+            "description": "Data de In\u00edcio para o Registro de Ci\u00eancia",
+            "required": false,
+            "format": "date",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.data_fim_ciencia_programa": {
+            "name": "data_fim_ciencia_programa",
+            "description": "Data Final para o Registro de Ci\u00eancia",
+            "required": false,
+            "format": "date",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.valor_necessidade_financeira_programa": {
+            "name": "valor_necessidade_financeira_programa",
+            "description": "Valor da Necessidade Financeira do Programa, resultado do somat\u00f3rio das minutas de empenho",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.valor_total_disponibilizado_programa": {
+            "name": "valor_total_disponibilizado_programa",
+            "description": "Valor Total Disponibilizado para o Programa",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.valor_impedido_programa": {
+            "name": "valor_impedido_programa",
+            "description": "Valor Impedido",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.valor_a_disponibilizar_programa": {
+            "name": "valor_a_disponibilizar_programa",
+            "description": "Valor a ser Disponibilizado",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.valor_documentos_habeis_gerados_programa": {
+            "name": "valor_documentos_habeis_gerados_programa",
+            "description": "Valor dos Documentos H\u00e1beis Gerados",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.valor_obs_geradas_programa": {
+            "name": "valor_obs_geradas_programa",
+            "description": "Valor das Ordens Banc\u00e1rias Geradas",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.programa_especial.valor_disponibilidade_atual_programa": {
+            "name": "valor_disponibilidade_atual_programa",
+            "description": "Valor do Saldo Dispon\u00edvel para o registro atual de disponibiliza\u00e7\u00e3o",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "body.plano_trabalho_historico_especial": {
+            "name": "plano_trabalho_historico_especial",
+            "description": "plano_trabalho_historico_especial",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/plano_trabalho_historico_especial"
+            }
+        },
+        "rowFilter.plano_trabalho_historico_especial.id_plano_trabalho_hist": {
+            "name": "id_plano_trabalho_hist",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_historico_especial.data_plano_trabalho_hist": {
+            "name": "data_plano_trabalho_hist",
+            "required": false,
+            "format": "timestamp without time zone",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_historico_especial.cpf_responsavel_plano_trabalho_hist": {
+            "name": "cpf_responsavel_plano_trabalho_hist",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_historico_especial.situacao_plano_trabalho_hist": {
+            "name": "situacao_plano_trabalho_hist",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_historico_especial.id_plano_trabalho": {
+            "name": "id_plano_trabalho",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "body.relatorio_gestao_novo_especial": {
+            "name": "relatorio_gestao_novo_especial",
+            "description": "relatorio_gestao_novo_especial",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/relatorio_gestao_novo_especial"
+            }
+        },
+        "rowFilter.relatorio_gestao_novo_especial.id_relatorio_gestao_novo": {
+            "name": "id_relatorio_gestao_novo",
+            "description": "Identificador \u00danico do Relatorio de Gest\u00e3o Novo",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.relatorio_gestao_novo_especial.data_e_hora_relatorio_gestao_novo": {
+            "name": "data_e_hora_relatorio_gestao_novo",
+            "description": "Data e Hora do Relat\u00f3rio de Gest\u00e3o Novo",
+            "required": false,
+            "format": "timestamp without time zone",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.relatorio_gestao_novo_especial.tipo_relatorio_gestao_novo": {
+            "name": "tipo_relatorio_gestao_novo",
+            "description": "Tipo do Relat\u00f3rio de Gest\u00e3o Novo",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.relatorio_gestao_novo_especial.valor_executado_relatorio_gestao_novo": {
+            "name": "valor_executado_relatorio_gestao_novo",
+            "description": "Valor Executado do Relat\u00f3rio de Gest\u00e3o Novo",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.relatorio_gestao_novo_especial.valor_pendente_relatorio_gestao_novo": {
+            "name": "valor_pendente_relatorio_gestao_novo",
+            "description": "Valor Pendente do Relat\u00f3rio de Gest\u00e3o Novo",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.relatorio_gestao_novo_especial.situacao_relatorio_gestao_novo": {
+            "name": "situacao_relatorio_gestao_novo",
+            "description": "Situa\u00e7\u00e3o do Relat\u00f3rio de Gest\u00e3o Novo",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.relatorio_gestao_novo_especial.id_plano_acao": {
+            "name": "id_plano_acao",
+            "description": "Identificador \u00danico do Plano de A\u00e7\u00e3o (PA)",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "body.executor_especial": {
+            "name": "executor_especial",
+            "description": "executor_especial",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/executor_especial"
+            }
+        },
+        "rowFilter.executor_especial.id_plano_acao": {
+            "name": "id_plano_acao",
+            "description": "Identificador do Plano de Acao da Proposta",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.executor_especial.id_executor": {
+            "name": "id_executor",
+            "description": "Identificador Unico do Executor do Planejamento",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.executor_especial.cnpj_executor": {
+            "name": "cnpj_executor",
+            "description": "CNPJ do Executor",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.executor_especial.nome_executor": {
+            "name": "nome_executor",
+            "description": "Nome do Executor",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.executor_especial.objeto_executor": {
+            "name": "objeto_executor",
+            "description": "Texto detalhado informando o Objeto da Execucao",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.executor_especial.vl_custeio_executor": {
+            "name": "vl_custeio_executor",
+            "description": "Valor de Custeio do objeto a ser atendido pelo executor",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.executor_especial.vl_investimento_executor": {
+            "name": "vl_investimento_executor",
+            "description": "Valor de Investimento do objeto a ser atendido pelo executor",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.executor_especial.ind_recursos_gerenciados_conta_especifica_executor": {
+            "name": "ind_recursos_gerenciados_conta_especifica_executor",
+            "description": "Indica se os recursos ser\u00e3o gerenciados por conta espec\u00edfica do executor",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.executor_especial.codigo_banco_executor": {
+            "name": "codigo_banco_executor",
+            "description": "C\u00f3digo do Banco do Executor",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.executor_especial.nome_banco_executor": {
+            "name": "nome_banco_executor",
+            "description": "Nome do Banco do Executor",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.executor_especial.numero_agencia_executor": {
+            "name": "numero_agencia_executor",
+            "description": "N\u00famero da Ag\u00eancia Banc\u00e1ria do Executor",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.executor_especial.dv_agencia_executor": {
+            "name": "dv_agencia_executor",
+            "description": "D\u00edgito Verificador da Ag\u00eancia Banc\u00e1ria do Executor",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.executor_especial.nome_agencia_executor": {
+            "name": "nome_agencia_executor",
+            "description": "Nome da Ag\u00eancia Banc\u00e1ria do Executor",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.executor_especial.numero_conta_executor": {
+            "name": "numero_conta_executor",
+            "description": "N\u00famero da Conta Banc\u00e1ria do Executor",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.executor_especial.dv_conta_executor": {
+            "name": "dv_conta_executor",
+            "description": "D\u00edgito Verificador da Conta Banc\u00e1ria do Executor",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.executor_especial.codigo_situacao_dado_bancario_executor": {
+            "name": "codigo_situacao_dado_bancario_executor",
+            "description": "C\u00f3digo da Situa\u00e7\u00e3o da Conta Banc\u00e1ria do Executor",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.executor_especial.descricao_situacao_dado_bancario_executor": {
+            "name": "descricao_situacao_dado_bancario_executor",
+            "description": "Descri\u00e7\u00e3o da Situa\u00e7\u00e3o da Conta Banc\u00e1ria do Executor",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "body.plano_trabalho_especial": {
+            "name": "plano_trabalho_especial",
+            "description": "plano_trabalho_especial",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/plano_trabalho_especial"
+            }
+        },
+        "rowFilter.plano_trabalho_especial.id_plano_trabalho": {
+            "name": "id_plano_trabalho",
+            "description": "Identificador Unico do Planejamento",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_especial.situacao_plano_trabalho": {
+            "name": "situacao_plano_trabalho",
+            "description": "Identificador da Situacao do Planejamento",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_especial.ind_orcamento_proprio_plano_trabalho": {
+            "name": "ind_orcamento_proprio_plano_trabalho",
+            "description": "Indicador de que os recursos do Plano de Acao foram indicados no orcamento proprio do Beneficiario",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_especial.data_inicio_execucao_plano_trabalho": {
+            "name": "data_inicio_execucao_plano_trabalho",
+            "description": "Data da Emiss\u00e3o da OB no Siafi",
+            "required": false,
+            "format": "timestamp without time zone",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_especial.data_fim_execucao_plano_trabalho": {
+            "name": "data_fim_execucao_plano_trabalho",
+            "description": "Data prevista para o fim da execu\u00e7\u00e3o do Plano de Trabalho Especial com base no Prazo de Execucao",
+            "required": false,
+            "format": "timestamp without time zone",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_especial.prazo_execucao_meses_plano_trabalho": {
+            "name": "prazo_execucao_meses_plano_trabalho",
+            "description": "Prazo de Execucao em meses",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_especial.id_plano_acao": {
+            "name": "id_plano_acao",
+            "description": "Identificador do Plano de Acao da Proposta",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_especial.classificacao_orcamentaria_pt": {
+            "name": "classificacao_orcamentaria_pt",
+            "description": "Texto com classifica\u00e7\u00e3o or\u00e7ament\u00e1ria da despesa informado quando indicado no orcamento proprio",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_especial.ind_justificativa_prorrogacao_atraso_pt": {
+            "name": "ind_justificativa_prorrogacao_atraso_pt",
+            "description": "Indica atraso na liberacao dos recursos",
+            "required": false,
+            "format": "boolean",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_especial.ind_justificativa_prorrogacao_paralizacao_pt": {
+            "name": "ind_justificativa_prorrogacao_paralizacao_pt",
+            "description": "Indica paralizacao da execucao do objeto",
+            "required": false,
+            "format": "boolean",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_especial.justificativa_prorrogacao_pt": {
+            "name": "justificativa_prorrogacao_pt",
+            "description": "Detalhamento da Justificativa da Prorrogacao de Prazo",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "body.empenho_especial": {
+            "name": "empenho_especial",
+            "description": "empenho_especial",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/empenho_especial"
+            }
+        },
+        "rowFilter.empenho_especial.id_empenho": {
+            "name": "id_empenho",
+            "description": "Identificador \u00danico da Nota de Empenho (NE)",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.id_minuta_empenho": {
+            "name": "id_minuta_empenho",
+            "description": "N\u00famero da Minuta gerado para Nota de Empenho, utiliza o N\u00famero Interno e Ano de Emiss\u00e3o",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.numero_empenho": {
+            "name": "numero_empenho",
+            "description": "N\u00famero da Nota de Empenho gerada e enviada pelo SIAFI (Sistema Integrado de Administra\u00e7\u00e3o Financeira)",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.situacao_empenho": {
+            "name": "situacao_empenho",
+            "description": "Situa\u00e7\u00e3o da Nota de Empenho",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.descricao_situacao_empenho": {
+            "name": "descricao_situacao_empenho",
+            "description": "Descri\u00e7\u00e3o da Situa\u00e7\u00e3o da Nota de Empenho",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.tipo_documento_empenho": {
+            "name": "tipo_documento_empenho",
+            "description": "Tipo da Nota de Empenho",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.descricao_tipo_documento_empenho": {
+            "name": "descricao_tipo_documento_empenho",
+            "description": "Descri\u00e7\u00e3o do Tipo da Nota de Empenho",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.status_processamento_empenho": {
+            "name": "status_processamento_empenho",
+            "description": "Indica o status do processamento em lote da Nota de Empenho",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.ug_responsavel_empenho": {
+            "name": "ug_responsavel_empenho",
+            "description": "C\u00f3digo da Unidade Gestora Respons\u00e1vel da Nota de Empenho",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.ug_emitente_empenho": {
+            "name": "ug_emitente_empenho",
+            "description": "C\u00f3digo da Unidade Gestora Emitente da Nota de Empenho",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.descricao_ug_emitente_empenho": {
+            "name": "descricao_ug_emitente_empenho",
+            "description": "Nome da Unidade Gestora Emitente da Nota de Empenho",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.fonte_recurso_empenho": {
+            "name": "fonte_recurso_empenho",
+            "description": "Fonte de Recurso da Nota de Empenho no SIAFI (Sistema Integrado de Administra\u00e7\u00e3o Financeira)",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.plano_interno_empenho": {
+            "name": "plano_interno_empenho",
+            "description": "Instrumento de planejamento e de acompanhamento da a\u00e7\u00e3o planejada, usado como forma de detalhamento desta, de uso exclusivo de cada Minist\u00e9rio/\u00f3rg\u00e3o, com as seguintes caracter\u00edsticas: - H\u00e1 um atributo na tabela de \u00f3rg\u00e3o para indicar se o \u00f3rg\u00e3o utiliza ou n\u00e3o o Plano Interno (PI). Este atributo \u00e9 mantido pela STN decorrente da solicita\u00e7\u00e3o do \u00f3rg\u00e3o. - A unidade setorial de or\u00e7amento do \u00f3rg\u00e3o \u00e9 respons\u00e1vel por registrar na tabela os c\u00f3digos de PI. - O SIAFI (Sistema Integrado de Administra\u00e7\u00e3o Financeira), de acordo com o cadastramento previsto acima, s\u00f3 aceitar\u00e1 a emiss\u00e3o de nota de empenho com o c\u00f3digo de PI existente. - Os c\u00f3digos de PI poder\u00e3o ter at\u00e9 11 (onze) posi\u00e7\u00f5es alfa-num\u00e9ricas",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.ptres_empenho": {
+            "name": "ptres_empenho",
+            "description": "N\u00famero do Programa de Trabalho Resumido",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.grupo_natureza_despesa_empenho": {
+            "name": "grupo_natureza_despesa_empenho",
+            "description": "Primeiro d\u00edgito do C\u00f3digo da Natureza de Despesa no SIAFI",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.natureza_despesa_empenho": {
+            "name": "natureza_despesa_empenho",
+            "description": "C\u00f3digo da Natureza de Despesa no SIAFI (Sistema Integrado de Administra\u00e7\u00e3o Financeira)",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.subitem_empenho": {
+            "name": "subitem_empenho",
+            "description": "Valor do Sub-item da Natureza de Despesa no SIAFI (Sistema Integrado de Administra\u00e7\u00e3o Financeira)",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.categoria_despesa_empenho": {
+            "name": "categoria_despesa_empenho",
+            "description": "C\u00f3digo da Categoria de Despesa associada \u00e0 Nota de Empenho",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.modalidade_despesa_empenho": {
+            "name": "modalidade_despesa_empenho",
+            "description": "C\u00f3digo da Modalidade de Despesa",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.cnpj_beneficiario_empenho": {
+            "name": "cnpj_beneficiario_empenho",
+            "description": "CNPJ do Benefici\u00e1rio",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.nome_beneficiario_empenho": {
+            "name": "nome_beneficiario_empenho",
+            "description": "Nome do Benefici\u00e1rio",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.uf_beneficiario_empenho": {
+            "name": "uf_beneficiario_empenho",
+            "description": "Sigla da Unidade da Federa\u00e7\u00e3o do Benefici\u00e1rio",
+            "required": false,
+            "format": "character",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.numero_ro_empenho": {
+            "name": "numero_ro_empenho",
+            "description": "N\u00famero da lista gerado e enviado pelo SIAFI (Sistema Integrado de Administra\u00e7\u00e3o Financeira)",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.data_emissao_empenho": {
+            "name": "data_emissao_empenho",
+            "description": "Data de envio ao SIAFI (Sistema Integrado de Administra\u00e7\u00e3o Financeira)",
+            "required": false,
+            "format": "date",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.prioridade_desbloqueio_empenho": {
+            "name": "prioridade_desbloqueio_empenho",
+            "description": "Indicador de prioridade no desbloqueio de recursos",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.valor_empenho": {
+            "name": "valor_empenho",
+            "description": "Valor Total da Nota de Empenho",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.empenho_especial.id_plano_acao": {
+            "name": "id_plano_acao",
+            "description": "Identificador \u00danico do Plano de A\u00e7\u00e3o (PA)",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "body.plano_trabalho_analise_especial": {
+            "name": "plano_trabalho_analise_especial",
+            "description": "plano_trabalho_analise_especial",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/plano_trabalho_analise_especial"
+            }
+        },
+        "rowFilter.plano_trabalho_analise_especial.id_plano_trabalho_analise": {
+            "name": "id_plano_trabalho_analise",
+            "description": "Identificador \u00danico da An\u00e1lise do Plano de Trabalho",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_analise_especial.codigo_siorg_orgao_analise_pt": {
+            "name": "codigo_siorg_orgao_analise_pt",
+            "description": "SIORG do \u00f3rg\u00e3o respons\u00e1vel pela an\u00e1lise do plano de trabalho",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_analise_especial.nome_orgao_analise_pt": {
+            "name": "nome_orgao_analise_pt",
+            "description": "Nome do \u00f3rg\u00e3o respons\u00e1vel pela an\u00e1lise do plano de trabalho",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_analise_especial.situacao_planejamento_pt": {
+            "name": "situacao_planejamento_pt",
+            "description": "Identificador da Situa\u00e7\u00e3o do Planejamento",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_analise_especial.situacao_parecer_analise_pt": {
+            "name": "situacao_parecer_analise_pt",
+            "description": "Status do parecer da an\u00e1lise do Plano de Trabalho",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_analise_especial.texto_parecer_analise_pt": {
+            "name": "texto_parecer_analise_pt",
+            "description": "Texto do parecer da an\u00e1lise do Plano de Trabalho",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_analise_especial.situacao_analise_pt": {
+            "name": "situacao_analise_pt",
+            "description": "Status da an\u00e1lise do Plano de Trabalho",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_analise_especial.data_analise_pt": {
+            "name": "data_analise_pt",
+            "description": "Data da an\u00e1lise do Plano de Trabalho",
+            "required": false,
+            "format": "timestamp without time zone",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_analise_especial.valor_reprovado_analise_pt": {
+            "name": "valor_reprovado_analise_pt",
+            "description": "Valor reprovado na an\u00e1lise do plano de trabalho",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_analise_especial.id_plano_trabalho": {
+            "name": "id_plano_trabalho",
+            "description": "Identificador \u00danico do Plano de Trabalho",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "body.ordem_pagamento_ordem_bancaria_especial": {
+            "name": "ordem_pagamento_ordem_bancaria_especial",
+            "description": "ordem_pagamento_ordem_bancaria_especial",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/ordem_pagamento_ordem_bancaria_especial"
+            }
+        },
+        "rowFilter.ordem_pagamento_ordem_bancaria_especial.id_op_ob": {
+            "name": "id_op_ob",
+            "description": "Identificador \u00danico da Opera\u00e7\u00e3o de Ordem Banc\u00e1ria",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.ordem_pagamento_ordem_bancaria_especial.data_emissao_op": {
+            "name": "data_emissao_op",
+            "description": "Data da Emiss\u00e3o da Ordem de Pagamento",
+            "required": false,
+            "format": "date",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.ordem_pagamento_ordem_bancaria_especial.numero_ordem_pagamento": {
+            "name": "numero_ordem_pagamento",
+            "description": "N\u00famero da Ordem de Pagamento, no formato AAAAOPNNNNNN, exemplo \u201c2020OP146800\u201d",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.ordem_pagamento_ordem_bancaria_especial.vinculacao_op": {
+            "name": "vinculacao_op",
+            "description": "C\u00f3digo da vincula\u00e7\u00e3o da Ordem de Pagamento no SIAFI (Padr\u00e3o: 405)",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.ordem_pagamento_ordem_bancaria_especial.situacao_op": {
+            "name": "situacao_op",
+            "description": "C\u00f3digo da Situa\u00e7\u00e3o da Ordem de Pagamento/Banc\u00e1ria",
+            "required": false,
+            "format": "smallint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.ordem_pagamento_ordem_bancaria_especial.descricao_situacao_op": {
+            "name": "descricao_situacao_op",
+            "description": "Descri\u00e7\u00e3o da Situa\u00e7\u00e3o da Ordem de Pagamento/Banc\u00e1ria",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.ordem_pagamento_ordem_bancaria_especial.data_situacao_op": {
+            "name": "data_situacao_op",
+            "description": "Data da Situa\u00e7\u00e3o da Ordem de Pagamento/Banc\u00e1ria",
+            "required": false,
+            "format": "date",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.ordem_pagamento_ordem_bancaria_especial.data_emissao_ob": {
+            "name": "data_emissao_ob",
+            "description": "Data da Emiss\u00e3o da OB no SIAFI",
+            "required": false,
+            "format": "date",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.ordem_pagamento_ordem_bancaria_especial.numero_ordem_bancaria": {
+            "name": "numero_ordem_bancaria",
+            "description": "N\u00famero da Ordem Banc\u00e1ria, no formato AAAAOBNNNNNN, exemplo \u201c2020OB146800\u201d",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.ordem_pagamento_ordem_bancaria_especial.numero_ordem_lancamento": {
+            "name": "numero_ordem_lancamento",
+            "description": "N\u00famero da Nota de Lan\u00e7amento no sistema, no formato AAAANSNNNNNN, exemplo \u201c2020NS146800\u201d",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.ordem_pagamento_ordem_bancaria_especial.data_assinatura_ordenador_despesa_ob": {
+            "name": "data_assinatura_ordenador_despesa_ob",
+            "description": "Data de Assinatura do Ordenador de Despesa",
+            "required": false,
+            "format": "date",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.ordem_pagamento_ordem_bancaria_especial.data_assinatura_gestor_financeiro_ob": {
+            "name": "data_assinatura_gestor_financeiro_ob",
+            "description": "Data de Assinatura do Gestor Financeiro",
+            "required": false,
+            "format": "date",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.ordem_pagamento_ordem_bancaria_especial.id_dh": {
+            "name": "id_dh",
+            "description": "Identificador \u00danico do Documento H\u00e1bil (DH)",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "body.plano_trabalho_analise_historico_especial": {
+            "name": "plano_trabalho_analise_historico_especial",
+            "description": "plano_trabalho_analise_historico_especial",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/plano_trabalho_analise_historico_especial"
+            }
+        },
+        "rowFilter.plano_trabalho_analise_historico_especial.codigo_siorg_orgao_analise_pt_hist": {
+            "name": "codigo_siorg_orgao_analise_pt_hist",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_analise_historico_especial.nome_orgao_analise_pt_hist": {
+            "name": "nome_orgao_analise_pt_hist",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_analise_historico_especial.situacao_parecer_analise_pt_hist": {
+            "name": "situacao_parecer_analise_pt_hist",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_analise_historico_especial.data_analise_pt_hist": {
+            "name": "data_analise_pt_hist",
+            "required": false,
+            "format": "timestamp without time zone",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_analise_historico_especial.situacao_analise_pt_hist": {
+            "name": "situacao_analise_pt_hist",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_analise_historico_especial.responsaveis_analise_pt_hist": {
+            "name": "responsaveis_analise_pt_hist",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_trabalho_analise_historico_especial.id_plano_trabalho_analise": {
+            "name": "id_plano_trabalho_analise",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "body.finalidade_especial": {
+            "name": "finalidade_especial",
+            "description": "finalidade_especial",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/finalidade_especial"
+            }
+        },
+        "rowFilter.finalidade_especial.id_executor": {
+            "name": "id_executor",
+            "description": "Identificador Unico do Executor do Planejamento",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.finalidade_especial.cd_area_politica_publica_tipo_pt": {
+            "name": "cd_area_politica_publica_tipo_pt",
+            "description": "Codigo do Tipo da Area de Politica Publica",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.finalidade_especial.area_politica_publica_tipo_pt": {
+            "name": "area_politica_publica_tipo_pt",
+            "description": "Nome do Tipo da Area de Politica Publica",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.finalidade_especial.cd_area_politica_publica_pt": {
+            "name": "cd_area_politica_publica_pt",
+            "description": "Codigo da Area de Politica Publica. Deve ser exibido apos do codigo do tipo da area",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.finalidade_especial.area_politica_publica_pt": {
+            "name": "area_politica_publica_pt",
+            "description": "Nome da Area de Politica Publica",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "body.orgao_analise_pendente_especial": {
+            "name": "orgao_analise_pendente_especial",
+            "description": "orgao_analise_pendente_especial",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/orgao_analise_pendente_especial"
+            }
+        },
+        "rowFilter.orgao_analise_pendente_especial.id_analise_pendente": {
+            "name": "id_analise_pendente",
+            "description": "Identificador \u00danico do Plano de Trabalho concatenado com o Identificador do \u00f3rg\u00e3o que possui an\u00e1lises pendentes",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.orgao_analise_pendente_especial.id_orgao_analise_pendente_pt": {
+            "name": "id_orgao_analise_pendente_pt",
+            "description": "Identificador do \u00f3rg\u00e3o que possui an\u00e1lises pendentes",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.orgao_analise_pendente_especial.nome_orgao_analise_pendente_pt": {
+            "name": "nome_orgao_analise_pendente_pt",
+            "description": "Nome do \u00f3rg\u00e3o que possui an\u00e1lises pendentes",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.orgao_analise_pendente_especial.id_plano_trabalho": {
+            "name": "id_plano_trabalho",
+            "description": "Identificador \u00danico do Plano de Trabalho",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "body.plano_acao_especial": {
+            "name": "plano_acao_especial",
+            "description": "plano_acao_especial",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/plano_acao_especial"
+            }
+        },
+        "rowFilter.plano_acao_especial.id_plano_acao": {
+            "name": "id_plano_acao",
+            "description": "Identificador \u00danico do Plano de A\u00e7\u00e3o (PA)",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.codigo_plano_acao": {
+            "name": "codigo_plano_acao",
+            "description": "C\u00f3digo do Programa concatenado com o ID do Plano de A\u00e7\u00e3o",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.ano_plano_acao": {
+            "name": "ano_plano_acao",
+            "description": "Ano de Cria\u00e7\u00e3o do Plano de A\u00e7\u00e3o",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.modalidade_plano_acao": {
+            "name": "modalidade_plano_acao",
+            "description": "Modalidade de Transfer\u00eancia do Plano de A\u00e7\u00e3o",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.situacao_plano_acao": {
+            "name": "situacao_plano_acao",
+            "description": "Situa\u00e7\u00e3o do Plano de A\u00e7\u00e3o",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.cnpj_beneficiario_plano_acao": {
+            "name": "cnpj_beneficiario_plano_acao",
+            "description": "CNPJ \u2013 Cadastro Nacional de Pessoa Jur\u00eddica do Benefici\u00e1rio do Plano de A\u00e7\u00e3o",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.nome_beneficiario_plano_acao": {
+            "name": "nome_beneficiario_plano_acao",
+            "description": "Nome do Benefici\u00e1rio do Plano de A\u00e7\u00e3o",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.uf_beneficiario_plano_acao": {
+            "name": "uf_beneficiario_plano_acao",
+            "description": "Sigla da Unidade de Federa\u00e7\u00e3o",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.codigo_banco_plano_acao": {
+            "name": "codigo_banco_plano_acao",
+            "description": "C\u00f3digo do Banco do PA",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.codigo_situacao_dado_bancario_plano_acao": {
+            "name": "codigo_situacao_dado_bancario_plano_acao",
+            "description": "C\u00f3digo da Situa\u00e7\u00e3o da Conta Corrente do PA",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.nome_banco_plano_acao": {
+            "name": "nome_banco_plano_acao",
+            "description": "Nome do Banco do PA",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.numero_agencia_plano_acao": {
+            "name": "numero_agencia_plano_acao",
+            "description": "N\u00famero da Ag\u00eancia Banc\u00e1ria da Conta Corrente do PA",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.dv_agencia_plano_acao": {
+            "name": "dv_agencia_plano_acao",
+            "description": "D\u00edgito Verificador da Ag\u00eancia Banc\u00e1ria da Conta Corrente do PA",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.numero_conta_plano_acao": {
+            "name": "numero_conta_plano_acao",
+            "description": "N\u00famero da Conta Corrente do PA",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.dv_conta_plano_acao": {
+            "name": "dv_conta_plano_acao",
+            "description": "D\u00edgito Verificador da Conta Corrente do PA",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.nome_parlamentar_emenda_plano_acao": {
+            "name": "nome_parlamentar_emenda_plano_acao",
+            "description": "Nome do Parlamentar Autor da Emenda",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.ano_emenda_parlamentar_plano_acao": {
+            "name": "ano_emenda_parlamentar_plano_acao",
+            "description": "Ano da Emenda Parlamentar",
+            "required": false,
+            "format": "character",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.codigo_parlamentar_emenda_plano_acao": {
+            "name": "codigo_parlamentar_emenda_plano_acao",
+            "description": "C\u00f3digo do Parlamentar Autor da Emenda",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.sequencial_emenda_parlamentar_plano_acao": {
+            "name": "sequencial_emenda_parlamentar_plano_acao",
+            "description": "Sequencial da Emenda Por Parlamentar no Ano",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.numero_emenda_parlamentar_plano_acao": {
+            "name": "numero_emenda_parlamentar_plano_acao",
+            "description": "Concatena\u00e7\u00e3o do Ano, C\u00f3digo e Sequencial do Parlamentar",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.codigo_emenda_parlamentar_formatado_plano_acao": {
+            "name": "codigo_emenda_parlamentar_formatado_plano_acao",
+            "description": "C\u00f3digo Formatado da Emenda Parlamentar",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.codigo_descricao_areas_politicas_publicas_plano_acao": {
+            "name": "codigo_descricao_areas_politicas_publicas_plano_acao",
+            "description": "Concatena\u00e7\u00e3o dos C\u00f3digos e Descri\u00e7\u00f5es dos Tipos da \u00c1reas das Pol\u00edticas P\u00fablicas com os C\u00f3digos e Descri\u00e7\u00f5es das \u00c1reas das Pol\u00edticas P\u00fablicas",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.descricao_programacao_orcamentaria_plano_acao": {
+            "name": "descricao_programacao_orcamentaria_plano_acao",
+            "description": "Concatena\u00e7\u00e3o das Programa\u00e7\u00f5es Or\u00e7ament\u00e1rias constantes da Lei Or\u00e7ament\u00e1ria do ente beneficiado na qual o recurso ser\u00e1 apropriado",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.motivo_impedimento_plano_acao": {
+            "name": "motivo_impedimento_plano_acao",
+            "description": "Motivo do Impedimento do Plano de A\u00e7\u00e3o",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.valor_custeio_plano_acao": {
+            "name": "valor_custeio_plano_acao",
+            "description": "Valor Consolidado de Custeio das Emendas Parlamentares do Plano de A\u00e7\u00e3o",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.valor_investimento_plano_acao": {
+            "name": "valor_investimento_plano_acao",
+            "description": "Valor Consolidado de Investimento das Emendas Parlamentares do Plano de A\u00e7\u00e3o",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.plano_acao_especial.id_programa": {
+            "name": "id_programa",
+            "description": "Identificador \u00danico do Programa",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "body.historico_pagamento_especial": {
+            "name": "historico_pagamento_especial",
+            "description": "historico_pagamento_especial",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/historico_pagamento_especial"
+            }
+        },
+        "rowFilter.historico_pagamento_especial.id_historico_op_ob": {
+            "name": "id_historico_op_ob",
+            "description": "Identificador \u00danico tabela opob_hist",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.historico_pagamento_especial.data_hora_historico_op": {
+            "name": "data_hora_historico_op",
+            "description": "Controle de data e hora da inser\u00e7\u00e3o ou atualiza\u00e7\u00e3o do registro, conforme hora do sistema",
+            "required": false,
+            "format": "timestamp without time zone",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.historico_pagamento_especial.historico_situacao_op": {
+            "name": "historico_situacao_op",
+            "description": "Eventos da OP",
+            "required": false,
+            "format": "smallint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.historico_pagamento_especial.descricao_historico_situacao_op": {
+            "name": "descricao_historico_situacao_op",
+            "description": "Descri\u00e7\u00e3o dos Eventos da OP",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.historico_pagamento_especial.id_op_ob": {
+            "name": "id_op_ob",
+            "description": "Identificador \u00danico da Opera\u00e7\u00e3o de Ordem Banc\u00e1ria",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "body.documento_habil_especial": {
+            "name": "documento_habil_especial",
+            "description": "documento_habil_especial",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/documento_habil_especial"
+            }
+        },
+        "rowFilter.documento_habil_especial.id_dh": {
+            "name": "id_dh",
+            "description": "Identificador \u00danico do Documento H\u00e1bil (DH)",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.id_minuta_documento_habil": {
+            "name": "id_minuta_documento_habil",
+            "description": "Padrao de Minuta de DH do tipo 2020MDH000001",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.numero_documento_habil": {
+            "name": "numero_documento_habil",
+            "description": "N\u00famero do DH no formato: YYYYTTNNNNNN (Ex.: 2020TF000001)",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.situacao_dh": {
+            "name": "situacao_dh",
+            "description": "C\u00f3digo da Situa\u00e7\u00e3o do DH",
+            "required": false,
+            "format": "smallint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.descricao_situacao_dh": {
+            "name": "descricao_situacao_dh",
+            "description": "Descri\u00e7\u00e3o da Situa\u00e7\u00e3o do DH",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.tipo_documento_dh": {
+            "name": "tipo_documento_dh",
+            "description": "C\u00f3digo do tipo do Documento H\u00e1bil",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.ug_emitente_dh": {
+            "name": "ug_emitente_dh",
+            "description": "C\u00f3digo da Unidade Gestora Emitente do Documento H\u00e1bil",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.descricao_ug_emitente_dh": {
+            "name": "descricao_ug_emitente_dh",
+            "description": "Nome da Unidade Gestora Emitente do Documento H\u00e1bil",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.data_vencimento_dh": {
+            "name": "data_vencimento_dh",
+            "description": "Data de Vencimento do Documento H\u00e1bil",
+            "required": false,
+            "format": "date",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.data_emissao_dh": {
+            "name": "data_emissao_dh",
+            "description": "Data de Emiss\u00e3o do Documento H\u00e1bil",
+            "required": false,
+            "format": "date",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.ug_pagadora_dh": {
+            "name": "ug_pagadora_dh",
+            "description": "C\u00f3digo da Unidade de Gest\u00e3o Pagadora do Documento H\u00e1bil",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.descricao_ug_pagadora_dh": {
+            "name": "descricao_ug_pagadora_dh",
+            "description": "Nome da Unidade de Gest\u00e3o Pagadora do Documento H\u00e1bil",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.variacao_patrimonial_diminuta_dh": {
+            "name": "variacao_patrimonial_diminuta_dh",
+            "description": "Varia\u00e7\u00e3o Patrimonial Diminutiva",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.passivo_transferencia_constitucional_legal_dh": {
+            "name": "passivo_transferencia_constitucional_legal_dh",
+            "description": "Passivo de Transfer\u00eancia Legal ou Constitucional",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.centro_custo_empenho": {
+            "name": "centro_custo_empenho",
+            "description": "C\u00f3digo do Centro de Custo",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.codigo_siorg_empenho": {
+            "name": "codigo_siorg_empenho",
+            "description": "C\u00f3digo SIORG do Centro de Custo",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.mes_referencia_empenho": {
+            "name": "mes_referencia_empenho",
+            "description": "M\u00eas de Refer\u00eancia do Centro do Custo",
+            "required": false,
+            "format": "text",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.ano_referencia_empenho": {
+            "name": "ano_referencia_empenho",
+            "description": "Ano de Refer\u00eancia do Centro de Custo",
+            "required": false,
+            "format": "integer",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.ug_beneficiada_dh": {
+            "name": "ug_beneficiada_dh",
+            "description": "C\u00f3digo da Unidade Gestora Beneficada do Documento H\u00e1bil",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.descricao_ug_beneficiada_dh": {
+            "name": "descricao_ug_beneficiada_dh",
+            "description": "Nome da Unidade Gestora Beneficiada do Documento H\u00e1bil",
+            "required": false,
+            "format": "character varying",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.valor_dh": {
+            "name": "valor_dh",
+            "description": "Valor do Documento H\u00e1bil. OBS: Se a Disponibilidade Financeira for menor que o valor do Empenho, mais de um Documento H\u00e1bil pode ser criado",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.valor_rateio_dh": {
+            "name": "valor_rateio_dh",
+            "description": "Valor do Rateio",
+            "required": false,
+            "format": "numeric",
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.documento_habil_especial.id_empenho": {
+            "name": "id_empenho",
+            "description": "Identificador \u00danico da Nota de Empenho (NE)",
+            "required": false,
+            "format": "bigint",
+            "in": "query",
+            "type": "string"
+        }
+    },
+    "externalDocs": {
+        "description": "PostgREST Documentation",
+        "url": "https://postgrest.org/en/v11.2/api.html"
+    }
+}

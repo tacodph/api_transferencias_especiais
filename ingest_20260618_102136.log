@@ -1,0 +1,18 @@
+2026-06-18 10:21:36,310 [INFO] Iniciando ingestão: 1 tabela(s)
+2026-06-18 10:21:36,311 [INFO] Destino: campinas.cidades.gov.br/corporativo schema=se_api_transferencias_especiais
+2026-06-18 10:21:36,411 [INFO] Conexão com o banco estabelecida.
+2026-06-18 10:21:36,412 [INFO] Modo incremental ativo: ultimos 7 dia(s)
+2026-06-18 10:21:36,412 [INFO] ============================================================
+2026-06-18 10:21:36,412 [INFO] Processando tabela: empenho_especial
+2026-06-18 10:21:36,412 [INFO] ============================================================
+2026-06-18 10:21:36,412 [INFO]   Carga incremental: data_emissao_empenho >= 2026-06-11
+2026-06-18 10:21:36,412 [INFO]   Iniciando fetch de 'empenho_especial' (carga incremental)...
+2026-06-18 10:21:37,450 [INFO]   Fetch concluído: 0 registros de 'empenho_especial'.
+2026-06-18 10:21:37,450 [WARNING]   Nenhum registro retornado para 'empenho_especial'.
+2026-06-18 10:21:37,460 [INFO] 
+============================================================
+2026-06-18 10:21:37,460 [INFO] RESUMO DA INGESTÃO
+2026-06-18 10:21:37,460 [INFO] ============================================================
+2026-06-18 10:21:37,460 [INFO]   empenho_especial: OK
+2026-06-18 10:21:37,460 [INFO] 
+Total: 1/1 tabelas com sucesso.
