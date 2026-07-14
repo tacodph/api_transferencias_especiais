@@ -1,0 +1,6139 @@
+{
+  "all_param_names": [
+    "agencia_batch",
+    "ano_emenda_parlamentar_plano_acao",
+    "ano_plano_acao",
+    "ano_programa",
+    "ano_referencia_centro_custo_dh",
+    "area_politica_publica_pt",
+    "area_politica_publica_tipo_pt",
+    "categoria_despesa_empenho",
+    "categoria_despesa_plano_acao",
+    "cd_area_politica_publica_pt",
+    "cd_area_politica_publica_tipo_pt",
+    "classificacao_orcamentaria_pt",
+    "cnpj_beneficiario",
+    "cnpj_ente_solicitante_gestao_financeira",
+    "cnpj_executor",
+    "cnpj_orgao_programa",
+    "cnpj_orgao_superior_programa",
+    "codigo_agencia_depositante_gestao_financeira",
+    "codigo_agencia_gestao_financeira",
+    "codigo_banco_beneficiario_subtransacao_gestao_financeira",
+    "codigo_banco_depositante_gestao_financeira",
+    "codigo_banco_executor",
+    "codigo_banco_favorecido_gestao_financeira",
+    "codigo_banco_gestao_financeira",
+    "codigo_banco_plano_acao",
+    "codigo_categoria_despesa_lancamento_gestao_financeira",
+    "codigo_categoria_despesa_subtransacao_gestao_financeira",
+    "codigo_conta_depositante_gestao_financeira",
+    "codigo_conta_gestao_financeira",
+    "codigo_descricao_areas_politicas_publicas_plano_acao",
+    "codigo_emenda_parlamentar_formatado_plano_acao",
+    "codigo_parlamentar_emenda_plano_acao",
+    "codigo_plano_acao",
+    "codigo_programa",
+    "codigo_siorg_centro_custo_dh",
+    "codigo_siorg_orgao_analise_pt",
+    "codigo_siorg_orgao_analise_pt_hist",
+    "codigo_situacao_dado_bancario_executor",
+    "codigo_situacao_dado_bancario_plano_acao",
+    "conta_batch",
+    "cpf_responsavel_plano_trabalho_hist",
+    "data_aceite_plano_acao",
+    "data_analise_pt",
+    "data_analise_pt_hist",
+    "data_assinatura_gestor_financeiro_ob",
+    "data_assinatura_ordenador_despesa_ob",
+    "data_e_hora_relatorio_gestao_novo",
+    "data_emissao_dh",
+    "data_emissao_empenho",
+    "data_emissao_ob",
+    "data_emissao_op",
+    "data_fim_ciencia_programa",
+    "data_fim_execucao_plano_trabalho",
+    "data_hora_historico_plano_acao",
+    "data_inicio_ciencia_programa",
+    "data_inicio_execucao_plano_trabalho",
+    "data_lancamento_gestao_financeira",
+    "data_pagamento_subtransacao_gestao_financeira",
+    "data_plano_trabalho_hist",
+    "data_relatorio_gestao",
+    "data_relatorio_gestao_novo",
+    "data_saldo_conta",
+    "data_situacao_op",
+    "data_vencimento_dh",
+    "desc_meta",
+    "descricao_centro_custo_dh",
+    "descricao_gestao_financeira",
+    "descricao_historico_plano_acao",
+    "descricao_programacao_orcamentaria_plano_acao",
+    "descricao_situacao_dado_bancario_executor",
+    "descricao_situacao_dado_bancario_plano_acao",
+    "descricao_situacao_dh",
+    "descricao_situacao_empenho",
+    "descricao_situacao_op",
+    "descricao_subtransacao_gestao_financeira",
+    "descricao_tipo_documento_empenho",
+    "descricao_ug_beneficiada_centro_custo_dh",
+    "descricao_ug_emitente_dh",
+    "descricao_ug_emitente_empenho",
+    "descricao_ug_pagadora_dh",
+    "descritivo_relatorio_gestao",
+    "detalhamento_objeto",
+    "doc_depositante_gestao_financeira",
+    "doc_favorecido_gestao_financeira",
+    "documentos_origem_programa",
+    "dt_hora_pt_aprovado",
+    "dt_hora_situacao_plano_trabalho",
+    "dv_agencia_depositante_gestao_financeira",
+    "dv_agencia_gestao_financeira",
+    "dv_agencia_plano_acao",
+    "dv_conta_depositante_gestao_financeira",
+    "dv_conta_gestao_financeira",
+    "dv_conta_plano_acao",
+    "email_camara",
+    "estado_subtransacao_gestao_financeira",
+    "fonte_recurso_empenho",
+    "grupo_natureza_despesa_empenho",
+    "id_agencia_conta",
+    "id_beneficiario",
+    "id_dh",
+    "id_empenho",
+    "id_ente",
+    "id_executor",
+    "id_historico_plano_acao",
+    "id_lancamento_gestao_financeira",
+    "id_meta",
+    "id_minuta_documento_habil",
+    "id_minuta_empenho",
+    "id_objeto",
+    "id_op_ob",
+    "id_orgao_analise_pendente_pt",
+    "id_orgao_programa",
+    "id_orgao_superior_programa",
+    "id_plano_acao",
+    "id_plano_trabalho",
+    "id_plano_trabalho_analise_pt",
+    "id_plano_trabalho_hist",
+    "id_programa",
+    "id_relatorio_gestao",
+    "id_relatorio_gestao_novo",
+    "id_subtransacao_gestao_financeira",
+    "id_unidade_gestora_programa",
+    "id_unidade_orcamentaria_responsavel_programa",
+    "ind_justificativa_prorrogacao_atraso_pt",
+    "ind_justificativa_prorrogacao_paralizacao_pt",
+    "ind_orcamento_proprio_plano_trabalho",
+    "ind_orgao_analises_pendentes",
+    "ind_recursos_gerenciados_conta_especifica_executor",
+    "justificativa_prorrogacao_paralizacao_pt",
+    "mes_ano_referencia_centro_custo_dh",
+    "mes_referencia_centro_custo_dh",
+    "modalidade_despesa_empenho",
+    "modalidade_plano_acao",
+    "modalidade_programa",
+    "motivo_impedimento_plano_acao",
+    "natureza_despesa_empenho",
+    "nome_agencia_executor",
+    "nome_banco_executor",
+    "nome_banco_plano_acao",
+    "nome_beneficiario",
+    "nome_beneficiario_subtransacao_gestao_financeira",
+    "nome_depositante_gestao_financeira",
+    "nome_ente_solicitante_gestao_financeira",
+    "nome_executor",
+    "nome_favorecido_gestao_financeira",
+    "nome_meta",
+    "nome_objeto",
+    "nome_orgao_analise_pendente_pt",
+    "nome_orgao_analise_pt",
+    "nome_orgao_analise_pt_hist",
+    "nome_orgao_programa",
+    "nome_orgao_superior_programa",
+    "nome_parlamentar_emenda_plano_acao",
+    "numero_agencia_executor",
+    "numero_agencia_plano_acao",
+    "numero_conta_executor",
+    "numero_conta_plano_acao",
+    "numero_documento_beneficiario_subtransacao_gestao_financeira",
+    "numero_documento_habil",
+    "numero_dv_agencia_executor",
+    "numero_dv_conta_executor",
+    "numero_emenda_parlamentar_plano_acao",
+    "numero_empenho",
+    "numero_ordem_bancaria",
+    "numero_ordem_gestao_financeira",
+    "numero_ordem_lancamento",
+    "numero_ordem_pagamento",
+    "numero_referencia_unica_gestao_financeira",
+    "numero_ro_empenho",
+    "objeto_executor",
+    "operacao_historico_plano_acao",
+    "origem_solicitacao_gestao_financeira",
+    "pagina",
+    "passivo_transferencia_constitucional_legal_dh",
+    "plano_interno_empenho",
+    "prazo_execucao_meses_plano_trabalho",
+    "prioridade_desbloqueio_empenho",
+    "ptres_empenho",
+    "qt_meses_meta",
+    "qt_unidade_meta",
+    "quantidade_subtransacoes_lancamento_gestao_financeira",
+    "responsaveis_analise_pt_hist",
+    "saldo_final_gestao_financeira",
+    "sequencial_emenda_parlamentar_plano_acao",
+    "sequencial_meta",
+    "sigla_orgao_programa",
+    "sigla_orgao_superior_programa",
+    "situacao_analise_pt",
+    "situacao_analise_pt_hist",
+    "situacao_dh",
+    "situacao_empenho",
+    "situacao_historico_plano_acao",
+    "situacao_op",
+    "situacao_pagamento_subtransacao_gestao_financeira",
+    "situacao_parecer_analise_pt",
+    "situacao_parecer_analise_pt_hist",
+    "situacao_planejamento_pt",
+    "situacao_plano_acao",
+    "situacao_plano_trabalho",
+    "situacao_plano_trabalho_hist",
+    "situacao_relatorio_gestao",
+    "situacao_relatorio_gestao_novo",
+    "status_processamento_empenho",
+    "subitem_empenho",
+    "tamanho_da_pagina",
+    "texto_parecer_analise_pt",
+    "tipo_depositante_gestao_financeira",
+    "tipo_documento_dh",
+    "tipo_documento_empenho",
+    "tipo_favorecido_gestao_financeira",
+    "tipo_operacao_gestao_financeira",
+    "tipo_pessoa_beneficiario_subtransacao_gestao_financeira",
+    "tipo_relatorio_gestao",
+    "tipo_relatorio_gestao_novo",
+    "uf_beneficiario",
+    "ug_beneficiada_centro_custo_dh",
+    "ug_emitente_dh",
+    "ug_emitente_empenho",
+    "ug_pagadora_dh",
+    "ug_responsavel_empenho",
+    "un_medida_meta",
+    "valor_a_disponibilizar_programa",
+    "valor_custeio_plano_acao",
+    "valor_custo_centro_custo_dh",
+    "valor_dh",
+    "valor_disponibilidade_atual_programa",
+    "valor_documentos_habeis_gerados_programa",
+    "valor_empenho",
+    "valor_executado_relatorio_gestao",
+    "valor_executado_relatorio_gestao_novo",
+    "valor_gestao_financeira",
+    "valor_impedido_programa",
+    "valor_investimento_plano_acao",
+    "valor_necessidade_financeira_programa",
+    "valor_obs_geradas_programa",
+    "valor_pendente_relatorio_gestao",
+    "valor_pendente_relatorio_gestao_novo",
+    "valor_rateio_dh",
+    "valor_reprovado_pt",
+    "valor_subtransacao_gestao_financeira",
+    "valor_total_disponibilizado_programa",
+    "variacao_patrimonial_diminuta_dh",
+    "vinculacao_op",
+    "vl_custeio_doacao_meta",
+    "vl_custeio_emenda_especial_meta",
+    "vl_custeio_executor",
+    "vl_custeio_recursos_proprios_meta",
+    "vl_custeio_rendimento_meta",
+    "vl_investimento_doacao_meta",
+    "vl_investimento_emenda_especial_meta",
+    "vl_investimento_executor",
+    "vl_investimento_recursos_proprios_meta",
+    "vl_investimento_rendimento_meta"
+  ],
+  "order_like": [
+    [
+      "/ordens_pagamentos_ordens_bancarias_especiais",
+      "data_assinatura_ordenador_despesa_ob",
+      "Data da assinatura do ordenador de despesa na Ordem Bancária (AAAA-MM-DD)."
+    ]
+  ],
+  "openapi_params": {
+    "programas_especiais": [
+      {
+        "name": "id_programa",
+        "in": "query",
+        "required": false,
+        "description": "Identificador único do programa.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "ano_programa",
+        "in": "query",
+        "required": false,
+        "description": "Ano de vigência ou cadastro do programa.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "modalidade_programa",
+        "in": "query",
+        "required": false,
+        "description": "Modalidade do programa.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_programa",
+        "in": "query",
+        "required": false,
+        "description": "Código alfanumérico único do programa.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_orgao_superior_programa",
+        "in": "query",
+        "required": false,
+        "description": "ID do órgão superior (hierárquico) do programa.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "sigla_orgao_superior_programa",
+        "in": "query",
+        "required": false,
+        "description": "Sigla do órgão superior.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "cnpj_orgao_superior_programa",
+        "in": "query",
+        "required": false,
+        "description": "CNPJ do órgão superior.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "nome_orgao_superior_programa",
+        "in": "query",
+        "required": false,
+        "description": "Nome do órgão superior.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_orgao_programa",
+        "in": "query",
+        "required": false,
+        "description": "ID do órgão executor do programa.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "sigla_orgao_programa",
+        "in": "query",
+        "required": false,
+        "description": "Sigla do órgão executor.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "cnpj_orgao_programa",
+        "in": "query",
+        "required": false,
+        "description": "CNPJ do órgão executor.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "nome_orgao_programa",
+        "in": "query",
+        "required": false,
+        "description": "Nome do órgão executor.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_unidade_gestora_programa",
+        "in": "query",
+        "required": false,
+        "description": "ID da unidade gestora responsável.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "documentos_origem_programa",
+        "in": "query",
+        "required": false,
+        "description": "Documentos ou base legal que originaram o programa.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_unidade_orcamentaria_responsavel_programa",
+        "in": "query",
+        "required": false,
+        "description": "ID da unidade orçamentária responsável.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_inicio_ciencia_programa",
+        "in": "query",
+        "required": false,
+        "description": "Data de início da ciência do programa (AAAA-MM-DD).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_fim_ciencia_programa",
+        "in": "query",
+        "required": false,
+        "description": "Data de término da ciência do programa (AAAA-MM-DD).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_necessidade_financeira_programa",
+        "in": "query",
+        "required": false,
+        "description": "Valor total da necessidade financeira estimada para o programa.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_total_disponibilizado_programa",
+        "in": "query",
+        "required": false,
+        "description": "Valor total já disponibilizado para o programa.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_impedido_programa",
+        "in": "query",
+        "required": false,
+        "description": "Valor que está impedido de ser usado.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_a_disponibilizar_programa",
+        "in": "query",
+        "required": false,
+        "description": "Valor restante a ser disponibilizado.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_documentos_habeis_gerados_programa",
+        "in": "query",
+        "required": false,
+        "description": "Valor total dos documentos hábeis gerados.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_obs_geradas_programa",
+        "in": "query",
+        "required": false,
+        "description": "Valor total de Ordens Bancárias (OBs) geradas.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_disponibilidade_atual_programa",
+        "in": "query",
+        "required": false,
+        "description": "Valor da disponibilidade financeira atual do programa.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "planos_acao_especiais": [
+      {
+        "name": "id_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Identificador único do plano de ação (chave primária).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Código identificador do plano de ação.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "ano_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Ano do plano de ação (AAAA).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "modalidade_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Modalidade do plano de ação.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "situacao_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Situação atual do plano de ação.",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "CIENTE",
+          "IMPEDIDO"
+        ]
+      },
+      {
+        "name": "email_camara",
+        "in": "query",
+        "required": false,
+        "description": "E-mail de contato da câmara.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_aceite_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Data de aceite do plano de ação (AAAA-MM-DD).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_banco_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Código do banco associado ao plano.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_situacao_dado_bancario_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Código da situação dos dados bancários.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "descricao_situacao_dado_bancario_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Descrição da situação dos dados bancários.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "nome_banco_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Nome do banco associado ao plano.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "numero_agencia_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Número da agência bancária.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "dv_agencia_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Dígito verificador da agência.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "numero_conta_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Número da conta bancária.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "dv_conta_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Dígito verificador da conta bancária.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "nome_parlamentar_emenda_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Nome do parlamentar associado à emenda.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "ano_emenda_parlamentar_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Ano da emenda parlamentar.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_parlamentar_emenda_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Código do parlamentar da emenda.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "sequencial_emenda_parlamentar_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Sequencial da emenda parlamentar.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "numero_emenda_parlamentar_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Número da emenda parlamentar.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_emenda_parlamentar_formatado_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Código formatado da emenda parlamentar.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "motivo_impedimento_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Motivo de impedimento do plano de ação.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_custeio_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Valor de custeio do plano de ação.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_investimento_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Valor de investimento do plano de ação.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_agencia_conta",
+        "in": "query",
+        "required": false,
+        "description": "Identificador da agência/conta.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_beneficiario",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do beneficiário.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_objeto",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do objeto.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "nome_objeto",
+        "in": "query",
+        "required": false,
+        "description": "Nome do objeto.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "detalhamento_objeto",
+        "in": "query",
+        "required": false,
+        "description": "Detalhamento do objeto.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_programa",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do programa.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "categoria_despesa_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Categoria de despesa do plano de ação.",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "CUSTEIO",
+          "CUSTEIO E INVESTIMENTO",
+          "INVESTIMENTO"
+        ]
+      },
+      {
+        "name": "codigo_descricao_areas_politicas_publicas_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Códigos e descrições de áreas de políticas públicas relacionadas.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "descricao_programacao_orcamentaria_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Descrição da programação orçamentária vinculada ao plano de ação.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "planos_acao_historico_especiais": [
+      {
+        "name": "id_historico_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Identificador Único do Histórico do Plano de Ação",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "situacao_historico_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Situação do Histórico do Plano de Ação",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "AGUARDANDO_CIENCIA",
+          "AGUARDANDO_CONCLUSAO_PLANO_TRABALHO",
+          "CIENTE",
+          "IMPEDIDO",
+          "IMPEDIDO_REJEICAO_PLANO_TRABALHO"
+        ]
+      },
+      {
+        "name": "operacao_historico_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Operação do Histórico do Plano de Ação",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "ATUALIZACAO",
+          "INSERCAO"
+        ]
+      },
+      {
+        "name": "descricao_historico_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Descrição do Histórico do Plano de Ação",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_hora_historico_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Data e Hora do Histórico do Plano de Ação (AAAA-MM-DD)",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do Plano de Ação",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "beneficiarios_especiais": [
+      {
+        "name": "id_beneficiario",
+        "in": "query",
+        "required": false,
+        "description": "Identificador Único do Beneficiário",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "uf_beneficiario",
+        "in": "query",
+        "required": false,
+        "description": "UF do Beneficiário",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "AC",
+          "AL",
+          "AM",
+          "AP",
+          "BA",
+          "CE",
+          "DF",
+          "ES",
+          "GO",
+          "MA",
+          "MG",
+          "MS",
+          "MT",
+          "PA",
+          "PB",
+          "PE",
+          "PI",
+          "PR",
+          "RJ",
+          "RN",
+          "RO",
+          "RR",
+          "RS",
+          "SC",
+          "SE",
+          "SP",
+          "TO"
+        ]
+      },
+      {
+        "name": "nome_beneficiario",
+        "in": "query",
+        "required": false,
+        "description": "Nome do Beneficiário",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "cnpj_beneficiario",
+        "in": "query",
+        "required": false,
+        "description": "CNPJ do Beneficiário",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_ente",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do Ente",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "planos_trabalho_especiais": [
+      {
+        "name": "id_plano_trabalho",
+        "in": "query",
+        "required": false,
+        "description": "Identificador único do plano de trabalho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "dt_hora_situacao_plano_trabalho",
+        "in": "query",
+        "required": false,
+        "description": "Data e hora da situação atual do plano de trabalho (AAAA-MM-DD).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "situacao_plano_trabalho",
+        "in": "query",
+        "required": false,
+        "description": "Descrição textual da situação do plano.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "ind_orcamento_proprio_plano_trabalho",
+        "in": "query",
+        "required": false,
+        "description": "Indicador se o plano possui orçamento próprio.",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "Sim",
+          "Não"
+        ]
+      },
+      {
+        "name": "data_inicio_execucao_plano_trabalho",
+        "in": "query",
+        "required": false,
+        "description": "Data de início da execução do plano (AAAA-MM-DD).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_fim_execucao_plano_trabalho",
+        "in": "query",
+        "required": false,
+        "description": "Data de término da execução do plano (AAAA-MM-DD).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "prazo_execucao_meses_plano_trabalho",
+        "in": "query",
+        "required": false,
+        "description": "Prazo de execução em meses.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do plano de ação a qual o plano de trabalho está vinculado.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "classificacao_orcamentaria_pt",
+        "in": "query",
+        "required": false,
+        "description": "Classificação orçamentária detalhada do plano de trabalho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "ind_justificativa_prorrogacao_atraso_pt",
+        "in": "query",
+        "required": false,
+        "description": "Indicador de justificativa para prorrogação por atraso.",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "SIM",
+          "NÃO"
+        ]
+      },
+      {
+        "name": "ind_justificativa_prorrogacao_paralizacao_pt",
+        "in": "query",
+        "required": false,
+        "description": "Indicador de justificativa para prorrogação por paralisação.",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "SIM",
+          "NÃO"
+        ]
+      },
+      {
+        "name": "justificativa_prorrogacao_paralizacao_pt",
+        "in": "query",
+        "required": false,
+        "description": "Texto da justificativa para prorrogação por paralisação.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "dt_hora_pt_aprovado",
+        "in": "query",
+        "required": false,
+        "description": "Data e hora em que o plano de trabalho foi aprovado.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "ind_orgao_analises_pendentes",
+        "in": "query",
+        "required": false,
+        "description": "Indicador de pendências de análise por parte do órgão.",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "Não",
+          "Sim"
+        ]
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "planos_trabalho_analises_especiais": [
+      {
+        "name": "id_plano_trabalho_analise_pt",
+        "in": "query",
+        "required": false,
+        "description": "Identificador Único da Análise do Plano de Trabalho",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_siorg_orgao_analise_pt",
+        "in": "query",
+        "required": false,
+        "description": "Código SIORG do Órgão de Análise do Plano de Trabalho",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "nome_orgao_analise_pt",
+        "in": "query",
+        "required": false,
+        "description": "Nome do Órgão de Análise do Plano de Trabalho",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "situacao_planejamento_pt",
+        "in": "query",
+        "required": false,
+        "description": "Situação do Planejamento do Plano de Trabalho",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "APROVADO",
+          "CONCLUIDO",
+          "CONCLUIDO_NT_TCU",
+          "EM_ADITIVACAO",
+          "EM_COMPLEMENTACAO",
+          "ENVIADO_PARA_ANALISE",
+          "REPROVADO"
+        ]
+      },
+      {
+        "name": "situacao_parecer_analise_pt",
+        "in": "query",
+        "required": false,
+        "description": "Situação do Parecer de Análise do Plano de Trabalho",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "Aprovar Plano de Trabalho",
+          "Não se aplica",
+          "Reprovar Plano de Trabalho",
+          "Solicitar Complementação"
+        ]
+      },
+      {
+        "name": "texto_parecer_analise_pt",
+        "in": "query",
+        "required": false,
+        "description": "Texto do Parecer de Análise do Plano de Trabalho",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "situacao_analise_pt",
+        "in": "query",
+        "required": false,
+        "description": "Situação da Análise do Plano de Trabalho",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "Concluída",
+          "Em elaboração"
+        ]
+      },
+      {
+        "name": "data_analise_pt",
+        "in": "query",
+        "required": false,
+        "description": "Data da Análise do Plano de Trabalho (AAAA-MM-DD)",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_reprovado_pt",
+        "in": "query",
+        "required": false,
+        "description": "Valor Reprovado do Plano de Trabalho",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_plano_trabalho",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do Plano de Trabalho",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "plano_trabalho_analise_historico_especiais": [
+      {
+        "name": "codigo_siorg_orgao_analise_pt_hist",
+        "in": "query",
+        "required": false,
+        "description": "Código SIORG do órgão responsável pela análise registrada no histórico.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "nome_orgao_analise_pt_hist",
+        "in": "query",
+        "required": false,
+        "description": "Nome do órgão responsável pela análise registrada no histórico.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "situacao_parecer_analise_pt_hist",
+        "in": "query",
+        "required": false,
+        "description": "Situação do parecer da análise no histórico.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_analise_pt_hist",
+        "in": "query",
+        "required": false,
+        "description": "Data e hora em que a análise foi registrada no histórico (AAAA-MM-DD).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "situacao_analise_pt_hist",
+        "in": "query",
+        "required": false,
+        "description": "Situação da análise no momento do registro histórico.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "responsaveis_analise_pt_hist",
+        "in": "query",
+        "required": false,
+        "description": "Responsáveis pela análise registrada no histórico.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_plano_trabalho_analise_pt",
+        "in": "query",
+        "required": false,
+        "description": "Identificador único da análise do plano de trabalho ao qual este registro de histórico se refere.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "planos_trabalho_historico": [
+      {
+        "name": "id_plano_trabalho_hist",
+        "in": "query",
+        "required": false,
+        "description": "Identificador único do registro de histórico do plano de trabalho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_plano_trabalho_hist",
+        "in": "query",
+        "required": false,
+        "description": "Data e hora em que a situação foi registrada no histórico. (AAAA-MM-DD)",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "cpf_responsavel_plano_trabalho_hist",
+        "in": "query",
+        "required": false,
+        "description": "CPF do responsável pela alteração registrada no histórico.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "situacao_plano_trabalho_hist",
+        "in": "query",
+        "required": false,
+        "description": "Situação do plano de trabalho no momento do registro histórico.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_plano_trabalho",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do Plano de Trabalho ao qual este registro de histórico se refere.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "orgaos_analises_pendentes_especiais": [
+      {
+        "name": "id_plano_trabalho",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do Plano de Trabalho",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_orgao_analise_pendente_pt",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do Órgão de Análise Pendente do Plano de Trabalho",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "nome_orgao_analise_pendente_pt",
+        "in": "query",
+        "required": false,
+        "description": "Nome do Órgão de Análise Pendente do Plano de Trabalho",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "ind_orgao_analises_pendentes",
+        "in": "query",
+        "required": false,
+        "description": "Indicador de Órgão de Análises Pendentes",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "relatorios_gestao_especiais": [
+      {
+        "name": "id_relatorio_gestao",
+        "in": "query",
+        "required": false,
+        "description": "Identificador Único do Relatório de Gestão",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_relatorio_gestao",
+        "in": "query",
+        "required": false,
+        "description": "Data de referência do relatório de gestão (AAAA-MM-DD)",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "tipo_relatorio_gestao",
+        "in": "query",
+        "required": false,
+        "description": "Tipo do relatório. Domínio: Final, Parcial",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "situacao_relatorio_gestao",
+        "in": "query",
+        "required": false,
+        "description": "Situação atual do relatório.",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "DISPONIBILIZADO",
+          "EM_ELABORACAO"
+        ]
+      },
+      {
+        "name": "valor_executado_relatorio_gestao",
+        "in": "query",
+        "required": false,
+        "description": "Valor financeiro executado reportado neste relatório",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_pendente_relatorio_gestao",
+        "in": "query",
+        "required": false,
+        "description": "Valor financeiro pendente de execução reportado neste relatório",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "descritivo_relatorio_gestao",
+        "in": "query",
+        "required": false,
+        "description": "Texto descritivo, justificativas ou observações detalhadas do relatório",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Identificador Único do Plano de Ação Especial associado ao relatório",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "relatorios_gestao_novos_especiais": [
+      {
+        "name": "id_relatorio_gestao_novo",
+        "in": "query",
+        "required": false,
+        "description": "Identificador Único do Relatório de Gestão Novo",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_relatorio_gestao_novo",
+        "in": "query",
+        "required": false,
+        "description": "Data do Relatório de Gestão Novo (AAAA-MM-DD)",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_e_hora_relatorio_gestao_novo",
+        "in": "query",
+        "required": false,
+        "description": "Data e Hora do Relatório de Gestão Novo (AAAA-MM-DD)",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "tipo_relatorio_gestao_novo",
+        "in": "query",
+        "required": false,
+        "description": "Tipo do Relatório de Gestão Novo",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "Final",
+          "Parcial"
+        ]
+      },
+      {
+        "name": "valor_executado_relatorio_gestao_novo",
+        "in": "query",
+        "required": false,
+        "description": "Valor Executado do Relatório de Gestão Novo",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_pendente_relatorio_gestao_novo",
+        "in": "query",
+        "required": false,
+        "description": "Valor Pendente do Relatório de Gestão Novo",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "situacao_relatorio_gestao_novo",
+        "in": "query",
+        "required": false,
+        "description": "Situação do Relatório de Gestão Novo",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "DISPONIBILIZADO",
+          "EM_ELABORACAO"
+        ]
+      },
+      {
+        "name": "id_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do Plano de Ação",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "empenhos_especiais": [
+      {
+        "name": "id_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Identificador único do empenho especial.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_minuta_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Identificador da minuta de empenho associada.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "numero_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Número do empenho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "situacao_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Código da situação atual do empenho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "descricao_situacao_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Descrição da situação atual do empenho.",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "Minuta de Empenho",
+          "Enviado"
+        ]
+      },
+      {
+        "name": "tipo_documento_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Código do tipo de documento do empenho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "descricao_tipo_documento_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Descrição do tipo de documento do empenho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "status_processamento_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Status de processamento do empenho.",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "AGUARDANDO_GERACAO_EMPENHO",
+          "ENVIADA"
+        ]
+      },
+      {
+        "name": "ug_responsavel_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Unidade Gestora responsável pelo empenho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "ug_emitente_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Unidade Gestora que emitiu o empenho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "descricao_ug_emitente_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Descrição da Unidade Gestora emitente.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "fonte_recurso_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Código da fonte de recurso utilizada no empenho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "plano_interno_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Plano Interno do empenho.",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "13326EMTESP",
+          "T.ESPECIAIS"
+        ]
+      },
+      {
+        "name": "ptres_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Programa de Trabalho Resumido do empenho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "grupo_natureza_despesa_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Grupo de Natureza da Despesa do empenho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "natureza_despesa_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Natureza da Despesa do empenho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "subitem_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Código do subitem de despesa do empenho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "categoria_despesa_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Categoria de Despesa do empenho.",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "INVESTIMENTO",
+          "CUSTEIO"
+        ]
+      },
+      {
+        "name": "modalidade_despesa_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Modalidade de Despesa do empenho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "numero_ro_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Número do Registro de Ordem associado ao empenho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_emissao_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Data de emissão do empenho (AAAA-MM-DD).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "prioridade_desbloqueio_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Prioridade para desbloqueio do empenho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Valor monetário total do empenho.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do plano de ação associado.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "documentos_habeis_especiais": [
+      {
+        "name": "id_dh",
+        "in": "query",
+        "required": false,
+        "description": "Identificador único do Documento Hábil.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_minuta_documento_habil",
+        "in": "query",
+        "required": false,
+        "description": "Identificador da minuta do documento hábil.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "numero_documento_habil",
+        "in": "query",
+        "required": false,
+        "description": "Número do documento hábil.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "situacao_dh",
+        "in": "query",
+        "required": false,
+        "description": "Código da situação do Documento Hábil.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "descricao_situacao_dh",
+        "in": "query",
+        "required": false,
+        "description": "Descrição da situação do Documento Hábil.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "tipo_documento_dh",
+        "in": "query",
+        "required": false,
+        "description": "Tipo do Documento Hábil.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "ug_emitente_dh",
+        "in": "query",
+        "required": false,
+        "description": "Código da Unidade Gestora emitente do Documento Hábil.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "descricao_ug_emitente_dh",
+        "in": "query",
+        "required": false,
+        "description": "Descrição da UG emitente.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_vencimento_dh",
+        "in": "query",
+        "required": false,
+        "description": "Data de vencimento do Documento Hábil (AAAA-MM-DD).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_emissao_dh",
+        "in": "query",
+        "required": false,
+        "description": "Data de emissão do Documento Hábil (AAAA-MM-DD).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "ug_pagadora_dh",
+        "in": "query",
+        "required": false,
+        "description": "Código da Unidade Gestora pagadora do Documento Hábil.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "descricao_ug_pagadora_dh",
+        "in": "query",
+        "required": false,
+        "description": "Descrição da UG pagadora.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "variacao_patrimonial_diminuta_dh",
+        "in": "query",
+        "required": false,
+        "description": "Indicador de Variação Patrimonial Diminuta.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "passivo_transferencia_constitucional_legal_dh",
+        "in": "query",
+        "required": false,
+        "description": "Indicador de Passivo de Transferência Constitucional/Legal.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "descricao_centro_custo_dh",
+        "in": "query",
+        "required": false,
+        "description": "Descrição do centro de custo do Documento Hábil.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_siorg_centro_custo_dh",
+        "in": "query",
+        "required": false,
+        "description": "Código SIORG do centro de custo.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "mes_referencia_centro_custo_dh",
+        "in": "query",
+        "required": false,
+        "description": "Mês de referência do centro de custo.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "ano_referencia_centro_custo_dh",
+        "in": "query",
+        "required": false,
+        "description": "Ano de referência do centro de custo (AAAA).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "mes_ano_referencia_centro_custo_dh",
+        "in": "query",
+        "required": false,
+        "description": "Mês/Ano de referência do centro de custo (M/AAAA).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "ug_beneficiada_centro_custo_dh",
+        "in": "query",
+        "required": false,
+        "description": "Código da Unidade Gestora beneficiada pelo centro de custo.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "descricao_ug_beneficiada_centro_custo_dh",
+        "in": "query",
+        "required": false,
+        "description": "Descrição da UG beneficiada pelo centro de custo.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_dh",
+        "in": "query",
+        "required": false,
+        "description": "Valor total do Documento Hábil.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_rateio_dh",
+        "in": "query",
+        "required": false,
+        "description": "Valor de rateio do Documento Hábil.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_custo_centro_custo_dh",
+        "in": "query",
+        "required": false,
+        "description": "Valor de custo do centro de custo do Documento Hábil.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_empenho",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do Empenho associado.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "ordens_pagamentos_ordens_bancarias_especiais": [
+      {
+        "name": "id_op_ob",
+        "in": "query",
+        "required": false,
+        "description": "Identificador único da Ordem de Pagamento/Ordem Bancária.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_emissao_op",
+        "in": "query",
+        "required": false,
+        "description": "Data de emissão da Ordem de Pagamento (AAAA-MM-DD).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "numero_ordem_pagamento",
+        "in": "query",
+        "required": false,
+        "description": "Número da Ordem de Pagamento (AAAAOPNNNNNN)<br/>Ex.: “2020OP146800”",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "vinculacao_op",
+        "in": "query",
+        "required": false,
+        "description": "Código de vinculação da Ordem de Pagamento.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "situacao_op",
+        "in": "query",
+        "required": false,
+        "description": "Código da situação da Ordem de Pagamento.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "descricao_situacao_op",
+        "in": "query",
+        "required": false,
+        "description": "Descrição da situação da Ordem de Pagamento.",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "OB Enviada à instituição bancária para pagamento",
+          "OP Pendente (Retorno com erro no envio ao SIAFI)"
+        ]
+      },
+      {
+        "name": "data_situacao_op",
+        "in": "query",
+        "required": false,
+        "description": "Data em que a OP atingiu a situação atual (AAAA-MM-DD).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_emissao_ob",
+        "in": "query",
+        "required": false,
+        "description": "Data de emissão da Ordem Bancária (AAAA-MM-DD).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "numero_ordem_bancaria",
+        "in": "query",
+        "required": false,
+        "description": "Número da Ordem Bancária (AAAAOBNNNNNN)",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "numero_ordem_lancamento",
+        "in": "query",
+        "required": false,
+        "description": "Número da Nota de Lançamento no sistema (AAAANSNNNNNN)",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_assinatura_ordenador_despesa_ob",
+        "in": "query",
+        "required": false,
+        "description": "Data da assinatura do ordenador de despesa na Ordem Bancária (AAAA-MM-DD).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_assinatura_gestor_financeiro_ob",
+        "in": "query",
+        "required": false,
+        "description": "Data da assinatura do gestor financeiro na Ordem Bancária (AAAA-MM-DD).",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_dh",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do Documento Hábil associado.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "executores_especiais": [
+      {
+        "name": "id_executor",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do executor.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "cnpj_executor",
+        "in": "query",
+        "required": false,
+        "description": "Número do Cadastro Nacional da Pessoa Jurídica (CNPJ) do executor.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "nome_executor",
+        "in": "query",
+        "required": false,
+        "description": "Nome ou Razão Social do executor.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "objeto_executor",
+        "in": "query",
+        "required": false,
+        "description": "Descrição detalhada do objeto da execução ou parceria.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "vl_custeio_executor",
+        "in": "query",
+        "required": false,
+        "description": "Valor destinado ao custeio da execução.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "vl_investimento_executor",
+        "in": "query",
+        "required": false,
+        "description": "Valor destinado a investimento na execução.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "ind_recursos_gerenciados_conta_especifica_executor",
+        "in": "query",
+        "required": false,
+        "description": "Indicador de recursos gerenciados em conta específica.",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "Sim",
+          "Não"
+        ]
+      },
+      {
+        "name": "codigo_banco_executor",
+        "in": "query",
+        "required": false,
+        "description": "Código do banco onde a conta do executor está cadastrada.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "nome_banco_executor",
+        "in": "query",
+        "required": false,
+        "description": "Nome do banco.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "numero_agencia_executor",
+        "in": "query",
+        "required": false,
+        "description": "Número da agência bancária do executor.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "numero_dv_agencia_executor",
+        "in": "query",
+        "required": false,
+        "description": "Dígito verificador da agência bancária.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "nome_agencia_executor",
+        "in": "query",
+        "required": false,
+        "description": "Nome da agência bancária.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "numero_conta_executor",
+        "in": "query",
+        "required": false,
+        "description": "Número da conta bancária do executor.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "numero_dv_conta_executor",
+        "in": "query",
+        "required": false,
+        "description": "Dígito verificador da conta bancária.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_situacao_dado_bancario_executor",
+        "in": "query",
+        "required": false,
+        "description": "Código da situação atual do dado bancário.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "descricao_situacao_dado_bancario_executor",
+        "in": "query",
+        "required": false,
+        "description": "Descrição da situação do dado bancário.",
+        "type": "string",
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": [
+          "",
+          "Aguardando Solicitação de Abertura de Conta",
+          "Conta Ativa"
+        ]
+      },
+      {
+        "name": "id_plano_acao",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do plano de ação associado.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "meta_especiais": [
+      {
+        "name": "id_executor",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do Executor associado à Meta.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_meta",
+        "in": "query",
+        "required": false,
+        "description": "Identificador ÚnicoIdentificador único da Meta.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "sequencial_meta",
+        "in": "query",
+        "required": false,
+        "description": "Número sequencial da Meta.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "nome_meta",
+        "in": "query",
+        "required": false,
+        "description": "Nome da Meta.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "desc_meta",
+        "in": "query",
+        "required": false,
+        "description": "Descrição detalhada da Meta.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "un_medida_meta",
+        "in": "query",
+        "required": false,
+        "description": "Unidade de medida da Meta.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "qt_unidade_meta",
+        "in": "query",
+        "required": false,
+        "description": "Quantidade de unidades previstas na Meta.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "vl_custeio_emenda_especial_meta",
+        "in": "query",
+        "required": false,
+        "description": "Valor de custeio previsto com Emenda Especial.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "vl_investimento_emenda_especial_meta",
+        "in": "query",
+        "required": false,
+        "description": "Valor de investimento previsto com Emenda Especial.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "vl_custeio_recursos_proprios_meta",
+        "in": "query",
+        "required": false,
+        "description": "Valor de custeio previsto com Recursos Próprios.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "vl_investimento_recursos_proprios_meta",
+        "in": "query",
+        "required": false,
+        "description": "Valor de investimento previsto com Recursos Próprios.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "vl_custeio_rendimento_meta",
+        "in": "query",
+        "required": false,
+        "description": "Valor de custeio previsto com Rendimento.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "vl_investimento_rendimento_meta",
+        "in": "query",
+        "required": false,
+        "description": "Valor de investimento previsto com Rendimento.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "vl_custeio_doacao_meta",
+        "in": "query",
+        "required": false,
+        "description": "Valor de custeio previsto com Doação.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "vl_investimento_doacao_meta",
+        "in": "query",
+        "required": false,
+        "description": "Valor de investimento previsto com Doação.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "qt_meses_meta",
+        "in": "query",
+        "required": false,
+        "description": "Quantidade de meses previstos para a execução da Meta.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "finalidade_especiais": [
+      {
+        "name": "id_executor",
+        "in": "query",
+        "required": false,
+        "description": "Identificador Único do Executor Especial",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "cd_area_politica_publica_tipo_pt",
+        "in": "query",
+        "required": false,
+        "description": "Código do tipo de política pública da Finalidade Plano de Trabalho Especial",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "area_politica_publica_tipo_pt",
+        "in": "query",
+        "required": false,
+        "description": "Descrição do tipo de política pública da Finalidade do Plano de Trabalho Especial",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "cd_area_politica_publica_pt",
+        "in": "query",
+        "required": false,
+        "description": "Código da área da política pública da Finalidade do Plano de Trabalho Especial",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "area_politica_publica_pt",
+        "in": "query",
+        "required": false,
+        "description": "Descrição da área da política pública da Finalidade do Plano de Trabalho Especial",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "gestao_financeira_lancamentos_especiais": [
+      {
+        "name": "id_lancamento_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Identificador Único do Lançamento da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "origem_solicitacao_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Origem da Solicitação da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "cnpj_ente_solicitante_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "CNPJ do Ente Solicitante da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "nome_ente_solicitante_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Nome do Ente Solicitante da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_banco_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Código do Banco da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_agencia_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Código da Agência da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "dv_agencia_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "DV da Agência da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_conta_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Código da Conta da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "dv_conta_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "DV da Conta da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "descricao_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Descrição da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_lancamento_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Data do Lançamento da Gestão Financeira (AAAA-MM-DD)",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "numero_ordem_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Número da Ordem da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "numero_referencia_unica_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Número de Referência Única da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "tipo_operacao_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Tipo de Operação da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Valor da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "doc_depositante_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Documento do Depositante da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "nome_depositante_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Nome do Depositante da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "tipo_depositante_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Tipo do Depositante da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_banco_depositante_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Código do Banco do Depositante da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_agencia_depositante_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Código da Agência do Depositante da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "dv_agencia_depositante_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "DV da Agência do Depositante da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_conta_depositante_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Código da Conta do depositante da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "dv_conta_depositante_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Dígito verificador da conta do depositante.",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "doc_favorecido_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Documento do Favorecido da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "nome_favorecido_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Nome do Favorecido da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "tipo_favorecido_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Tipo do Favorecido da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_banco_favorecido_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Código do Banco Favorecido da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_categoria_despesa_lancamento_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Código da Categoria de Despesa do Lançamento da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_agencia_conta",
+        "in": "query",
+        "required": false,
+        "description": "Identificador da Agência e Conta",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "quantidade_subtransacoes_lancamento_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Quantidade de Subtransações do Lançamento da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "gestao_financeira_subtransacoes_especiais": [
+      {
+        "name": "id_subtransacao_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Identificador da Subtransação da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "estado_subtransacao_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Estado da Subtransação da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "situacao_pagamento_subtransacao_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Situação de Pagamento da Subtransação da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_pagamento_subtransacao_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Data de Pagamento da Subtransação da Gestão Financeira (AAAA-MM-DD)",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "valor_subtransacao_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Valor da Subtransação da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_banco_beneficiario_subtransacao_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Código do Banco Beneficiário da Subtransação da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "tipo_pessoa_beneficiario_subtransacao_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Tipo de Pessoa Beneficiária da Subtransação da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "numero_documento_beneficiario_subtransacao_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Número do Documento Beneficiário da Subtransação da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "nome_beneficiario_subtransacao_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Nome do Beneficiário da Subtransação da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "codigo_categoria_despesa_subtransacao_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Código da Categoria de Despesa da Subtransação da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "descricao_subtransacao_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Descrição da Subtransação da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "id_lancamento_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Identificador do Lançamento da Gestão Financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ],
+    "saldo_conta_gestao_financeira_especiais": [
+      {
+        "name": "id_agencia_conta",
+        "in": "query",
+        "required": false,
+        "description": "Identificador da Agência e Conta",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "agencia_batch",
+        "in": "query",
+        "required": false,
+        "description": "Número da agência",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "conta_batch",
+        "in": "query",
+        "required": false,
+        "description": "Número da conta",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "data_saldo_conta",
+        "in": "query",
+        "required": false,
+        "description": "Data do saldo da conta (formato: YYYY-MM-DD)",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "saldo_final_gestao_financeira",
+        "in": "query",
+        "required": false,
+        "description": "Valor do saldo final calculado para a gestão financeira",
+        "type": null,
+        "default": null,
+        "maximum": null,
+        "minimum": null,
+        "enum": null
+      },
+      {
+        "name": "pagina",
+        "in": "query",
+        "required": false,
+        "description": "Número da Página",
+        "type": "integer",
+        "default": 1,
+        "maximum": null,
+        "minimum": 1,
+        "enum": null
+      },
+      {
+        "name": "tamanho_da_pagina",
+        "in": "query",
+        "required": false,
+        "description": "Tamanho da Página",
+        "type": "integer",
+        "default": 50,
+        "maximum": 200,
+        "minimum": 1,
+        "enum": null
+      }
+    ]
+  },
+  "page_tests": {
+    "programas_especiais": {
+      "endpoint": "programas_especiais",
+      "default_status": 200,
+      "default_page_size": 15,
+      "default_page_number": 1,
+      "total_items": 15,
+      "total_pages": 1,
+      "size200_status": 200,
+      "size200_page_size": 15,
+      "size200_len": 15,
+      "size500_status": 422,
+      "size500_page_size": null,
+      "size500_len": 0,
+      "size500_error": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ],
+      "size201_status": 422,
+      "size201_page_size": null,
+      "size201_len": 0
+    },
+    "planos_acao_especiais": {
+      "endpoint": "planos_acao_especiais",
+      "default_status": 200,
+      "default_page_size": 50,
+      "default_page_number": 1,
+      "total_items": 57827,
+      "total_pages": 1157,
+      "size200_status": 200,
+      "size200_page_size": 200,
+      "size200_len": 200,
+      "size500_status": 422,
+      "size500_page_size": null,
+      "size500_len": 0,
+      "size500_error": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ],
+      "size201_status": 422,
+      "size201_page_size": null,
+      "size201_len": 0
+    },
+    "empenhos_especiais": {
+      "endpoint": "empenhos_especiais",
+      "default_status": 200,
+      "default_page_size": 50,
+      "default_page_number": 1,
+      "total_items": 60322,
+      "total_pages": 1207,
+      "size200_status": 200,
+      "size200_page_size": 200,
+      "size200_len": 200,
+      "size500_status": 422,
+      "size500_page_size": null,
+      "size500_len": 0,
+      "size500_error": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ],
+      "size201_status": 422,
+      "size201_page_size": null,
+      "size201_len": 0
+    },
+    "gestao_financeira_lancamentos_especiais": {
+      "endpoint": "gestao_financeira_lancamentos_especiais",
+      "default_status": 200,
+      "default_page_size": 50,
+      "default_page_number": 1,
+      "total_items": 713166,
+      "total_pages": 14264,
+      "size200_status": 200,
+      "size200_page_size": 200,
+      "size200_len": 200,
+      "size500_status": 422,
+      "size500_page_size": null,
+      "size500_len": 0,
+      "size500_error": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ],
+      "size201_status": 422,
+      "size201_page_size": null,
+      "size201_len": 0
+    }
+  },
+  "size500_all": {
+    "programas_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "planos_acao_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "planos_acao_historico_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "beneficiarios_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "planos_trabalho_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "planos_trabalho_analises_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "plano_trabalho_analise_historico_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "planos_trabalho_historico": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "orgaos_analises_pendentes_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "relatorios_gestao_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "relatorios_gestao_novos_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "empenhos_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "documentos_habeis_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "ordens_pagamentos_ordens_bancarias_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "executores_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "meta_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "finalidade_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "gestao_financeira_lancamentos_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "gestao_financeira_subtransacoes_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    },
+    "saldo_conta_gestao_financeira_especiais": {
+      "status": 422,
+      "page_size": null,
+      "n": 0,
+      "err": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "query",
+            "tamanho_da_pagina"
+          ],
+          "msg": "Input should be less than or equal to 200",
+          "input": "500",
+          "ctx": {
+            "le": 200
+          }
+        }
+      ]
+    }
+  },
+  "stability": {
+    "programas_especiais": {
+      "stable": true,
+      "page1_sample": [
+        25,
+        10,
+        7,
+        8,
+        5
+      ],
+      "overlap_p1_p2": 0,
+      "page2_available": false
+    },
+    "planos_acao_especiais": {
+      "stable": true,
+      "page1_sample": [
+        3221,
+        3206,
+        83398,
+        3244,
+        3216
+      ],
+      "overlap_p1_p2": 0,
+      "page2_available": true
+    },
+    "empenhos_especiais": {
+      "stable": true,
+      "page1_sample": [
+        31034,
+        14519,
+        47009,
+        26666,
+        54244
+      ],
+      "overlap_p1_p2": 0,
+      "page2_available": true
+    },
+    "planos_trabalho_historico": {
+      "stable": true,
+      "page1_sample": [
+        651894,
+        559218,
+        472122,
+        248726,
+        248725
+      ],
+      "overlap_p1_p2": 0,
+      "page2_available": true
+    },
+    "gestao_financeira_lancamentos_especiais": {
+      "stable": true,
+      "page1_sample": [
+        "001-3037332",
+        "001-1174235",
+        "001-1162517",
+        "001-3037327",
+        "001-3037336"
+      ],
+      "overlap_p1_p2": 0,
+      "page2_available": true
+    }
+  },
+  "date_tests": {
+    "programa_especial": {
+      "endpoint": "programas_especiais",
+      "campo_antigo": "data_inicio_ciencia_programa",
+      "date_params_openapi": [
+        {
+          "name": "data_inicio_ciencia_programa",
+          "in": "query",
+          "required": false,
+          "description": "Data de início da ciência do programa (AAAA-MM-DD).",
+          "type": null,
+          "default": null,
+          "maximum": null,
+          "minimum": null,
+          "enum": null
+        },
+        {
+          "name": "data_fim_ciencia_programa",
+          "in": "query",
+          "required": false,
+          "description": "Data de término da ciência do programa (AAAA-MM-DD).",
+          "type": null,
+          "default": null,
+          "maximum": null,
+          "minimum": null,
+          "enum": null
+        }
+      ],
+      "tested": {
+        "data_inicio_ciencia_programa": {
+          "field": "data_inicio_ciencia_programa",
+          "sample": "2026-03-30",
+          "tests": {
+            "eq_exata": {
+              "status": 200,
+              "total_items": 1,
+              "page_size": 1,
+              "n": 1,
+              "sample_vals": [
+                "2026-03-30"
+              ],
+              "parece_filtrado": true
+            },
+            "eq_timestamp": {
+              "status": 200,
+              "total_items": 1,
+              "page_size": 1,
+              "n": 1,
+              "sample_vals": [
+                "2026-03-30"
+              ],
+              "parece_filtrado": true
+            },
+            "gte_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_inicio_ciencia_programa"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gte.2026-03-30",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "gte_op": {
+              "status": 403,
+              "total_items": null,
+              "page_size": null,
+              "n": 0
+            },
+            "gt_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_inicio_ciencia_programa"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gt.2026-03-29",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "intervalo_dois_params_sufixo": {
+              "status": 200,
+              "total_items": 15,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2026-03-30",
+                null,
+                null
+              ],
+              "parece_ignorado": true
+            },
+            "data_inicio_data_fim": {
+              "status": 200,
+              "total_items": 15,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2026-03-30",
+                null,
+                null
+              ],
+              "parece_ignorado": true
+            },
+            "periodo": {
+              "status": 200,
+              "total_items": 15,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2026-03-30",
+                null,
+                null
+              ],
+              "parece_ignorado": true
+            }
+          },
+          "baseline_total": 15,
+          "in_openapi": true,
+          "in_row": true
+        }
+      }
+    },
+    "empenho_especial": {
+      "endpoint": "empenhos_especiais",
+      "campo_antigo": "data_emissao_empenho",
+      "date_params_openapi": [
+        {
+          "name": "data_emissao_empenho",
+          "in": "query",
+          "required": false,
+          "description": "Data de emissão do empenho (AAAA-MM-DD).",
+          "type": null,
+          "default": null,
+          "maximum": null,
+          "minimum": null,
+          "enum": null
+        }
+      ],
+      "tested": {
+        "data_emissao_empenho": {
+          "field": "data_emissao_empenho",
+          "sample": "2023-05-26",
+          "tests": {
+            "eq_exata": {
+              "status": 200,
+              "total_items": 197,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2023-05-26",
+                "2023-05-26",
+                "2023-05-26"
+              ],
+              "parece_filtrado": true
+            },
+            "eq_timestamp": {
+              "status": 200,
+              "total_items": 197,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2023-05-26",
+                "2023-05-26",
+                "2023-05-26"
+              ],
+              "parece_filtrado": true
+            },
+            "gte_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_emissao_empenho"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gte.2023-05-26",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "gte_op": {
+              "status": 403,
+              "total_items": null,
+              "page_size": null,
+              "n": 0
+            },
+            "gt_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_emissao_empenho"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gt.2023-05-25",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "intervalo_dois_params_sufixo": {
+              "status": 200,
+              "total_items": 60322,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2023-05-26",
+                "2021-08-17",
+                "2025-07-29"
+              ],
+              "parece_ignorado": true
+            },
+            "data_inicio_data_fim": {
+              "status": 200,
+              "total_items": 60322,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2023-05-26",
+                "2021-08-17",
+                "2025-07-29"
+              ],
+              "parece_ignorado": true
+            },
+            "periodo": {
+              "status": 200,
+              "total_items": 60322,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2023-05-26",
+                "2021-08-17",
+                "2025-07-29"
+              ],
+              "parece_ignorado": true
+            }
+          },
+          "baseline_total": 60322,
+          "in_openapi": true,
+          "in_row": true
+        }
+      }
+    },
+    "documento_habil_especial": {
+      "endpoint": "documentos_habeis_especiais",
+      "campo_antigo": "data_emissao_dh",
+      "date_params_openapi": [
+        {
+          "name": "data_vencimento_dh",
+          "in": "query",
+          "required": false,
+          "description": "Data de vencimento do Documento Hábil (AAAA-MM-DD).",
+          "type": null,
+          "default": null,
+          "maximum": null,
+          "minimum": null,
+          "enum": null
+        },
+        {
+          "name": "data_emissao_dh",
+          "in": "query",
+          "required": false,
+          "description": "Data de emissão do Documento Hábil (AAAA-MM-DD).",
+          "type": null,
+          "default": null,
+          "maximum": null,
+          "minimum": null,
+          "enum": null
+        }
+      ],
+      "tested": {
+        "data_emissao_dh": {
+          "field": "data_emissao_dh",
+          "sample": "2021-07-30",
+          "tests": {
+            "eq_exata": {
+              "status": 200,
+              "total_items": 2318,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2021-07-30",
+                "2021-07-30",
+                "2021-07-30"
+              ],
+              "parece_filtrado": true
+            },
+            "eq_timestamp": {
+              "status": 200,
+              "total_items": 2318,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2021-07-30",
+                "2021-07-30",
+                "2021-07-30"
+              ],
+              "parece_filtrado": true
+            },
+            "gte_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_emissao_dh"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gte.2021-07-30",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "gte_op": {
+              "status": 403,
+              "total_items": null,
+              "page_size": null,
+              "n": 0
+            },
+            "gt_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_emissao_dh"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gt.2021-07-29",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "intervalo_dois_params_sufixo": {
+              "status": 200,
+              "total_items": 57986,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2021-07-30",
+                "2021-07-30",
+                "2020-06-25"
+              ],
+              "parece_ignorado": true
+            },
+            "data_inicio_data_fim": {
+              "status": 200,
+              "total_items": 57986,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2021-07-30",
+                "2021-07-30",
+                "2020-06-25"
+              ],
+              "parece_ignorado": true
+            },
+            "periodo": {
+              "status": 200,
+              "total_items": 57986,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2021-07-30",
+                "2021-07-30",
+                "2020-06-25"
+              ],
+              "parece_ignorado": true
+            }
+          },
+          "baseline_total": 57986,
+          "in_openapi": true,
+          "in_row": true
+        }
+      }
+    },
+    "ordem_pagamento_ordem_bancaria_especial": {
+      "endpoint": "ordens_pagamentos_ordens_bancarias_especiais",
+      "campo_antigo": "data_situacao_op",
+      "date_params_openapi": [
+        {
+          "name": "data_emissao_op",
+          "in": "query",
+          "required": false,
+          "description": "Data de emissão da Ordem de Pagamento (AAAA-MM-DD).",
+          "type": null,
+          "default": null,
+          "maximum": null,
+          "minimum": null,
+          "enum": null
+        },
+        {
+          "name": "data_situacao_op",
+          "in": "query",
+          "required": false,
+          "description": "Data em que a OP atingiu a situação atual (AAAA-MM-DD).",
+          "type": null,
+          "default": null,
+          "maximum": null,
+          "minimum": null,
+          "enum": null
+        },
+        {
+          "name": "data_emissao_ob",
+          "in": "query",
+          "required": false,
+          "description": "Data de emissão da Ordem Bancária (AAAA-MM-DD).",
+          "type": null,
+          "default": null,
+          "maximum": null,
+          "minimum": null,
+          "enum": null
+        },
+        {
+          "name": "data_assinatura_ordenador_despesa_ob",
+          "in": "query",
+          "required": false,
+          "description": "Data da assinatura do ordenador de despesa na Ordem Bancária (AAAA-MM-DD).",
+          "type": null,
+          "default": null,
+          "maximum": null,
+          "minimum": null,
+          "enum": null
+        },
+        {
+          "name": "data_assinatura_gestor_financeiro_ob",
+          "in": "query",
+          "required": false,
+          "description": "Data da assinatura do gestor financeiro na Ordem Bancária (AAAA-MM-DD).",
+          "type": null,
+          "default": null,
+          "maximum": null,
+          "minimum": null,
+          "enum": null
+        }
+      ],
+      "tested": {
+        "data_situacao_op": {
+          "field": "data_situacao_op",
+          "sample": "2020-06-26",
+          "tests": {
+            "eq_exata": {
+              "status": 200,
+              "total_items": 1726,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2020-06-26",
+                "2020-06-26",
+                "2020-06-26"
+              ],
+              "parece_filtrado": true
+            },
+            "eq_timestamp": {
+              "status": 200,
+              "total_items": 1726,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2020-06-26",
+                "2020-06-26",
+                "2020-06-26"
+              ],
+              "parece_filtrado": true
+            },
+            "gte_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_situacao_op"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gte.2020-06-26",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "gte_op": {
+              "status": 403,
+              "total_items": null,
+              "page_size": null,
+              "n": 0
+            },
+            "gt_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_situacao_op"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gt.2020-06-25",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "intervalo_dois_params_sufixo": {
+              "status": 200,
+              "total_items": 55148,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2020-06-26",
+                "2020-06-26",
+                "2020-06-26"
+              ],
+              "parece_ignorado": true
+            },
+            "data_inicio_data_fim": {
+              "status": 200,
+              "total_items": 55148,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2020-06-26",
+                "2020-06-26",
+                "2020-06-26"
+              ],
+              "parece_ignorado": true
+            },
+            "periodo": {
+              "status": 200,
+              "total_items": 55148,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2020-06-26",
+                "2020-06-26",
+                "2020-06-26"
+              ],
+              "parece_ignorado": true
+            }
+          },
+          "baseline_total": 55148,
+          "in_openapi": true,
+          "in_row": true
+        },
+        "data_emissao_op": {
+          "field": "data_emissao_op",
+          "sample": "2020-06-26",
+          "tests": {
+            "eq_exata": {
+              "status": 200,
+              "total_items": 1725,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2020-06-26",
+                "2020-06-26",
+                "2020-06-26"
+              ],
+              "parece_filtrado": true
+            },
+            "eq_timestamp": {
+              "status": 200,
+              "total_items": 1725,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2020-06-26",
+                "2020-06-26",
+                "2020-06-26"
+              ],
+              "parece_filtrado": true
+            },
+            "gte_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_emissao_op"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gte.2020-06-26",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "gte_op": {
+              "status": 403,
+              "total_items": null,
+              "page_size": null,
+              "n": 0
+            },
+            "gt_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_emissao_op"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gt.2020-06-25",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "intervalo_dois_params_sufixo": {
+              "status": 200,
+              "total_items": 55148,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2020-06-26",
+                "2020-06-26",
+                "2020-06-26"
+              ],
+              "parece_ignorado": true
+            },
+            "data_inicio_data_fim": {
+              "status": 200,
+              "total_items": 55148,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2020-06-26",
+                "2020-06-26",
+                "2020-06-26"
+              ],
+              "parece_ignorado": true
+            },
+            "periodo": {
+              "status": 200,
+              "total_items": 55148,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2020-06-26",
+                "2020-06-26",
+                "2020-06-26"
+              ],
+              "parece_ignorado": true
+            }
+          },
+          "baseline_total": 55148,
+          "in_openapi": true,
+          "in_row": true
+        }
+      }
+    },
+    "historico_pagamento_especial": {
+      "endpoint": null,
+      "obs": "sem sucessor no v2"
+    },
+    "relatorio_gestao_novo_especial": {
+      "endpoint": "relatorios_gestao_novos_especiais",
+      "campo_antigo": "data_e_hora_relatorio_gestao_novo",
+      "date_params_openapi": [
+        {
+          "name": "data_relatorio_gestao_novo",
+          "in": "query",
+          "required": false,
+          "description": "Data do Relatório de Gestão Novo (AAAA-MM-DD)",
+          "type": null,
+          "default": null,
+          "maximum": null,
+          "minimum": null,
+          "enum": null
+        },
+        {
+          "name": "data_e_hora_relatorio_gestao_novo",
+          "in": "query",
+          "required": false,
+          "description": "Data e Hora do Relatório de Gestão Novo (AAAA-MM-DD)",
+          "type": null,
+          "default": null,
+          "maximum": null,
+          "minimum": null,
+          "enum": null
+        }
+      ],
+      "tested": {
+        "data_e_hora_relatorio_gestao_novo": {
+          "field": "data_e_hora_relatorio_gestao_novo",
+          "sample": "2024-11-06T20:20:24",
+          "tests": {
+            "eq_exata": {
+              "status": 200,
+              "total_items": 1,
+              "page_size": 1,
+              "n": 1,
+              "sample_vals": [
+                "2024-11-06T20:20:24"
+              ],
+              "parece_filtrado": true
+            },
+            "eq_timestamp": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_e_hora_relatorio_gestao_novo"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "2024-11-06T20:20:24",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "gte_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_e_hora_relatorio_gestao_novo"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gte.2024-11-06",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "gte_op": {
+              "status": 403,
+              "total_items": null,
+              "page_size": null,
+              "n": 0
+            },
+            "gt_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_e_hora_relatorio_gestao_novo"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gt.2024-11-05",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "intervalo_dois_params_sufixo": {
+              "status": 200,
+              "total_items": 25608,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2024-11-06T20:20:24",
+                "2025-09-04T12:55:46.999999",
+                "2024-11-07T09:17:27"
+              ],
+              "parece_ignorado": true
+            },
+            "data_inicio_data_fim": {
+              "status": 200,
+              "total_items": 25608,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2024-11-06T20:20:24",
+                "2025-09-04T12:55:46.999999",
+                "2024-11-07T09:17:27"
+              ],
+              "parece_ignorado": true
+            },
+            "periodo": {
+              "status": 200,
+              "total_items": 25608,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2024-11-06T20:20:24",
+                "2025-09-04T12:55:46.999999",
+                "2024-11-07T09:17:27"
+              ],
+              "parece_ignorado": true
+            }
+          },
+          "baseline_total": 25608,
+          "in_openapi": true,
+          "in_row": true
+        },
+        "data_relatorio_gestao_novo": {
+          "field": "data_relatorio_gestao_novo",
+          "sample": "2024-11-06",
+          "tests": {
+            "eq_exata": {
+              "status": 200,
+              "total_items": 1,
+              "page_size": 1,
+              "n": 1,
+              "sample_vals": [
+                "2024-11-06"
+              ],
+              "parece_filtrado": true
+            },
+            "eq_timestamp": {
+              "status": 200,
+              "total_items": 1,
+              "page_size": 1,
+              "n": 1,
+              "sample_vals": [
+                "2024-11-06"
+              ],
+              "parece_filtrado": true
+            },
+            "gte_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_relatorio_gestao_novo"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gte.2024-11-06",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "gte_op": {
+              "status": 403,
+              "total_items": null,
+              "page_size": null,
+              "n": 0
+            },
+            "gt_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_relatorio_gestao_novo"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gt.2024-11-05",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "intervalo_dois_params_sufixo": {
+              "status": 200,
+              "total_items": 25608,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2024-11-06",
+                "2025-09-04",
+                "2024-11-07"
+              ],
+              "parece_ignorado": true
+            },
+            "data_inicio_data_fim": {
+              "status": 200,
+              "total_items": 25608,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2024-11-06",
+                "2025-09-04",
+                "2024-11-07"
+              ],
+              "parece_ignorado": true
+            },
+            "periodo": {
+              "status": 200,
+              "total_items": 25608,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2024-11-06",
+                "2025-09-04",
+                "2024-11-07"
+              ],
+              "parece_ignorado": true
+            }
+          },
+          "baseline_total": 25608,
+          "in_openapi": true,
+          "in_row": true
+        }
+      }
+    },
+    "plano_trabalho_especial": {
+      "endpoint": "planos_trabalho_especiais",
+      "campo_antigo": "data_inicio_execucao_plano_trabalho",
+      "date_params_openapi": [
+        {
+          "name": "data_inicio_execucao_plano_trabalho",
+          "in": "query",
+          "required": false,
+          "description": "Data de início da execução do plano (AAAA-MM-DD).",
+          "type": null,
+          "default": null,
+          "maximum": null,
+          "minimum": null,
+          "enum": null
+        },
+        {
+          "name": "data_fim_execucao_plano_trabalho",
+          "in": "query",
+          "required": false,
+          "description": "Data de término da execução do plano (AAAA-MM-DD).",
+          "type": null,
+          "default": null,
+          "maximum": null,
+          "minimum": null,
+          "enum": null
+        }
+      ],
+      "tested": {
+        "data_inicio_execucao_plano_trabalho": {
+          "field": "data_inicio_execucao_plano_trabalho",
+          "sample": "2025-09-09",
+          "tests": {
+            "eq_exata": {
+              "status": 200,
+              "total_items": 2700,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2025-09-09",
+                "2025-09-09",
+                "2025-09-09"
+              ],
+              "parece_filtrado": true
+            },
+            "eq_timestamp": {
+              "status": 200,
+              "total_items": 2700,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2025-09-09",
+                "2025-09-09",
+                "2025-09-09"
+              ],
+              "parece_filtrado": true
+            },
+            "gte_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_inicio_execucao_plano_trabalho"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gte.2025-09-09",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "gte_op": {
+              "status": 403,
+              "total_items": null,
+              "page_size": null,
+              "n": 0
+            },
+            "gt_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_inicio_execucao_plano_trabalho"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gt.2025-09-08",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "intervalo_dois_params_sufixo": {
+              "status": 200,
+              "total_items": 56416,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2025-09-09",
+                "2024-06-25",
+                "2023-03-29"
+              ],
+              "parece_ignorado": true
+            },
+            "data_inicio_data_fim": {
+              "status": 200,
+              "total_items": 56416,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2025-09-09",
+                "2024-06-25",
+                "2023-03-29"
+              ],
+              "parece_ignorado": true
+            },
+            "periodo": {
+              "status": 200,
+              "total_items": 56416,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2025-09-09",
+                "2024-06-25",
+                "2023-03-29"
+              ],
+              "parece_ignorado": true
+            }
+          },
+          "baseline_total": 56416,
+          "in_openapi": true,
+          "in_row": true
+        }
+      }
+    },
+    "plano_trabalho_analise_especial": {
+      "endpoint": "planos_trabalho_analises_especiais",
+      "campo_antigo": "data_analise_pt",
+      "date_params_openapi": [
+        {
+          "name": "data_analise_pt",
+          "in": "query",
+          "required": false,
+          "description": "Data da Análise do Plano de Trabalho (AAAA-MM-DD)",
+          "type": null,
+          "default": null,
+          "maximum": null,
+          "minimum": null,
+          "enum": null
+        }
+      ],
+      "tested": {
+        "data_analise_pt": {
+          "field": "data_analise_pt",
+          "sample": "2025-03-07T00:00:00",
+          "tests": {
+            "eq_exata": {
+              "status": 200,
+              "total_items": 2213,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2025-03-07T00:00:00",
+                "2025-03-07T00:00:00",
+                "2025-03-07T00:00:00"
+              ],
+              "parece_filtrado": true
+            },
+            "eq_timestamp": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_analise_pt"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "2025-03-07T00:00:00",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "gte_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_analise_pt"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gte.2025-03-07",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "gte_op": {
+              "status": 403,
+              "total_items": null,
+              "page_size": null,
+              "n": 0
+            },
+            "gt_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_analise_pt"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gt.2025-03-06",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "intervalo_dois_params_sufixo": {
+              "status": 200,
+              "total_items": 106540,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2025-03-07T00:00:00",
+                "2025-07-08T09:27:39.176999",
+                "2025-09-02T16:47:31.443000"
+              ],
+              "parece_ignorado": true
+            },
+            "data_inicio_data_fim": {
+              "status": 200,
+              "total_items": 106540,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2025-03-07T00:00:00",
+                "2025-07-08T09:27:39.176999",
+                "2025-09-02T16:47:31.443000"
+              ],
+              "parece_ignorado": true
+            },
+            "periodo": {
+              "status": 200,
+              "total_items": 106540,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2025-03-07T00:00:00",
+                "2025-07-08T09:27:39.176999",
+                "2025-09-02T16:47:31.443000"
+              ],
+              "parece_ignorado": true
+            }
+          },
+          "baseline_total": 106540,
+          "in_openapi": true,
+          "in_row": true
+        }
+      }
+    },
+    "plano_trabalho_historico_especial": {
+      "endpoint": "planos_trabalho_historico",
+      "campo_antigo": "data_plano_trabalho_hist",
+      "date_params_openapi": [
+        {
+          "name": "data_plano_trabalho_hist",
+          "in": "query",
+          "required": false,
+          "description": "Data e hora em que a situação foi registrada no histórico. (AAAA-MM-DD)",
+          "type": null,
+          "default": null,
+          "maximum": null,
+          "minimum": null,
+          "enum": null
+        }
+      ],
+      "tested": {
+        "data_plano_trabalho_hist": {
+          "field": "data_plano_trabalho_hist",
+          "sample": "2026-06-29T10:07:00",
+          "tests": {
+            "eq_exata": {
+              "status": 200,
+              "total_items": 900,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2026-06-29T10:07:00",
+                "2026-06-29T11:30:00",
+                "2026-06-29T11:21:00"
+              ],
+              "parece_filtrado": true
+            },
+            "eq_timestamp": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_plano_trabalho_hist"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "2026-06-29T10:07:00",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "gte_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_plano_trabalho_hist"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gte.2026-06-29",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "gte_op": {
+              "status": 403,
+              "total_items": null,
+              "page_size": null,
+              "n": 0
+            },
+            "gt_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_plano_trabalho_hist"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gt.2026-06-28",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "intervalo_dois_params_sufixo": {
+              "status": 200,
+              "total_items": 459545,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2026-06-29T10:07:00",
+                "2026-04-09T09:41:00",
+                "2025-09-24T19:10:00"
+              ],
+              "parece_ignorado": true
+            },
+            "data_inicio_data_fim": {
+              "status": 200,
+              "total_items": 459545,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2026-06-29T10:07:00",
+                "2026-04-09T09:41:00",
+                "2025-09-24T19:10:00"
+              ],
+              "parece_ignorado": true
+            },
+            "periodo": {
+              "status": 200,
+              "total_items": 459545,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2026-06-29T10:07:00",
+                "2026-04-09T09:41:00",
+                "2025-09-24T19:10:00"
+              ],
+              "parece_ignorado": true
+            }
+          },
+          "baseline_total": 459545,
+          "in_openapi": true,
+          "in_row": true
+        }
+      }
+    },
+    "plano_trabalho_analise_historico_especial": {
+      "endpoint": "plano_trabalho_analise_historico_especiais",
+      "campo_antigo": "data_analise_pt_hist",
+      "date_params_openapi": [
+        {
+          "name": "data_analise_pt_hist",
+          "in": "query",
+          "required": false,
+          "description": "Data e hora em que a análise foi registrada no histórico (AAAA-MM-DD).",
+          "type": null,
+          "default": null,
+          "maximum": null,
+          "minimum": null,
+          "enum": null
+        }
+      ],
+      "tested": {
+        "data_analise_pt_hist": {
+          "field": "data_analise_pt_hist",
+          "sample": "2025-02-01T00:00:00",
+          "tests": {
+            "eq_exata": {
+              "status": 200,
+              "total_items": 4633,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2025-02-01T00:00:00",
+                "2025-02-01T00:00:00",
+                "2025-02-01T00:00:00"
+              ],
+              "parece_filtrado": true
+            },
+            "eq_timestamp": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_analise_pt_hist"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "2025-02-01T00:00:00",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "gte_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_analise_pt_hist"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gte.2025-02-01",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "gte_op": {
+              "status": 403,
+              "total_items": null,
+              "page_size": null,
+              "n": 0
+            },
+            "gt_dot": {
+              "status": 422,
+              "total_items": null,
+              "page_size": null,
+              "n": 0,
+              "msg": [
+                {
+                  "type": "string_pattern_mismatch",
+                  "loc": [
+                    "query",
+                    "data_analise_pt_hist"
+                  ],
+                  "msg": "String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'",
+                  "input": "gt.2025-01-31",
+                  "ctx": {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  }
+                }
+              ]
+            },
+            "intervalo_dois_params_sufixo": {
+              "status": 200,
+              "total_items": 62599,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2025-02-01T00:00:00",
+                "2025-01-29T15:47:00",
+                "2025-01-24T23:09:00"
+              ],
+              "parece_ignorado": true
+            },
+            "data_inicio_data_fim": {
+              "status": 200,
+              "total_items": 62599,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2025-02-01T00:00:00",
+                "2025-01-29T15:47:00",
+                "2025-01-24T23:09:00"
+              ],
+              "parece_ignorado": true
+            },
+            "periodo": {
+              "status": 200,
+              "total_items": 62599,
+              "page_size": 5,
+              "n": 5,
+              "sample_vals": [
+                "2025-02-01T00:00:00",
+                "2025-01-29T15:47:00",
+                "2025-01-24T23:09:00"
+              ],
+              "parece_ignorado": true
+            }
+          },
+          "baseline_total": 62599,
+          "in_openapi": true,
+          "in_row": true
+        }
+      }
+    }
+  },
+  "date_params_all": {
+    "programas_especiais": [
+      {
+        "name": "data_inicio_ciencia_programa",
+        "type": null,
+        "default": null,
+        "description": "Data de início da ciência do programa (AAAA-MM-DD)."
+      },
+      {
+        "name": "data_fim_ciencia_programa",
+        "type": null,
+        "default": null,
+        "description": "Data de término da ciência do programa (AAAA-MM-DD)."
+      }
+    ],
+    "planos_acao_especiais": [
+      {
+        "name": "data_aceite_plano_acao",
+        "type": null,
+        "default": null,
+        "description": "Data de aceite do plano de ação (AAAA-MM-DD)."
+      }
+    ],
+    "planos_acao_historico_especiais": [
+      {
+        "name": "data_hora_historico_plano_acao",
+        "type": null,
+        "default": null,
+        "description": "Data e Hora do Histórico do Plano de Ação (AAAA-MM-DD)"
+      }
+    ],
+    "beneficiarios_especiais": [],
+    "planos_trabalho_especiais": [
+      {
+        "name": "dt_hora_situacao_plano_trabalho",
+        "type": null,
+        "default": null,
+        "description": "Data e hora da situação atual do plano de trabalho (AAAA-MM-DD)."
+      },
+      {
+        "name": "data_inicio_execucao_plano_trabalho",
+        "type": null,
+        "default": null,
+        "description": "Data de início da execução do plano (AAAA-MM-DD)."
+      },
+      {
+        "name": "data_fim_execucao_plano_trabalho",
+        "type": null,
+        "default": null,
+        "description": "Data de término da execução do plano (AAAA-MM-DD)."
+      },
+      {
+        "name": "dt_hora_pt_aprovado",
+        "type": null,
+        "default": null,
+        "description": "Data e hora em que o plano de trabalho foi aprovado."
+      }
+    ],
+    "planos_trabalho_analises_especiais": [
+      {
+        "name": "data_analise_pt",
+        "type": null,
+        "default": null,
+        "description": "Data da Análise do Plano de Trabalho (AAAA-MM-DD)"
+      }
+    ],
+    "plano_trabalho_analise_historico_especiais": [
+      {
+        "name": "data_analise_pt_hist",
+        "type": null,
+        "default": null,
+        "description": "Data e hora em que a análise foi registrada no histórico (AAAA-MM-DD)."
+      }
+    ],
+    "planos_trabalho_historico": [
+      {
+        "name": "data_plano_trabalho_hist",
+        "type": null,
+        "default": null,
+        "description": "Data e hora em que a situação foi registrada no histórico. (AAAA-MM-DD)"
+      }
+    ],
+    "orgaos_analises_pendentes_especiais": [],
+    "relatorios_gestao_especiais": [
+      {
+        "name": "data_relatorio_gestao",
+        "type": null,
+        "default": null,
+        "description": "Data de referência do relatório de gestão (AAAA-MM-DD)"
+      }
+    ],
+    "relatorios_gestao_novos_especiais": [
+      {
+        "name": "data_relatorio_gestao_novo",
+        "type": null,
+        "default": null,
+        "description": "Data do Relatório de Gestão Novo (AAAA-MM-DD)"
+      },
+      {
+        "name": "data_e_hora_relatorio_gestao_novo",
+        "type": null,
+        "default": null,
+        "description": "Data e Hora do Relatório de Gestão Novo (AAAA-MM-DD)"
+      }
+    ],
+    "empenhos_especiais": [
+      {
+        "name": "data_emissao_empenho",
+        "type": null,
+        "default": null,
+        "description": "Data de emissão do empenho (AAAA-MM-DD)."
+      }
+    ],
+    "documentos_habeis_especiais": [
+      {
+        "name": "data_vencimento_dh",
+        "type": null,
+        "default": null,
+        "description": "Data de vencimento do Documento Hábil (AAAA-MM-DD)."
+      },
+      {
+        "name": "data_emissao_dh",
+        "type": null,
+        "default": null,
+        "description": "Data de emissão do Documento Hábil (AAAA-MM-DD)."
+      }
+    ],
+    "ordens_pagamentos_ordens_bancarias_especiais": [
+      {
+        "name": "data_emissao_op",
+        "type": null,
+        "default": null,
+        "description": "Data de emissão da Ordem de Pagamento (AAAA-MM-DD)."
+      },
+      {
+        "name": "data_situacao_op",
+        "type": null,
+        "default": null,
+        "description": "Data em que a OP atingiu a situação atual (AAAA-MM-DD)."
+      },
+      {
+        "name": "data_emissao_ob",
+        "type": null,
+        "default": null,
+        "description": "Data de emissão da Ordem Bancária (AAAA-MM-DD)."
+      },
+      {
+        "name": "data_assinatura_ordenador_despesa_ob",
+        "type": null,
+        "default": null,
+        "description": "Data da assinatura do ordenador de despesa na Ordem Bancária (AAAA-MM-DD)."
+      },
+      {
+        "name": "data_assinatura_gestor_financeiro_ob",
+        "type": null,
+        "default": null,
+        "description": "Data da assinatura do gestor financeiro na Ordem Bancária (AAAA-MM-DD)."
+      }
+    ],
+    "executores_especiais": [],
+    "meta_especiais": [],
+    "finalidade_especiais": [],
+    "gestao_financeira_lancamentos_especiais": [
+      {
+        "name": "data_lancamento_gestao_financeira",
+        "type": null,
+        "default": null,
+        "description": "Data do Lançamento da Gestão Financeira (AAAA-MM-DD)"
+      }
+    ],
+    "gestao_financeira_subtransacoes_especiais": [
+      {
+        "name": "data_pagamento_subtransacao_gestao_financeira",
+        "type": null,
+        "default": null,
+        "description": "Data de Pagamento da Subtransação da Gestão Financeira (AAAA-MM-DD)"
+      }
+    ],
+    "saldo_conta_gestao_financeira_especiais": [
+      {
+        "name": "data_saldo_conta",
+        "type": null,
+        "default": null,
+        "description": "Data do saldo da conta (formato: YYYY-MM-DD)"
+      }
+    ]
+  }
+}

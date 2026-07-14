@@ -2,6 +2,12 @@
 
 Execução diária às **06:00** via Agendador de Tarefas.
 
+Comando efetivo (modelo atual / 20 tabelas):
+
+```bash
+python ingest_transferencias.py --workers 4 --dias 7
+```
+
 ## Arquivos
 
 | Arquivo | Função |
@@ -103,6 +109,6 @@ LIMIT 20;
 
 ## Observações
 
-- A conta da tarefa precisa de **acesso de rede** a `campinas.cidades.gov.br` e à API `api.transferegov.dth.api.gov.br`.
+- A conta da tarefa precisa de **acesso de rede** a `campinas.cidades.gov.br` e à API `api-publica.transferegov.gestao.gov.br`.
 - Se `python` não estiver no PATH da conta da tarefa, edite `Find-Python` em `run_ingest.ps1` com o caminho completo.
 - O script também gera `ingest_YYYYMMDD_HHMMSS.log` na raiz do projeto (log interno do Python).

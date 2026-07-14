@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="api-transferegov" schema="api_transferegov_especiais" type="PostgreSQL - 17.9 (Debian 17.9-1.pgdg13+1)">
+   <tables>
+      <table catalog="api-transferegov" name="beneficiarios_especiais" remarks="Tabela responsável por armazenar dados de beneficiários especiais." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_beneficiario" nullable="false" remarks="Identificador único do beneficiário." size="19" type="int8" typeCode="-5">
+            <child catalog="api-transferegov" column="id_beneficiario" foreignKey="fk_planos_acao_especiais_beneficiarios" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="planos_acao_especiais"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="uf_beneficiario" nullable="true" remarks="Unidade Federativa do beneficiário." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="nome_beneficiario" nullable="true" remarks="Nome completo do beneficiário." size="45" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="cnpj_beneficiario" nullable="true" remarks="Cadastro Nacional de Pessoa Jurídica do beneficiário." size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="id_ente" nullable="true" remarks="Identificador do ente relacionado." size="19" type="int8" typeCode="-5"/>
+         <primaryKey column="id_beneficiario" sequenceNumberInPK="1"/>
+         <index name="pk_beneficiarios_especiais" unique="true">
+            <column ascending="true" name="id_beneficiario"/>
+         </index>
+         <index name="idx_beneficiarios_especiais_cnpj" unique="false">
+            <column ascending="true" name="cnpj_beneficiario"/>
+         </index>
+         <index name="idx_beneficiarios_especiais_id_ente" unique="false">
+            <column ascending="true" name="id_ente"/>
+         </index>
+         <index name="idx_beneficiarios_especiais_uf" unique="false">
+            <column ascending="true" name="uf_beneficiario"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="documentos_habeis_especiais" remarks="Tabela de Documentos Hábeis Especiais." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_dh" nullable="false" remarks="Identificador único do Documento Hábil." size="19" type="int8" typeCode="-5">
+            <child catalog="api-transferegov" column="id_dh" foreignKey="fk_op_ob_documentos_habeis" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="ordens_pagamentos_ordens_bancarias_especiais"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="id_minuta_documento_habil" nullable="true" remarks="Identificador da minuta do documento hábil." size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="numero_documento_habil" nullable="true" remarks="Número do documento hábil." size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="situacao_dh" nullable="true" remarks="Código da situação do Documento Hábil." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="descricao_situacao_dh" nullable="true" remarks="Descrição da situação do Documento Hábil." size="20" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="tipo_documento_dh" nullable="true" remarks="Tipo do Documento Hábil." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="ug_emitente_dh" nullable="true" remarks="Código da Unidade Gestora emitente do Documento Hábil." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="descricao_ug_emitente_dh" nullable="true" remarks="Descrição da UG emitente." size="45" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="data_vencimento_dh" nullable="true" remarks="Data de vencimento do Documento Hábil." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="data_emissao_dh" nullable="true" remarks="Data de emissão do Documento Hábil." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="ug_pagadora_dh" nullable="true" remarks="Código da Unidade Gestora pagadora do Documento Hábil." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="descricao_ug_pagadora_dh" nullable="true" remarks="Descrição da UG pagadora." size="45" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="variacao_patrimonial_diminuta_dh" nullable="true" remarks="Indicador de Variação Patrimonial Diminuta." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="passivo_transferencia_constitucional_legal_dh" nullable="true" remarks="Indicador de Passivo de Transferência Constitucional/Legal." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="descricao_centro_custo_dh" nullable="true" remarks="Descrição do centro de custo do Documento Hábil." size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="codigo_siorg_centro_custo_dh" nullable="true" remarks="Código SIORG do centro de custo." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="mes_referencia_centro_custo_dh" nullable="true" remarks="Mês de referência do centro de custo." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="ano_referencia_centro_custo_dh" nullable="true" remarks="Ano de referência do centro de custo." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="mes_ano_referencia_centro_custo_dh" nullable="true" remarks="Mês/Ano de referência do centro de custo - formato varchar." size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="19" name="ug_beneficiada_centro_custo_dh" nullable="true" remarks="Código da Unidade Gestora beneficiada pelo centro de custo." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="20" name="descricao_ug_beneficiada_centro_custo_dh" nullable="true" remarks="Descrição da UG beneficiada pelo centro de custo." size="45" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="21" name="valor_dh" nullable="true" remarks="Valor total do Documento Hábil." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="22" name="valor_rateio_dh" nullable="true" remarks="Valor de rateio do Documento Hábil." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="23" name="valor_custo_centro_custo_dh" nullable="true" remarks="Valor de custo do centro de custo do Documento Hábil." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="24" name="id_empenho" nullable="true" remarks="Identificador do Empenho associado." size="19" type="int8" typeCode="-5">
+            <parent catalog="api-transferegov" column="id_empenho" foreignKey="fk_documentos_habeis_empenhos" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="empenhos_especiais"/>
+         </column>
+         <primaryKey column="id_dh" sequenceNumberInPK="1"/>
+         <index name="pk_documentos_habeis_especiais" unique="true">
+            <column ascending="true" name="id_dh"/>
+         </index>
+         <index name="idx_dh_ano_referencia_cc" unique="false">
+            <column ascending="true" name="ano_referencia_centro_custo_dh"/>
+         </index>
+         <index name="idx_dh_data_emissao_dh" unique="false">
+            <column ascending="true" name="data_emissao_dh"/>
+         </index>
+         <index name="idx_dh_data_vencimento_dh" unique="false">
+            <column ascending="true" name="data_vencimento_dh"/>
+         </index>
+         <index name="idx_dh_descricao_centro_custo_dh" unique="false">
+            <column ascending="true" name="descricao_centro_custo_dh"/>
+         </index>
+         <index name="idx_dh_descricao_situacao_dh" unique="false">
+            <column ascending="true" name="descricao_situacao_dh"/>
+         </index>
+         <index name="idx_dh_id_empenho" unique="false">
+            <column ascending="true" name="id_empenho"/>
+         </index>
+         <index name="idx_dh_mes_referencia_cc" unique="false">
+            <column ascending="true" name="mes_referencia_centro_custo_dh"/>
+         </index>
+         <index name="idx_dh_minuta_documento_habil" unique="false">
+            <column ascending="true" name="id_minuta_documento_habil"/>
+         </index>
+         <index name="idx_dh_numero_documento_habil" unique="false">
+            <column ascending="true" name="numero_documento_habil"/>
+         </index>
+         <index name="idx_dh_situacao_dh" unique="false">
+            <column ascending="true" name="situacao_dh"/>
+         </index>
+         <index name="idx_dh_tipo_documento_dh" unique="false">
+            <column ascending="true" name="tipo_documento_dh"/>
+         </index>
+         <index name="idx_dh_ug_beneficiada_cc" unique="false">
+            <column ascending="true" name="ug_beneficiada_centro_custo_dh"/>
+         </index>
+         <index name="idx_dh_ug_emitente_dh" unique="false">
+            <column ascending="true" name="ug_emitente_dh"/>
+         </index>
+         <index name="idx_dh_ug_pagadora_dh" unique="false">
+            <column ascending="true" name="ug_pagadora_dh"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="empenhos_especiais" remarks="Tabela contendo informações detalhadas sobre empenhos especiais." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_empenho" nullable="false" remarks="Identificador único do empenho especial." size="19" type="int8" typeCode="-5">
+            <child catalog="api-transferegov" column="id_empenho" foreignKey="fk_documentos_habeis_empenhos" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="documentos_habeis_especiais"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="id_minuta_empenho" nullable="true" remarks="Identificador da minuta de empenho associada." size="20" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="numero_empenho" nullable="true" remarks="Número do empenho." size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="situacao_empenho" nullable="true" remarks="Código da situação atual do empenho." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="descricao_situacao_empenho" nullable="true" remarks="Descrição da situação atual do empenho." size="20" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="tipo_documento_empenho" nullable="true" remarks="Código do tipo de documento do empenho." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="descricao_tipo_documento_empenho" nullable="true" remarks="Descrição do tipo de documento do empenho." size="20" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="status_processamento_empenho" nullable="true" remarks="Status de processamento do empenho." size="30" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="ug_responsavel_empenho" nullable="true" remarks="Unidade Gestora responsável pelo empenho." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="ug_emitente_empenho" nullable="true" remarks="Unidade Gestora que emitiu o empenho." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="descricao_ug_emitente_empenho" nullable="true" remarks="Descrição da Unidade Gestora emitente." size="45" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="fonte_recurso_empenho" nullable="true" remarks="Código da fonte de recurso utilizada no empenho." size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="plano_interno_empenho" nullable="true" remarks="Plano Interno do empenho." size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="ptres_empenho" nullable="true" remarks="Programa de Trabalho Resumido do empenho." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="grupo_natureza_despesa_empenho" nullable="true" remarks="Grupo de Natureza da Despesa do empenho." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="natureza_despesa_empenho" nullable="true" remarks="Natureza da Despesa do empenho." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="subitem_empenho" nullable="true" remarks="Código do subitem de despesa do empenho." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="categoria_despesa_empenho" nullable="true" remarks="Categoria de Despesa do empenho." size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="modalidade_despesa_empenho" nullable="true" remarks="Modalidade de Despesa do empenho." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="19" name="numero_ro_empenho" nullable="true" remarks="Número do Registro de Ordem associado ao empenho." size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="20" name="data_emissao_empenho" nullable="true" remarks="Data de emissão do empenho." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="21" name="prioridade_desbloqueio_empenho" nullable="true" remarks="Prioridade para desbloqueio do empenho." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="0.00" digits="2" id="22" name="valor_empenho" nullable="true" remarks="Valor monetário total do empenho." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="id_plano_acao" nullable="true" remarks="Identificador do plano de ação associado." size="19" type="int8" typeCode="-5">
+            <parent catalog="api-transferegov" column="id_plano_acao" foreignKey="fk_plano_acao" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="planos_acao_especiais"/>
+         </column>
+         <primaryKey column="id_empenho" sequenceNumberInPK="1"/>
+         <index name="empenhos_especiais_pkey" unique="true">
+            <column ascending="true" name="id_empenho"/>
+         </index>
+         <index name="idx_empenhos_categoria_despesa_empenho" unique="false">
+            <column ascending="true" name="categoria_despesa_empenho"/>
+         </index>
+         <index name="idx_empenhos_data_emissao_empenho" unique="false">
+            <column ascending="true" name="data_emissao_empenho"/>
+         </index>
+         <index name="idx_empenhos_descricao_situacao_empenho" unique="false">
+            <column ascending="true" name="descricao_situacao_empenho"/>
+         </index>
+         <index name="idx_empenhos_descricao_tipo_documento_empenho" unique="false">
+            <column ascending="true" name="descricao_tipo_documento_empenho"/>
+         </index>
+         <index name="idx_empenhos_grupo_natureza_despesa_empenho" unique="false">
+            <column ascending="true" name="grupo_natureza_despesa_empenho"/>
+         </index>
+         <index name="idx_empenhos_id_plano_acao" unique="false">
+            <column ascending="true" name="id_plano_acao"/>
+         </index>
+         <index name="idx_empenhos_natureza_despesa_empenho" unique="false">
+            <column ascending="true" name="natureza_despesa_empenho"/>
+         </index>
+         <index name="idx_empenhos_numero_empenho" unique="false">
+            <column ascending="true" name="numero_empenho"/>
+         </index>
+         <index name="idx_empenhos_plano_interno_empenho" unique="false">
+            <column ascending="true" name="plano_interno_empenho"/>
+         </index>
+         <index name="idx_empenhos_ptres_empenho" unique="false">
+            <column ascending="true" name="ptres_empenho"/>
+         </index>
+         <index name="idx_empenhos_situacao_empenho" unique="false">
+            <column ascending="true" name="situacao_empenho"/>
+         </index>
+         <index name="idx_empenhos_status_processamento_empenho" unique="false">
+            <column ascending="true" name="status_processamento_empenho"/>
+         </index>
+         <index name="idx_empenhos_tipo_documento_empenho" unique="false">
+            <column ascending="true" name="tipo_documento_empenho"/>
+         </index>
+         <index name="idx_empenhos_ug_emitente_empenho" unique="false">
+            <column ascending="true" name="ug_emitente_empenho"/>
+         </index>
+         <index name="idx_empenhos_ug_responsavel_empenho" unique="false">
+            <column ascending="true" name="ug_responsavel_empenho"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="executor_especiais" remarks="Tabela contendo informações sobre os executores e seus dados bancários, relacionados a planos de ação especiais." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_executor" nullable="false" remarks="Identificador do executor." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="cnpj_executor" nullable="true" remarks="Número do Cadastro Nacional da Pessoa Jurídica do executor." size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="nome_executor" nullable="true" remarks="Nome ou Razão Social do executor." size="105" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="objeto_executor" nullable="true" remarks="Descrição detalhada do objeto da execução ou parceria." size="5000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="4" name="vl_custeio_executor" nullable="true" remarks="Valor destinado ao custeio da execução." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="5" name="vl_investimento_executor" nullable="true" remarks="Valor destinado a investimento na execução." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="ind_recursos_gerenciados_conta_especifica_executor" nullable="true" remarks="Indicador de recursos gerenciados em conta específica." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="codigo_banco_executor" nullable="true" remarks="Código do banco onde a conta do executor está cadastrada." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="nome_banco_executor" nullable="true" remarks="Nome do banco." size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="numero_agencia_executor" nullable="true" remarks="Número da agência bancária do executor." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="numero_dv_agencia_executor" nullable="true" remarks="Dígito verificador da agência bancária." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="nome_agencia_executor" nullable="true" remarks="Nome da agência bancária." size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="numero_conta_executor" nullable="true" remarks="Número da conta bancária do executor." size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="numero_dv_conta_executor" nullable="true" remarks="Dígito verificador da conta bancária." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="codigo_situacao_dado_bancario_executor" nullable="true" remarks="Código da situação atual do dado bancário." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="descricao_situacao_dado_bancario_executor" nullable="true" remarks="Descrição da situação do dado bancário." size="45" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="id_plano_acao" nullable="true" remarks="Identificador do plano de ação associado." size="19" type="int8" typeCode="-5">
+            <parent catalog="api-transferegov" column="id_plano_acao" foreignKey="fk_plano_acao_executor" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="planos_acao_especiais"/>
+         </column>
+         <index name="idx_executor_cnpj_executor" unique="false">
+            <column ascending="true" name="cnpj_executor"/>
+         </index>
+         <index name="idx_executor_codigo_banco" unique="false">
+            <column ascending="true" name="codigo_banco_executor"/>
+         </index>
+         <index name="idx_executor_codigo_situacao_dado_bancario" unique="false">
+            <column ascending="true" name="codigo_situacao_dado_bancario_executor"/>
+         </index>
+         <index name="idx_executor_descricao_situacao_dado_bancario" unique="false">
+            <column ascending="true" name="descricao_situacao_dado_bancario_executor"/>
+         </index>
+         <index name="idx_executor_id_plano_acao" unique="false">
+            <column ascending="true" name="id_plano_acao"/>
+         </index>
+         <index name="idx_executor_numero_agencia" unique="false">
+            <column ascending="true" name="numero_agencia_executor"/>
+         </index>
+         <index name="idx_executor_numero_conta" unique="false">
+            <column ascending="true" name="numero_conta_executor"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="finalidade_pt_especiais" remarks="Tabela de detalhe da Finalidade do Programa de Trabalho associado ao Executor." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_executor" nullable="false" remarks="Identificador do Executor associado." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="cd_area_politica_publica_tipo_pt" nullable="true" remarks="Código do Tipo de Área de Política Pública associada ao Programa de Trabalho." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="area_politica_publica_tipo_pt" nullable="true" remarks="Descrição do Tipo de Área de Política Pública." size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="cd_area_politica_publica_pt" nullable="true" remarks="Código da Área de Política Pública ou Programa de Trabalho." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="area_politica_publica_pt" nullable="true" remarks="Descrição da Área de Política Pública ou Programa de Trabalho." size="50" type="varchar" typeCode="12"/>
+         <index name="idx_fpt_area_pp" unique="false">
+            <column ascending="true" name="area_politica_publica_pt"/>
+         </index>
+         <index name="idx_fpt_area_pp_tipo" unique="false">
+            <column ascending="true" name="area_politica_publica_tipo_pt"/>
+         </index>
+         <index name="idx_fpt_cd_area_pp" unique="false">
+            <column ascending="true" name="cd_area_politica_publica_pt"/>
+         </index>
+         <index name="idx_fpt_cd_area_pp_tipo" unique="false">
+            <column ascending="true" name="cd_area_politica_publica_tipo_pt"/>
+         </index>
+         <index name="idx_fpt_id_executor" unique="false">
+            <column ascending="true" name="id_executor"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="gestao_financeira_lancamentos_especiais" remarks="Armazena todos os lançamentos realizados nas contas de gestão financeira especiais." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_agencia_conta" nullable="true" remarks="Identificador composto da agência e conta." size="15" type="varchar" typeCode="12">
+            <parent catalog="api-transferegov" column="id_agencia_conta" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="api_transferegov_especiais" table="saldo_conta_gestao_financeira_especiais"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="id_lancamento_gestao_financeira" nullable="false" remarks="Identificador único do lançamento de gestão financeira." size="20" type="varchar" typeCode="12">
+            <child catalog="api-transferegov" column="id_lancamento_gestao_financeira" foreignKey="fk_gfse_lancamentos" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="gestao_financeira_subtransacoes_especiais"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="origem_solicitacao_gestao_financeira" nullable="true" remarks="Código da origem ou canal da solicitação do lançamento." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="cnpj_ente_solicitante_gestao_financeira" nullable="true" remarks="CNPJ do ente solicitante do lançamento." size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="nome_ente_solicitante_gestao_financeira" nullable="true" remarks="Nome/Razão Social do ente solicitante." size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="codigo_banco_gestao_financeira" nullable="true" remarks="Código do banco da conta origem do lançamento." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="codigo_agencia_gestao_financeira" nullable="true" remarks="Código da agência da conta origem do lançamento." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="dv_agencia_gestao_financeira" nullable="true" remarks="Dígito verificador da agência da conta origem." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="codigo_conta_gestao_financeira" nullable="true" remarks="Código da conta origem do lançamento." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="dv_conta_gestao_financeira" nullable="true" remarks="Dígito verificador da conta origem." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="descricao_gestao_financeira" nullable="true" remarks="Descrição do lançamento." size="30" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="data_lancamento_gestao_financeira" nullable="true" remarks="Data em que o lançamento foi efetuado." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="numero_ordem_gestao_financeira" nullable="true" remarks="Número de ordem de pagamento ou transação." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="numero_referencia_unica_gestao_financeira" nullable="true" remarks="Número único de referência da transação." size="20" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="tipo_operacao_gestao_financeira" nullable="true" remarks="Tipo de operação." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="0.00" digits="2" id="15" name="valor_gestao_financeira" nullable="true" remarks="Valor monetário do lançamento." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="doc_depositante_gestao_financeira" nullable="true" remarks="CPF/CNPJ do depositante." size="20" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="nome_depositante_gestao_financeira" nullable="true" remarks="Nome/Razão Social do depositante." size="115" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="tipo_depositante_gestao_financeira" nullable="true" remarks="Código do tipo de depositante." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="19" name="codigo_banco_depositante_gestao_financeira" nullable="true" remarks="Código do banco do depositante." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="20" name="codigo_agencia_depositante_gestao_financeira" nullable="true" remarks="Código da agência do depositante." size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="21" name="dv_agencia_depositante_gestao_financeira" nullable="true" remarks="Dígito verificador da agência do depositante." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="22" name="codigo_conta_depositante_gestao_financeira" nullable="true" remarks="Código da conta do depositante." size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="dv_conta_depositante_gestao_financeira" nullable="true" remarks="Dígito verificador da conta do depositante." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="24" name="doc_favorecido_gestao_financeira" nullable="true" remarks="CPF/CNPJ do favorecido." size="20" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="25" name="nome_favorecido_gestao_financeira" nullable="true" remarks="Nome/Razão Social do favorecido." size="115" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="26" name="tipo_favorecido_gestao_financeira" nullable="true" remarks="Código do tipo de favorecido." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="27" name="codigo_banco_favorecido_gestao_financeira" nullable="true" remarks="Código do banco do favorecido." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="28" name="codigo_agencia_favorecido_gestao_financeira" nullable="true" remarks="Código da agência do favorecido." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="29" name="dv_agencia_favorecido_gestao_financeira" nullable="true" remarks="Dígito verificador da agência do favorecido." size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="30" name="codigo_conta_favorecido_gestao_financeira" nullable="true" remarks="Código da conta do favorecido." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="31" name="dv_conta_favorecido_gestao_financeira" nullable="true" remarks="Dígito verificador da conta do favorecido." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="32" name="codigo_categoria_despesa_lancamento_gestao_financeira" nullable="true" remarks="Código da categoria orçamentária da despesa." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="33" name="quantidade_subtransacoes_lancamento_gestao_financeira" nullable="true" remarks="Número de subtransações ou parcelas associadas a este lançamento principal." size="19" type="int8" typeCode="-5"/>
+         <primaryKey column="id_lancamento_gestao_financeira" sequenceNumberInPK="1"/>
+         <index name="pk_lancamento_gestao" unique="true">
+            <column ascending="true" name="id_lancamento_gestao_financeira"/>
+         </index>
+         <index name="idx_gf_lanc_cnpj_solic" unique="false">
+            <column ascending="true" name="cnpj_ente_solicitante_gestao_financeira"/>
+         </index>
+         <index name="idx_gf_lanc_cod_agencia" unique="false">
+            <column ascending="true" name="codigo_agencia_gestao_financeira"/>
+         </index>
+         <index name="idx_gf_lanc_cod_conta" unique="false">
+            <column ascending="true" name="codigo_conta_gestao_financeira"/>
+         </index>
+         <index name="idx_gf_lanc_data_lancamento" unique="false">
+            <column ascending="true" name="data_lancamento_gestao_financeira"/>
+         </index>
+         <index name="idx_gf_lanc_id_agencia_conta" unique="false">
+            <column ascending="true" name="id_agencia_conta"/>
+         </index>
+         <index name="idx_gf_lanc_tipo_favorecido" unique="false">
+            <column ascending="true" name="tipo_favorecido_gestao_financeira"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="gestao_financeira_subtransacoes_especiais" remarks="Detalhamento das subtransações de pagamentos associadas a lançamentos financeiros." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_subtransacao_gestao_financeira" nullable="false" remarks="Identificador único da subtransação." size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="estado_subtransacao_gestao_financeira" nullable="true" remarks="Código do estado atual da subtransação." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="situacao_pagamento_subtransacao_gestao_financeira" nullable="true" remarks="Código da situação de pagamento da subtransação." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="data_pagamento_subtransacao_gestao_financeira" nullable="true" remarks="Data e hora em que o pagamento da subtransação foi efetuado ou agendado." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="4" name="valor_subtransacao_gestao_financeira" nullable="true" remarks="Valor monetário da subtransação." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="codigo_banco_beneficiario_subtransacao_gestao_financeira" nullable="true" remarks="Código do banco do beneficiário." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="codigo_agencia_beneficiario_subtransacao_gestao_financeira" nullable="true" remarks="Código da agência do beneficiário." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="codigo_conta_beneficiario_subtransacao_gestao_financeira" nullable="true" remarks="Código da conta do beneficiário." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="tipo_pessoa_beneficiario_subtransacao_gestao_financeira" nullable="true" remarks="Tipo de pessoa do beneficiário." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="numero_documento_beneficiario_subtransacao_gestao_financeira" nullable="true" remarks="CPF ou CNPJ do beneficiário." size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="nome_beneficiario_subtransacao_gestao_financeira" nullable="true" remarks="Nome ou Razão Social do beneficiário." size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="codigo_categoria_despesa_subtransacao_gestao_financeira" nullable="true" remarks="Código da categoria de despesa associada à subtransação." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="descricao_subtransacao_gestao_financeira" nullable="true" remarks="Descrição da subtransação. Domínio: Bloqueado, Cancelado, Em Processamento, Pago." size="200" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="id_lancamento_gestao_financeira" nullable="false" remarks="Identificador do lançamento financeiro associado." size="20" type="varchar" typeCode="12">
+            <parent catalog="api-transferegov" column="id_lancamento_gestao_financeira" foreignKey="fk_gfse_lancamentos" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="gestao_financeira_lancamentos_especiais"/>
+         </column>
+         <index name="idx_gfse_data_pagto" unique="false">
+            <column ascending="true" name="data_pagamento_subtransacao_gestao_financeira"/>
+         </index>
+         <index name="idx_gfse_descricao" unique="false">
+            <column ascending="true" name="descricao_subtransacao_gestao_financeira"/>
+         </index>
+         <index name="idx_gfse_id_lancamento" unique="false">
+            <column ascending="true" name="id_lancamento_gestao_financeira"/>
+         </index>
+         <index name="idx_gfse_id_subtransacao" unique="false">
+            <column ascending="true" name="id_subtransacao_gestao_financeira"/>
+         </index>
+         <index name="idx_gfse_situacao_pagto" unique="false">
+            <column ascending="true" name="situacao_pagamento_subtransacao_gestao_financeira"/>
+         </index>
+         <index name="idx_gfse_tipo_pessoa" unique="false">
+            <column ascending="true" name="tipo_pessoa_beneficiario_subtransacao_gestao_financeira"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="meta_especiais" remarks="Tabela que armazena as Metas associadas aos Executores especiais." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_executor" nullable="true" remarks="Identificador do Executor associado à Meta." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="id_meta" nullable="false" remarks="Identificador único da Meta." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="sequencial_meta" nullable="true" remarks="Número sequencial da Meta." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="nome_meta" nullable="true" remarks="Nome da Meta." size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="desc_meta" nullable="true" remarks="Descrição detalhada da Meta." size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="un_medida_meta" nullable="true" remarks="Unidade de medida da Meta." size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="qt_unidade_meta" nullable="true" remarks="Quantidade de unidades previstas na Meta." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="7" name="vl_custeio_emenda_especial_meta" nullable="true" remarks="Valor de custeio previsto com Emenda Especial." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="8" name="vl_investimento_emenda_especial_meta" nullable="true" remarks="Valor de investimento previsto com Emenda Especial." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="9" name="vl_custeio_recursos_proprios_meta" nullable="true" remarks="Valor de custeio previsto com Recursos Próprios." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="10" name="vl_investimento_recursos_proprios_meta" nullable="true" remarks="Valor de investimento previsto com Recursos Próprios." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="11" name="vl_custeio_rendimento_meta" nullable="true" remarks="Valor de custeio previsto com Rendimento." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="12" name="vl_investimento_rendimento_meta" nullable="true" remarks="Valor de investimento previsto com Rendimento." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="13" name="vl_custeio_doacao_meta" nullable="true" remarks="Valor de custeio previsto com Doação." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="14" name="vl_investimento_doacao_meta" nullable="true" remarks="Valor de investimento previsto com Doação." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="qt_meses_meta" nullable="true" remarks="Quantidade de meses previstos para a execução da Meta." size="19" type="int8" typeCode="-5"/>
+         <primaryKey column="id_meta" sequenceNumberInPK="1"/>
+         <index name="pk_meta_especiais" unique="true">
+            <column ascending="true" name="id_meta"/>
+         </index>
+         <index name="idx_meta_id_executor" unique="false">
+            <column ascending="true" name="id_executor"/>
+         </index>
+         <index name="idx_meta_nome_meta" unique="false">
+            <column ascending="true" name="nome_meta"/>
+         </index>
+         <index name="idx_meta_qt_meses_meta" unique="false">
+            <column ascending="true" name="qt_meses_meta"/>
+         </index>
+         <index name="idx_meta_sequencial_meta" unique="false">
+            <column ascending="true" name="sequencial_meta"/>
+         </index>
+         <index name="idx_meta_un_medida_meta" unique="false">
+            <column ascending="true" name="un_medida_meta"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="ordens_pagamentos_ordens_bancarias_especiais" remarks="Tabela que armazena informações sobre Ordens de Pagamento e Ordens Bancárias especiais." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_op_ob" nullable="false" remarks="Identificador único da Ordem de Pagamento/Ordem Bancária." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="data_emissao_op" nullable="true" remarks="Data de emissão da Ordem de Pagamento." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="numero_ordem_pagamento" nullable="true" remarks="Número da Ordem de Pagamento." size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="vinculacao_op" nullable="true" remarks="Código de vinculação da Ordem de Pagamento." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="situacao_op" nullable="true" remarks="Código da situação da Ordem de Pagamento." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="descricao_situacao_op" nullable="true" remarks="Descrição da situação da Ordem de Pagamento." size="150" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="data_situacao_op" nullable="true" remarks="Data em que a OP atingiu a situação atual." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="data_emissao_ob" nullable="true" remarks="Data de emissão da Ordem Bancária." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="numero_ordem_bancaria" nullable="true" remarks="Número da Ordem Bancária." size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="numero_ordem_lancamento" nullable="true" remarks="Número da Ordem de Lançamento." size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="data_assinatura_ordenador_despesa_ob" nullable="true" remarks="Data da assinatura do ordenador de despesa na Ordem Bancária." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="data_assinatura_gestor_financeiro_ob" nullable="true" remarks="Data da assinatura do gestor financeiro na Ordem Bancária." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="id_dh" nullable="true" remarks="Identificador do Documento Hábil associado." size="19" type="int8" typeCode="-5">
+            <parent catalog="api-transferegov" column="id_dh" foreignKey="fk_op_ob_documentos_habeis" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="documentos_habeis_especiais"/>
+         </column>
+         <primaryKey column="id_op_ob" sequenceNumberInPK="1"/>
+         <index name="pk_ordens_pagamentos_ordens_bancarias" unique="true">
+            <column ascending="true" name="id_op_ob"/>
+         </index>
+         <index name="idx_op_ob_data_emissao_ob" unique="false">
+            <column ascending="true" name="data_emissao_ob"/>
+         </index>
+         <index name="idx_op_ob_data_emissao_op" unique="false">
+            <column ascending="true" name="data_emissao_op"/>
+         </index>
+         <index name="idx_op_ob_data_situacao_op" unique="false">
+            <column ascending="true" name="data_situacao_op"/>
+         </index>
+         <index name="idx_op_ob_descricao_situacao_op" unique="false">
+            <column ascending="true" name="descricao_situacao_op"/>
+         </index>
+         <index name="idx_op_ob_id_dh" unique="false">
+            <column ascending="true" name="id_dh"/>
+         </index>
+         <index name="idx_op_ob_numero_ob" unique="false">
+            <column ascending="true" name="numero_ordem_bancaria"/>
+         </index>
+         <index name="idx_op_ob_numero_ol" unique="false">
+            <column ascending="true" name="numero_ordem_lancamento"/>
+         </index>
+         <index name="idx_op_ob_numero_op" unique="false">
+            <column ascending="true" name="numero_ordem_pagamento"/>
+         </index>
+         <index name="idx_op_ob_situacao_op" unique="false">
+            <column ascending="true" name="situacao_op"/>
+         </index>
+         <index name="idx_op_ob_vinculacao_op" unique="false">
+            <column ascending="true" name="vinculacao_op"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="orgaos_analises_pendentes_especiais" remarks="Tabela responsável por armazenar informações sobre órgãos com análises pendentes vinculados a planos de trabalho especiais." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_plano_trabalho" nullable="false" remarks="Identificador único do plano de trabalho. Chave estrangeira para a tabela planos_trabalho_especiais." size="19" type="int8" typeCode="-5">
+            <parent catalog="api-transferegov" column="id_plano_trabalho" foreignKey="fk_oape_plano_trabalho" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="planos_trabalho_especiais"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="id_orgao_analise_pendente_pt" nullable="true" remarks="Identificador numérico do órgão que possui análise pendente." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="nome_orgao_analise_pendente_pt" nullable="true" remarks="Nome por extenso do órgão com análise pendente." size="80" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="ind_orgao_analises_pendentes" nullable="true" remarks="Indicador situacional das análises pendentes do órgão." size="5" type="varchar" typeCode="12"/>
+         <index name="idx_oape_id_orgao" unique="false">
+            <column ascending="true" name="id_orgao_analise_pendente_pt"/>
+         </index>
+         <index name="idx_oape_id_plano_trabalho" unique="false">
+            <column ascending="true" name="id_plano_trabalho"/>
+         </index>
+         <index name="idx_oape_ind_pendentes" unique="false">
+            <column ascending="true" name="ind_orgao_analises_pendentes"/>
+         </index>
+         <index name="idx_oape_nome_orgao" unique="false">
+            <column ascending="true" name="nome_orgao_analise_pendente_pt"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="planos_acao_especiais" remarks="Tabela de planos de ação vinculados a programas especiais." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_plano_acao" nullable="false" remarks="Identificador único do plano de ação (chave primária)." size="19" type="int8" typeCode="-5">
+            <child catalog="api-transferegov" column="id_plano_acao" foreignKey="fk_plano_acao" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="empenhos_especiais"/>
+            <child catalog="api-transferegov" column="id_plano_acao" foreignKey="fk_plano_acao_executor" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="executor_especiais"/>
+            <child catalog="api-transferegov" column="id_plano_acao" foreignKey="fk_planos_acao_historico_plano" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="planos_acao_historico_especiais"/>
+            <child catalog="api-transferegov" column="id_plano_acao" foreignKey="fk_planos_trabalho_acao" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="planos_trabalho_especiais"/>
+            <child catalog="api-transferegov" column="id_plano_acao" foreignKey="fk_plano_acao" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="relatorios_gestao_especiais"/>
+            <child catalog="api-transferegov" column="id_plano_acao" foreignKey="fk_relatorios_gestao_plano" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="relatorios_gestao_novos_especiais"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="codigo_plano_acao" nullable="true" remarks="Código identificador do plano de ação." size="20" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="ano_plano_acao" nullable="true" remarks="Ano do plano de ação (YYYY)." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="modalidade_plano_acao" nullable="true" remarks="Modalidade do plano de ação." size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="situacao_plano_acao" nullable="true" remarks="Situação atual do plano de ação. Domínio: CIENTE, IMPEDIDO" size="65" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="email_camara" nullable="true" remarks="E-mail de contato da câmara." size="60" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="data_aceite_plano_acao" nullable="true" remarks="Data de aceite do plano de ação." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="codigo_banco_plano_acao" nullable="true" remarks="Código do banco associado ao plano." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="codigo_situacao_dado_bancario_plano_acao" nullable="true" remarks="Código da situação dos dados bancários." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="descricao_situacao_dado_bancario_plano_acao" nullable="true" remarks="Descrição da situação dos dados bancários." size="45" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="nome_banco_plano_acao" nullable="true" remarks="Nome do banco associado ao plano." size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="numero_agencia_plano_acao" nullable="true" remarks="Número da agência bancária." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="dv_agencia_plano_acao" nullable="true" remarks="Dígito verificador da agência." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="numero_conta_plano_acao" nullable="true" remarks="Número da conta bancária." size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="dv_conta_plano_acao" nullable="true" remarks="Dígito verificador da conta bancária." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="nome_parlamentar_emenda_plano_acao" nullable="true" remarks="Nome do parlamentar associado à emenda." size="35" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="ano_emenda_parlamentar_plano_acao" nullable="true" remarks="Ano da emenda parlamentar." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="codigo_parlamentar_emenda_plano_acao" nullable="true" remarks="Código do parlamentar da emenda." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="sequencial_emenda_parlamentar_plano_acao" nullable="true" remarks="Sequencial da emenda parlamentar." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="19" name="numero_emenda_parlamentar_plano_acao" nullable="true" remarks="Número da emenda parlamentar." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="20" name="codigo_emenda_parlamentar_formatado_plano_acao" nullable="true" remarks="Código formatado da emenda parlamentar." size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="21" name="motivo_impedimento_plano_acao" nullable="true" remarks="Motivo de impedimento do plano de ação." size="575" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="22" name="valor_custeio_plano_acao" nullable="true" remarks="Valor de custeio do plano de ação." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="23" name="valor_investimento_plano_acao" nullable="true" remarks="Valor de investimento do plano de ação." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="24" name="id_agencia_conta" nullable="true" remarks="Identificador da agência/conta." size="15" type="varchar" typeCode="12">
+            <parent catalog="api-transferegov" column="id_agencia_conta" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="api_transferegov_especiais" table="saldo_conta_gestao_financeira_especiais"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="25" name="id_beneficiario" nullable="true" remarks="Identificador do beneficiário." size="19" type="int8" typeCode="-5">
+            <parent catalog="api-transferegov" column="id_beneficiario" foreignKey="fk_planos_acao_especiais_beneficiarios" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="beneficiarios_especiais"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="26" name="id_objeto" nullable="true" remarks="Identificador do objeto." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="27" name="nome_objeto" nullable="true" remarks="Nome do objeto." size="360" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="28" name="detalhamento_objeto" nullable="true" remarks="Detalhamento do objeto." size="1440" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="29" name="id_programa" nullable="false" remarks="Identificador do programa." size="19" type="int8" typeCode="-5">
+            <parent catalog="api-transferegov" column="id_programa" foreignKey="fk_pae_programa" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="programas_especiais"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="30" name="categoria_despesa_plano_acao" nullable="true" remarks="Categoria de despesa do plano de ação. Domínio: CUSTEIO, CUSTEIO E INVESTIMENTO, INVESTIMENTO" size="25" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="31" name="codigo_descricao_areas_politicas_publicas_plano_acao" nullable="true" remarks="Códigos e descrições de áreas de políticas públicas relacionadas." size="4000" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="32" name="descricao_programacao_orcamentaria_plano_acao" nullable="true" remarks="Descrição da programação orçamentária vinculada ao plano de ação." size="9005" type="varchar" typeCode="12"/>
+         <primaryKey column="id_plano_acao" sequenceNumberInPK="1"/>
+         <index name="pk_planos_acao_especiais" unique="true">
+            <column ascending="true" name="id_plano_acao"/>
+         </index>
+         <index name="idx_planos_acao_especiais_ano_plano_acao" unique="false">
+            <column ascending="true" name="ano_plano_acao"/>
+         </index>
+         <index name="idx_planos_acao_especiais_codigo_plano_acao" unique="false">
+            <column ascending="true" name="codigo_plano_acao"/>
+         </index>
+         <index name="idx_planos_acao_especiais_id_programa" unique="false">
+            <column ascending="true" name="id_programa"/>
+         </index>
+         <index name="idx_planos_acao_especiais_modalidade_plano_acao" unique="false">
+            <column ascending="true" name="modalidade_plano_acao"/>
+         </index>
+         <index name="idx_planos_acao_especiais_numero_emenda_parlamentar_plano_acao" unique="false">
+            <column ascending="true" name="numero_emenda_parlamentar_plano_acao"/>
+         </index>
+         <index name="idx_planos_acao_especiais_situacao_plano_acao" unique="false">
+            <column ascending="true" name="situacao_plano_acao"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="planos_acao_historico_especiais" remarks="Tabela responsável por armazenar o histórico de alterações e situações dos planos de ação especiais." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_historico_plano_acao" nullable="false" remarks="Identificador único do registro de histórico." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="situacao_historico_plano_acao" nullable="true" remarks="Situação do plano de ação no momento do registro histórico." size="35" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="operacao_historico_plano_acao" nullable="true" remarks="Tipo de operação realizada. Domínio: ATUALIZACAO, INSERCAO" size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="descricao_historico_plano_acao" nullable="true" remarks="Descrição detalhada ou observações sobre a alteração no histórico." size="575" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="4" name="data_hora_historico_plano_acao" nullable="true" remarks="Data e hora exata em que o evento histórico ocorreu." size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="id_plano_acao" nullable="true" remarks="Identificador do plano de ação associado." size="19" type="int8" typeCode="-5">
+            <parent catalog="api-transferegov" column="id_plano_acao" foreignKey="fk_planos_acao_historico_plano" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="planos_acao_especiais"/>
+         </column>
+         <primaryKey column="id_historico_plano_acao" sequenceNumberInPK="1"/>
+         <index name="pk_planos_acao_historico_especiais" unique="true">
+            <column ascending="true" name="id_historico_plano_acao"/>
+         </index>
+         <index name="idx_pahe_data_hora" unique="false">
+            <column ascending="true" name="data_hora_historico_plano_acao"/>
+         </index>
+         <index name="idx_pahe_id_plano_acao" unique="false">
+            <column ascending="true" name="id_plano_acao"/>
+         </index>
+         <index name="idx_pahe_operacao" unique="false">
+            <column ascending="true" name="operacao_historico_plano_acao"/>
+         </index>
+         <index name="idx_pahe_situacao" unique="false">
+            <column ascending="true" name="situacao_historico_plano_acao"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="planos_trabalho_analises_especiais" remarks="Armazena os dados das análises especiais realizadas sobre os planos de trabalho." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_plano_trabalho_analise_pt" nullable="false" remarks="Identificador único da análise do plano de trabalho." size="19" type="int8" typeCode="-5">
+            <child catalog="api-transferegov" column="id_plano_trabalho_analise_pt" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="api_transferegov_especiais" table="pt_analise_historico_especiais"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="codigo_siorg_orgao_analise_pt" nullable="true" remarks="Código SIORG do órgão responsável pela análise do plano de trabalho." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="nome_orgao_analise_pt" nullable="true" remarks="Nome do órgão que realizou a análise do plano de trabalho." size="80" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="situacao_planejamento_pt" nullable="true" remarks="Situação do planejamento do plano de trabalho no momento da análise. Domínio: APROVADO, CONCLUIDO_NT_TCU, CONCLUIDO, EM_COMPLEMENTACAO, EM_ADITIVACAO, ENVIADO_PARA_ANALISE, REPROVADO" size="20" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="situacao_parecer_analise_pt" nullable="true" remarks="Situação do parecer emitido na análise. Domínio: Aprovar Plano de Trabalho, Não se aplica, Reprovar Plano de Trabalho, Solicitar Complementação" size="30" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="texto_parecer_analise_pt" nullable="true" remarks="Texto descritivo do parecer da análise." size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="situacao_analise_pt" nullable="true" remarks="Situação geral da análise do plano de trabalho. Domínio: Concluída, Em elaboração" size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="7" name="data_analise_pt" nullable="true" remarks="Data e hora em que a análise foi realizada." size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="8" name="valor_reprovado_pt" nullable="true" remarks="Valor financeiro que foi reprovado durante a análise." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="id_plano_trabalho" nullable="false" remarks="Chave estrangeira que referencia a tabela planos_trabalho_especiais." size="19" type="int8" typeCode="-5">
+            <parent catalog="api-transferegov" column="id_plano_trabalho" foreignKey="fk_analise_plano_trabalho" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="planos_trabalho_especiais"/>
+         </column>
+         <primaryKey column="id_plano_trabalho_analise_pt" sequenceNumberInPK="1"/>
+         <index name="pk_planos_trabalho_analises_especiais" unique="true">
+            <column ascending="true" name="id_plano_trabalho_analise_pt"/>
+         </index>
+         <index name="idx_ptae_codigo_siorg" unique="false">
+            <column ascending="true" name="codigo_siorg_orgao_analise_pt"/>
+         </index>
+         <index name="idx_ptae_data_analise" unique="false">
+            <column ascending="true" name="data_analise_pt"/>
+         </index>
+         <index name="idx_ptae_id_plano_trabalho" unique="false">
+            <column ascending="true" name="id_plano_trabalho"/>
+         </index>
+         <index name="idx_ptae_sit_analise" unique="false">
+            <column ascending="true" name="situacao_analise_pt"/>
+         </index>
+         <index name="idx_ptae_sit_parecer" unique="false">
+            <column ascending="true" name="situacao_parecer_analise_pt"/>
+         </index>
+         <index name="idx_ptae_sit_planejamento" unique="false">
+            <column ascending="true" name="situacao_planejamento_pt"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="planos_trabalho_especiais" remarks="Tabela para armazenar dados de planos de trabalho especiais e suas situações." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_plano_trabalho" nullable="false" remarks="Identificador único do plano de trabalho." size="19" type="int8" typeCode="-5">
+            <child catalog="api-transferegov" column="id_plano_trabalho" foreignKey="fk_oape_plano_trabalho" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="orgaos_analises_pendentes_especiais"/>
+            <child catalog="api-transferegov" column="id_plano_trabalho" foreignKey="fk_analise_plano_trabalho" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="planos_trabalho_analises_especiais"/>
+            <child catalog="api-transferegov" column="id_plano_trabalho" foreignKey="fk_pt_historico_plano_trabalho" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="pt_historico_especiais"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="1" name="dt_hora_situacao_plano_trabalho" nullable="true" remarks="Data e hora da situação atual do plano de trabalho." size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="situacao_plano_trabalho" nullable="true" remarks="Descrição textual da situação do plano." size="30" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="ind_orcamento_proprio_plano_trabalho" nullable="true" remarks="Indicador se o plano possui orçamento próprio." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="data_inicio_execucao_plano_trabalho" nullable="true" remarks="Data de início da execução do plano." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="data_fim_execucao_plano_trabalho" nullable="true" remarks="Data de término da execução do plano." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="prazo_execucao_meses_plano_trabalho" nullable="true" remarks="Prazo de execução em meses." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="id_plano_acao" nullable="true" remarks="Identificador do plano de ação a qual o plano de trabalho está vinculado." size="19" type="int8" typeCode="-5">
+            <parent catalog="api-transferegov" column="id_plano_acao" foreignKey="fk_planos_trabalho_acao" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="planos_acao_especiais"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="classificacao_orcamentaria_pt" nullable="true" remarks="Classificação orçamentária detalhada do plano de trabalho." size="4960" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="ind_justificativa_prorrogacao_atraso_pt" nullable="true" remarks="Indicador de justificativa para prorrogação por atraso." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="ind_justificativa_prorrogacao_paralizacao_pt" nullable="true" remarks="Indicador de justificativa para prorrogação por paralisação." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="justificativa_prorrogacao_paralizacao_pt" nullable="true" remarks="Texto da justificativa para prorrogação por paralisação." size="4250" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="12" name="dt_hora_pt_aprovado" nullable="true" remarks="Data e hora em que o plano de trabalho foi aprovado." size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="ind_orgao_analises_pendentes" nullable="true" remarks="Indicador de pendências de análise por parte do órgão." size="5" type="varchar" typeCode="12"/>
+         <primaryKey column="id_plano_trabalho" sequenceNumberInPK="1"/>
+         <index name="pk_planos_trabalho_especiais" unique="true">
+            <column ascending="true" name="id_plano_trabalho"/>
+         </index>
+         <index name="idx_pte_dt_inicio" unique="false">
+            <column ascending="true" name="data_inicio_execucao_plano_trabalho"/>
+         </index>
+         <index name="idx_pte_id_plano_acao" unique="false">
+            <column ascending="true" name="id_plano_acao"/>
+         </index>
+         <index name="idx_pte_ind_analises" unique="false">
+            <column ascending="true" name="ind_orgao_analises_pendentes"/>
+         </index>
+         <index name="idx_pte_ind_orcamento" unique="false">
+            <column ascending="true" name="ind_orcamento_proprio_plano_trabalho"/>
+         </index>
+         <index name="idx_pte_situacao" unique="false">
+            <column ascending="true" name="situacao_plano_trabalho"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="programas_especiais" remarks="Tabela que armazena informações detalhadas sobre programas especiais, incluindo dados orçamentários e financeiros." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_orgao_programa" nullable="true" remarks="ID do órgão executor do programa." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="id_orgao_superior_programa" nullable="true" remarks="ID do órgão superior (hierárquico) do programa." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="id_programa" nullable="false" remarks="Identificador único do programa." size="19" type="int8" typeCode="-5">
+            <child catalog="api-transferegov" column="id_programa" foreignKey="fk_pae_programa" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="planos_acao_especiais"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="ano_programa" nullable="true" remarks="Ano de vigência ou cadastro do programa." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="modalidade_programa" nullable="true" remarks="Modalidade do programa." size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="codigo_programa" nullable="true" remarks="Código alfanumérico único do programa." size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="id_unidade_gestora_programa" nullable="true" remarks="ID da unidade gestora responsável." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="documentos_origem_programa" nullable="true" remarks="Documentos ou base legal que originaram o programa." size="125" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="id_unidade_orcamentaria_responsavel_programa" nullable="true" remarks="ID da unidade orçamentária responsável." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="data_inicio_ciencia_programa" nullable="true" remarks="Data de início da ciência do programa." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="data_fim_ciencia_programa" nullable="true" remarks="Data de término da ciência do programa." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="11" name="valor_necessidade_financeira_programa" nullable="true" remarks="Valor total da necessidade financeira estimada para o programa." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="12" name="valor_total_disponibilizado_programa" nullable="true" remarks="Valor total já disponibilizado para o programa." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="13" name="valor_impedido_programa" nullable="true" remarks="Valor que está impedido de ser usado." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="14" name="valor_a_disponibilizar_programa" nullable="true" remarks="Valor restante a ser disponibilizado." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="15" name="valor_documentos_habeis_gerados_programa" nullable="true" remarks="Valor total dos documentos hábeis gerados." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="16" name="valor_obs_geradas_programa" nullable="true" remarks="Valor total de Ordens Bancárias (OBs) geradas." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="17" name="valor_disponibilidade_atual_programa" nullable="true" remarks="Valor da disponibilidade financeira atual do programa." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="sigla_orgao_superior_programa" nullable="true" remarks="Sigla do órgão superior." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="19" name="cnpj_orgao_superior_programa" nullable="true" remarks="CNPJ do órgão superior." size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="20" name="nome_orgao_superior_programa" nullable="true" remarks="Nome do órgão superior." size="55" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="21" name="sigla_orgao_programa" nullable="true" remarks="Sigla do órgão executor." size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="22" name="cnpj_orgao_programa" nullable="true" remarks="CNPJ do órgão executor." size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="nome_orgao_programa" nullable="true" remarks="Nome do órgão executor." size="55" type="varchar" typeCode="12"/>
+         <primaryKey column="id_programa" sequenceNumberInPK="1"/>
+         <index name="programas_especiais_pkey" unique="true">
+            <column ascending="true" name="id_programa"/>
+         </index>
+         <index name="idx_programas_especiais_ano" unique="false">
+            <column ascending="true" name="ano_programa"/>
+         </index>
+         <index name="idx_programas_especiais_codigo" unique="false">
+            <column ascending="true" name="codigo_programa"/>
+         </index>
+         <index name="idx_programas_especiais_modalidade" unique="false">
+            <column ascending="true" name="modalidade_programa"/>
+         </index>
+         <index name="idx_programas_especiais_sigla_orgao" unique="false">
+            <column ascending="true" name="sigla_orgao_programa"/>
+         </index>
+         <index name="idx_programas_especiais_sigla_orgao_sup" unique="false">
+            <column ascending="true" name="sigla_orgao_superior_programa"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="pt_analise_historico_especiais" remarks="Tabela destinada a armazenar o histórico de análises especiais de planos de trabalho." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="codigo_siorg_orgao_analise_pt_hist" nullable="true" remarks="Código SIORG do órgão responsável pela análise registrada no histórico." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="nome_orgao_analise_pt_hist" nullable="true" remarks="Nome do órgão responsável pela análise registrada no histórico." size="80" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="situacao_parecer_analise_pt_hist" nullable="true" remarks="Situação do parecer da análise no histórico." size="30" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="3" name="data_analise_pt_hist" nullable="true" remarks="Data e hora em que a análise foi registrada no histórico." size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="situacao_analise_pt_hist" nullable="true" remarks="Situação da análise no momento do registro histórico." size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="responsaveis_analise_pt_hist" nullable="true" remarks="Responsáveis pela análise registrada no histórico." size="140" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="id_plano_trabalho_analise_pt" nullable="true" remarks="Identificador único da análise do plano de trabalho ao qual este registro de histórico se refere." size="19" type="int8" typeCode="-5">
+            <parent catalog="api-transferegov" column="id_plano_trabalho_analise_pt" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="api_transferegov_especiais" table="planos_trabalho_analises_especiais"/>
+         </column>
+         <index name="idx_ptah_codigo_siorg_orgao_analise_pt_hist" unique="false">
+            <column ascending="true" name="codigo_siorg_orgao_analise_pt_hist"/>
+         </index>
+         <index name="idx_ptah_id_plano_trabalho_analise_pt" unique="false">
+            <column ascending="true" name="id_plano_trabalho_analise_pt"/>
+         </index>
+         <index name="idx_ptah_situacao_analise_pt_hist" unique="false">
+            <column ascending="true" name="situacao_analise_pt_hist"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="pt_historico_especiais" remarks="Tabela destinada a armazenar o histórico de situações dos planos de trabalho especiais." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_plano_trabalho_hist" nullable="false" remarks="Identificador único do registro de histórico do plano de trabalho." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="1" name="data_plano_trabalho_hist" nullable="true" remarks="Data e hora em que a situação foi registrada no histórico." size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="cpf_responsavel_plano_trabalho_hist" nullable="true" remarks="CPF do responsável pela alteração registrada no histórico." size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="situacao_plano_trabalho_hist" nullable="true" remarks="Situação do plano de trabalho no momento do registro histórico." size="30" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="id_plano_trabalho" nullable="true" remarks="Identificador do plano de trabalho ao qual este histórico se refere." size="19" type="int8" typeCode="-5">
+            <parent catalog="api-transferegov" column="id_plano_trabalho" foreignKey="fk_pt_historico_plano_trabalho" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="planos_trabalho_especiais"/>
+         </column>
+         <primaryKey column="id_plano_trabalho_hist" sequenceNumberInPK="1"/>
+         <index name="pk_pt_historico_especiais" unique="true">
+            <column ascending="true" name="id_plano_trabalho_hist"/>
+         </index>
+         <index name="idx_pt_historico_id_plano_trabalho" unique="false">
+            <column ascending="true" name="id_plano_trabalho"/>
+         </index>
+         <index name="idx_pt_historico_situacao_plano_trabalho_hist" unique="false">
+            <column ascending="true" name="situacao_plano_trabalho_hist"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="relatorios_gestao_especiais" remarks="Armazena os relatórios de gestão especiais vinculados aos planos de ação." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_relatorio_gestao" nullable="false" remarks="Identificador único do relatório de gestão." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="data_relatorio_gestao" nullable="true" remarks="Data de referência do relatório de gestão." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="2" name="data_e_hora_relatorio_gestao" nullable="true" remarks="Data e hora exata da geração ou submissão do relatório." size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="tipo_relatorio_gestao" nullable="true" remarks="Tipo do relatório. Domínio: Final, Parcial" size="5" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="situacao_relatorio_gestao" nullable="true" remarks="Situação atual do relatório. Domínio: DISPONIBILIZADO, EM_ELABORACAO" size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="5" name="valor_executado_relatorio_gestao" nullable="true" remarks="Valor financeiro executado reportado neste relatório." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="6" name="valor_pendente_relatorio_gestao" nullable="true" remarks="Valor financeiro pendente de execução reportado neste relatório." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="descritivo_relatorio_gestao" nullable="true" remarks="Texto descritivo, justificativas ou observações detalhadas do relatório." size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="id_plano_acao" nullable="true" remarks="Identificador do plano de ação especial ao qual este relatório está vinculado." size="19" type="int8" typeCode="-5">
+            <parent catalog="api-transferegov" column="id_plano_acao" foreignKey="fk_plano_acao" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="planos_acao_especiais"/>
+         </column>
+         <primaryKey column="id_relatorio_gestao" sequenceNumberInPK="1"/>
+         <index name="relatorios_gestao_especiais_pkey" unique="true">
+            <column ascending="true" name="id_relatorio_gestao"/>
+         </index>
+         <index name="idx_rel_gest_data" unique="false">
+            <column ascending="true" name="data_relatorio_gestao"/>
+         </index>
+         <index name="idx_rel_gest_id_plano_acao" unique="false">
+            <column ascending="true" name="id_plano_acao"/>
+         </index>
+         <index name="idx_rel_gest_situacao" unique="false">
+            <column ascending="true" name="situacao_relatorio_gestao"/>
+         </index>
+         <index name="idx_rel_gest_tipo" unique="false">
+            <column ascending="true" name="tipo_relatorio_gestao"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="relatorios_gestao_novos_especiais" remarks="Tabela responsável por armazenar os novos relatórios de gestão especiais e seus status financeiros." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_relatorio_gestao_novo" nullable="false" remarks="Identificador único do relatório de gestão." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="data_relatorio_gestao_novo" nullable="true" remarks="Data de referência do relatório de gestão." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="2" name="data_e_hora_relatorio_gestao_novo" nullable="true" remarks="Carimbo de data e hora exato do relatório." size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="tipo_relatorio_gestao_novo" nullable="true" remarks="Classificação do tipo de relatório. Domínio: Final, Parcial" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="4" name="valor_executado_relatorio_gestao_novo" nullable="true" remarks="Valor financeiro já executado registrado neste relatório." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="5" name="valor_pendente_relatorio_gestao_novo" nullable="true" remarks="Valor financeiro ainda pendente registrado neste relatório." size="15" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="situacao_relatorio_gestao_novo" nullable="true" remarks="Situação atual do relatório. Domínio: DISPONIBILIZADO, EM_ELABORACAO" size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="id_plano_acao" nullable="true" remarks="Identificador do plano de ação associado." size="19" type="int8" typeCode="-5">
+            <parent catalog="api-transferegov" column="id_plano_acao" foreignKey="fk_relatorios_gestao_plano" implied="false" onDeleteCascade="false" schema="api_transferegov_especiais" table="planos_acao_especiais"/>
+         </column>
+         <primaryKey column="id_relatorio_gestao_novo" sequenceNumberInPK="1"/>
+         <index name="pk_relatorios_gestao_novos_especiais" unique="true">
+            <column ascending="true" name="id_relatorio_gestao_novo"/>
+         </index>
+         <index name="idx_rgne_data_relatorio" unique="false">
+            <column ascending="true" name="data_relatorio_gestao_novo"/>
+         </index>
+         <index name="idx_rgne_id_plano_acao" unique="false">
+            <column ascending="true" name="id_plano_acao"/>
+         </index>
+         <index name="idx_rgne_situacao" unique="false">
+            <column ascending="true" name="situacao_relatorio_gestao_novo"/>
+         </index>
+         <index name="idx_rgne_tipo" unique="false">
+            <column ascending="true" name="tipo_relatorio_gestao_novo"/>
+         </index>
+      </table>
+      <table catalog="api-transferegov" name="saldo_conta_gestao_financeira_especiais" remarks="Tabela responsável por armazenar os saldos de gestão financeira para contas especiais." schema="api_transferegov_especiais" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_agencia_conta" nullable="false" remarks="Identificador único da agência e conta." size="15" type="varchar" typeCode="12">
+            <child catalog="api-transferegov" column="id_agencia_conta" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="api_transferegov_especiais" table="gestao_financeira_lancamentos_especiais"/>
+            <child catalog="api-transferegov" column="id_agencia_conta" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="api_transferegov_especiais" table="planos_acao_especiais"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="agencia_batch" nullable="true" remarks="Número da agência associado ao lote de processamento." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="conta_batch" nullable="true" remarks="Número da conta associado ao lote de processamento." size="19" type="int8" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="data_saldo_conta" nullable="true" remarks="Data do saldo da conta." size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="0.00" digits="2" id="4" name="saldo_final_gestao_financeira" nullable="true" remarks="Valor do saldo final calculado para a gestão financeira." size="15" type="numeric" typeCode="2"/>
+         <primaryKey column="id_agencia_conta" sequenceNumberInPK="1"/>
+         <index name="saldo_conta_gestao_financeira_especiais_pkey" unique="true">
+            <column ascending="true" name="id_agencia_conta"/>
+         </index>
+         <index name="idx_scgfe_agencia_batch" unique="false">
+            <column ascending="true" name="agencia_batch"/>
+         </index>
+         <index name="idx_scgfe_conta_batch" unique="false">
+            <column ascending="true" name="conta_batch"/>
+         </index>
+         <index name="idx_scgfe_data_saldo_conta" unique="false">
+            <column ascending="true" name="data_saldo_conta"/>
+         </index>
+      </table>
+   </tables>
+</database>

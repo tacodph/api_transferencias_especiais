@@ -8,8 +8,8 @@ persiste os dados no banco corporativo do MCID.
 ## Arquitetura
 
 ```
-API (PostgREST)
-https://api.transferegov.dth.api.gov.br/transferenciasespeciais/
+API (dados abertos)
+https://api-publica.transferegov.gestao.gov.br/especiais
         │
         ▼
 ingest_transferencias.py   ← script principal
@@ -24,60 +24,22 @@ Schema: se_api_transferencias_especiais
 | Arquivo | Descrição |
 |---|---|
 | `ingest_transferencias.py` | Script principal de ingestão (fetch + upsert) |
-| `01_ddl_schema.sql` | DDL para criar o schema e as 16 tabelas no banco |
+| `data/04_ddl_schema_novo.sql` | DDL das 20 tabelas do modelo atual |
+| `data/07_controle_carga_v2.sql` | Controle de carga (`controle_carga` / `controle_carga_dia`) |
 | `requirements.txt` | Dependências Python |
-| `CLAUDE.md` | Este arquivo — contexto do projeto |
+| `agentes/CLAUDE.md` | Este arquivo — contexto do projeto |
 
 ## API: Detalhes Técnicos
 
-- **Tecnologia**: PostgREST 11.2 (dados abertos, sem autenticação)
-- **Base URL**: `https://api.transferegov.dth.api.gov.br/transferenciasespeciais/`
-- **Documentação Swagger**: `https://docs.api.transferegov.gestao.gov.br/transferenciasespeciais/`
-- **Paginação**: via parâmetros `limit` e `offset` (padrão: 1000 registros/página)
-- **Ordenação**: parâmetro `order=nome_coluna`
-- **Filtros**: operadores PostgREST (ex: `?ano_programa=eq.2024`)
+- **Base URL**: `https://api-publica.transferegov.gestao.gov.br/especiais`
+- **Paginação**: `pagina` + `tamanho_da_pagina` (máx. 200)
+- **Filtros de data**: igualdade `campo=YYYY-MM-DD` (sem `gte.`); incremental via loop diário
 
-### Endpoints (16 tabelas)
+### Endpoints principais (20 tabelas)
 
-| Endpoint | Chave Primária | Descrição |
-|---|---|---|
-| `/programa_especial` | id_programa | Programas (nível mais alto) |
-| `/plano_acao_especial` | id_plano_acao | Planos de Ação (ligados ao programa) |
-| `/empenho_especial` | id_empenho | Notas de Empenho |
-| `/documento_habil_especial` | id_dh | Documentos Hábeis |
-| `/ordem_pagamento_ordem_bancaria_especial` | id_op_ob | Ordens de Pagamento/Bancárias |
-| `/historico_pagamento_especial` | id_historico_op_ob | Histórico de pagamentos |
-| `/relatorio_gestao_especial` | id_relatorio_gestao | Relatórios de Gestão |
-| `/relatorio_gestao_novo_especial` | id_relatorio_gestao_novo | Relatórios de Gestão (novo modelo) |
-| `/meta_especial` | (id_executor, id_meta) | Metas dos Executores |
-| `/executor_especial` | (id_plano_acao, id_executor) | Executores |
-| `/plano_trabalho_especial` | id_plano_trabalho | Planos de Trabalho |
-| `/finalidade_especial` | (id_executor, cd_*) | Finalidades/Áreas de Política Pública |
-| `/plano_trabalho_analise_especial` | id_plano_trabalho_analise | Análises dos Planos |
-| `/orgao_analise_pendente_especial` | (id_plano_trabalho, id_orgao_*) | Órgãos com análise pendente |
-| `/plano_trabalho_historico_especial` | (id_plano_trabalho_hist, id_plano_trabalho) | Histórico dos Planos |
-| `/plano_trabalho_analise_historico_especial` | (id_plano_trabalho_analise, codigo_siorg_*, data_analise_*) | Histórico das Análises |
-
-### Hierarquia dos dados
-
-```
-programa_especial (1)
-  └── plano_acao_especial (N)          [id_programa → id_plano_acao]
-        ├── empenho_especial (N)        [id_plano_acao → id_empenho]
-        │     └── documento_habil_especial (N) [id_empenho → id_dh]
-        │           └── ordem_pagamento_ordem_bancaria_especial (N) [id_dh → id_op_ob]
-        │                 └── historico_pagamento_especial (N) [id_op_ob]
-        ├── relatorio_gestao_especial (N)
-        ├── relatorio_gestao_novo_especial (N)
-        └── executor_especial (N)       [id_plano_acao → id_executor]
-              ├── meta_especial (N)     [id_executor]
-              └── finalidade_especial (N) [id_executor]
-                    └── plano_trabalho_especial (1:1)
-                          ├── plano_trabalho_analise_especial (N)
-                          │     └── plano_trabalho_analise_historico_especial (N)
-                          ├── plano_trabalho_historico_especial (N)
-                          └── orgao_analise_pendente_especial (N)
-```
+Ver mapa completo em `docs/prompt1_mapa_e_chaves_v2.md`. Exemplos:  
+`/programas_especiais`, `/planos_acao_especiais`, `/empenhos_especiais`,  
+`/gestao_financeira_lancamentos_especiais`, `/beneficiarios_especiais`.
 
 ## Banco de Dados: Destino
 
@@ -86,7 +48,7 @@ programa_especial (1)
 - **Banco**: configurar via variável de ambiente `DB_NAME`
 - **Estratégia de carga**: UPSERT (INSERT ... ON CONFLICT DO UPDATE)
 - **Coluna de controle**: `dt_carga TIMESTAMP` em todas as tabelas
-- **Log de execução**: tabela `controle_carga`
+- **Log de execução**: `controle_carga` + `controle_carga_dia`
 
 ## Como Executar
 
@@ -113,22 +75,24 @@ Ou edite as constantes diretamente no início de `ingest_transferencias.py`.
 ### 3. Criar as tabelas (executar apenas uma vez)
 
 ```sql
--- Conectar ao banco e executar:
-\i 01_ddl_schema.sql
+-- Schema novo (20 tabelas):
+\i data/04_ddl_schema_novo.sql
+\i data/07_controle_carga_v2.sql
+\i data/08_fix_tipos_gestao_financeira.sql
 ```
 
 ### 4. Executar a ingestão
 
 ```bash
-# Todas as tabelas
+# Todas as tabelas (modelo atual)
 python ingest_transferencias.py
 
 # Apenas uma tabela
-python ingest_transferencias.py --tabela programa_especial
+python ingest_transferencias.py --tabela programas_especiais
 
 # Carga incremental (ultimos N dias; ver docs/carga_incremental.md)
 python ingest_transferencias.py --dias
-python ingest_transferencias.py --dias 14 --tabela historico_pagamento_especial
+python ingest_transferencias.py --dias 14 --tabela empenhos_especiais
 
 # Paralelismo por nivel hierarquico (padrao: 4 workers)
 python ingest_transferencias.py --workers 4
@@ -147,11 +111,15 @@ SELECT
     n_live_tup AS registros
 FROM pg_stat_user_tables
 WHERE schemaname = 'se_api_transferencias_especiais'
+  AND tablename LIKE '%\_especiais' ESCAPE '\'
 ORDER BY tablename;
 
 -- Checar log de cargas
 SELECT * FROM se_api_transferencias_especiais.controle_carga
 ORDER BY dt_inicio DESC LIMIT 20;
+
+SELECT * FROM se_api_transferencias_especiais.controle_carga_dia
+ORDER BY id DESC LIMIT 5;
 ```
 
 ## Agendamento (cron)
@@ -163,7 +131,7 @@ Para carga diária às 6h:
 crontab -e
 
 # Adicionar linha:
-0 6 * * * cd /caminho/do/projeto && python ingest_transferencias.py >> cron.log 2>&1
+0 6 * * * cd /caminho/do/projeto && python ingest_transferencias.py --workers 4 --dias 7 >> cron.log 2>&1
 ```
 
 ## Convenções de Código

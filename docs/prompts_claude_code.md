@@ -12,13 +12,15 @@ Estou criando uma rotina de ingestão da API pública de Transferências Especia
 Transferegov para o banco corporativo campinas.cidades.gov.br.
 
 Os arquivos base já estão nesta pasta:
-- CLAUDE.md         → contexto completo do projeto
-- ..\data\01_ddl_schema.sql → DDL para criar as 16 tabelas
-- ..\ingest_transferencias.py → script principal
+- agentes/CLAUDE.md → contexto completo do projeto
+- data/04_ddl_schema_novo.sql → DDL das 20 tabelas atuais
+- ingest_transferencias.py → script principal
 
 Instale as dependências necessárias (requests, psycopg2-binary) e crie o
 requirements.txt. Em seguida, verifique se o script está sintaticamente correto
-e execute um teste de conectividade com a API (sem gravar no banco).
+e execute um teste de conectividade com a API nova
+(https://api-publica.transferegov.gestao.gov.br/especiais/programas_especiais)
+sem gravar no banco.
 ```
 
 ---
@@ -36,8 +38,9 @@ nem exporte variáveis manualmente.
 Instale as dependências (pip install -r requirements.txt) e teste a conexão
 usando as variáveis DB_HOST, DB_PORT, DB_NAME, DB_USER e DB_PASSWORD do .env.
 
-Verifique se o schema existe. Se não existir, execute o 01_ddl_schema.sql para
-criar todas as tabelas. Após a criação, liste as tabelas criadas para confirmar.
+Verifique se o schema e as tabelas *_especiais existem. Se não existirem, execute
+data/04_ddl_schema_novo.sql e data/07_controle_carga_v2.sql. Após a criação,
+liste as tabelas criadas para confirmar.
 ```
 
 ---
@@ -45,9 +48,9 @@ criar todas as tabelas. Após a criação, liste as tabelas criadas para confirm
 ## PROMPT 3 — Teste de carga em uma tabela
 
 ```
-Execute a ingestão apenas da tabela programa_especial:
+Execute a ingestão apenas da tabela programas_especiais:
 
-    python ingest_transferencias.py --tabela programa_especial
+    python ingest_transferencias.py --tabela programas_especiais
 
 Mostre o log de execução e faça uma consulta SQL no banco para confirmar que os
 registros foram inseridos corretamente. Mostre as primeiras 5 linhas e a contagem
@@ -59,7 +62,7 @@ total de registros.
 ## PROMPT 4 — Carga completa
 
 ```
-Execute a carga completa de todas as 16 tabelas:
+Execute a carga completa de todas as 20 tabelas:
 
     python ingest_transferencias.py
 
@@ -69,9 +72,11 @@ o resumo de registros por tabela:
 SELECT tablename, n_live_tup AS registros
 FROM pg_stat_user_tables
 WHERE schemaname = 'se_api_transferencias_especiais'
+  AND tablename LIKE '%\_especiais' ESCAPE '\'
 ORDER BY tablename;
 
-Mostre também os últimos 20 registros da tabela controle_carga.
+Mostre também os últimos 20 registros da tabela controle_carga e o ultimo
+controle_carga_dia.
 ```
 
 ---
@@ -84,8 +89,8 @@ Implementado em ingest_transferencias.py. Use:
     python ingest_transferencias.py --dias       # ultimos 7 dias (padrao)
     python ingest_transferencias.py --dias 14    # ultimos 14 dias
 
-Tabelas com campo de data na API sao filtradas via PostgREST (gte).
-Tabelas sem data fazem carga completa. Detalhes e limitacoes em docs/carga_incremental.md.
+A API nova so aceita igualdade de data; o script faz loop diario.
+Tabelas sem data fazem carga completa. Detalhes em docs/carga_incremental.md.
 ```
 
 ---
@@ -171,11 +176,7 @@ Se SMTP_HOST ou EMAIL_TO nao estiverem configurados, apenas loga aviso.
 
 - Inicie sempre com `PROMPT 1` em um projeto novo
 - O `CLAUDE.md` é lido automaticamente pelo Claude Code — ele já sabe o contexto
-- Se precisar filtrar a API por órgão específico, use parâmetros PostgREST:
-  ```
-  ?id_orgao_programa=eq.56000   # filtra pelo código SIORG do MCID
-  ```
 - Para debugar uma requisição à API manualmente:
   ```bash
-  curl "https://api.transferegov.dth.api.gov.br/transferenciasespeciais/programa_especial?limit=5" | python -m json.tool
+  curl "https://api-publica.transferegov.gestao.gov.br/especiais/programas_especiais?tamanho_da_pagina=5" | python -m json.tool
   ```

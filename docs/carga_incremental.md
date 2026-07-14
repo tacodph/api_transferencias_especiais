@@ -1,4 +1,7 @@
-﻿# Carga incremental — Transferências Especiais
+﻿# Carga incremental — Transferências Especiais (modelo atual)
+
+API: `https://api-publica.transferegov.gestao.gov.br/especiais`  
+Tabelas: 20 × `*_especiais` no schema `se_api_transferencias_especiais`
 
 ## Uso
 
@@ -10,60 +13,56 @@ python ingest_transferencias.py --dias
 python ingest_transferencias.py --dias 14
 
 # Uma tabela especifica
-python ingest_transferencias.py --dias 7 --tabela empenho_especial
+python ingest_transferencias.py --dias 7 --tabela empenhos_especiais
 ```
 
-Sem `--dias`, o script continua fazendo **carga completa** (comportamento anterior).
+Sem `--dias`, o script faz **carga completa**.
 
 ## Como funciona
 
-O filtro usa operadores PostgREST (`coluna=gte.YYYY-MM-DD`) sobre um campo de data/timestamp
-de cada tabela. Apenas registros com data **maior ou igual** ao limite sao buscados na API e
-gravados via upsert.
+A API nova **só aceita igualdade** de data (`campo=YYYY-MM-DD`), sem `gte.`/intervalo.
+
+Com `--dias N`, o script itera cada dia em `[hoje−N, hoje]`, busca com igualdade,
+une os registros, **deduplica pela PK** e faz upsert.
 
 ## Tabelas com filtro incremental
 
-| Tabela | Campo filtrado | Tipo |
-|--------|----------------|------|
-| `programa_especial` | `data_inicio_ciencia_programa` | DATE |
-| `empenho_especial` | `data_emissao_empenho` | DATE |
-| `documento_habil_especial` | `data_emissao_dh` | DATE |
-| `ordem_pagamento_ordem_bancaria_especial` | `data_situacao_op` | DATE |
-| `historico_pagamento_especial` | `data_hora_historico_op` | TIMESTAMP |
-| `relatorio_gestao_novo_especial` | `data_e_hora_relatorio_gestao_novo` | TIMESTAMP |
-| `plano_trabalho_especial` | `data_inicio_execucao_plano_trabalho` | TIMESTAMP |
-| `plano_trabalho_analise_especial` | `data_analise_pt` | TIMESTAMP |
-| `plano_trabalho_historico_especial` | `data_plano_trabalho_hist` | TIMESTAMP |
-| `plano_trabalho_analise_historico_especial` | `data_analise_pt_hist` | TIMESTAMP |
+| Tabela | Campo filtrado |
+|--------|----------------|
+| `programas_especiais` | `data_inicio_ciencia_programa` |
+| `planos_acao_especiais` | `data_aceite_plano_acao` |
+| `planos_acao_historico_especiais` | `data_hora_historico_plano_acao` |
+| `empenhos_especiais` | `data_emissao_empenho` |
+| `documentos_habeis_especiais` | `data_emissao_dh` |
+| `ordens_pagamentos_ordens_bancarias_especiais` | `data_situacao_op` |
+| `relatorios_gestao_especiais` | `data_relatorio_gestao` |
+| `relatorios_gestao_novos_especiais` | `data_relatorio_gestao_novo` |
+| `planos_trabalho_especiais` | `data_inicio_execucao_plano_trabalho` |
+| `planos_trabalho_analises_especiais` | `data_analise_pt` |
+| `pt_historico_especiais` | `data_plano_trabalho_hist` |
+| `pt_analise_historico_especiais` | `data_analise_pt_hist` |
+| `gestao_financeira_lancamentos_especiais` | `data_lancamento_gestao_financeira` |
+| `gestao_financeira_subtransacoes_especiais` | `data_pagamento_subtransacao_gestao_financeira` |
+| `saldo_conta_gestao_financeira_especiais` | `data_saldo_conta` |
 
 ## Tabelas sempre em carga completa (sem campo de data na API)
 
-| Tabela | Motivo |
-|--------|--------|
-| `plano_acao_especial` | Nenhuma coluna de data no endpoint |
-| `relatorio_gestao_especial` | Nenhuma coluna de data no endpoint |
-| `meta_especial` | Nenhuma coluna de data no endpoint |
-| `executor_especial` | Nenhuma coluna de data no endpoint |
-| `finalidade_especial` | Nenhuma coluna de data no endpoint |
-| `orgao_analise_pendente_especial` | Nenhuma coluna de data no endpoint |
+| Tabela |
+|--------|
+| `beneficiarios_especiais` |
+| `executor_especiais` |
+| `meta_especiais` |
+| `finalidade_pt_especiais` |
+| `orgaos_analises_pendentes_especiais` |
+
+## Paginação
+
+- Parâmetros: `pagina` + `tamanho_da_pagina` (máx. **200**)
+- Sem parâmetro de ordenação; ordem estável entre chamadas
 
 ## Limitacoes
 
-1. **Nao ha campo `updated_at`**: a API nao expoe data de ultima alteracao. O filtro usa
-   campos de data de negocio (emissao, analise, historico etc.) como proxy — registros
-   alterados sem mudanca nessa data **nao serao recapturados**.
-
-2. **Tabelas sem data**: 6 das 16 tabelas sempre fazem carga completa mesmo com `--dias`.
-
-3. **Hierarquia nao propagada**: filtrar `empenho_especial` pelos ultimos 7 dias nao atualiza
-   automaticamente `plano_acao_especial` ou `programa_especial` relacionados.
-
-4. **Registros com data nula**: linhas com o campo de filtro `NULL` sao excluidos pelo
-   PostgREST e nao entram na carga incremental.
-
-5. **Campo escolhido e heuristico**: ex. `data_situacao_op` captura mudancas de situacao de OP,
-   mas nao necessariamente novas emissoes; `data_inicio_ciencia_programa` em programas reflete
-   inicio de ciencia, nao atualizacoes de valores.
-
-6. **Recomendacao operacional**: executar carga completa periodicamente (ex. semanal) e usar
-   `--dias` apenas nas cargas diarias intermediarias.
+1. **Nao ha `updated_at`**: o filtro usa data de negocio — alteracoes sem mudanca nessa data nao entram no incremental.
+2. **Tabelas sem data**: sempre full mesmo com `--dias`.
+3. **Custo do loop diario**: ate `N+1` varreduras paginadas por tabela filtravel.
+4. **Recomendacao**: carga completa periodica (ex. semanal) + `--dias` nas cargas diarias.

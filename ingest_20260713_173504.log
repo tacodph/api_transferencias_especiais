@@ -1,0 +1,23 @@
+2026-07-13 17:35:04,039 [INFO] Iniciando ingestão v2: 1 tabela(s)
+2026-07-13 17:35:04,039 [INFO] API: https://api-publica.transferegov.gestao.gov.br/especiais
+2026-07-13 17:35:04,039 [INFO] Destino: localhost/transferepro schema=se_api_transferencias_especiais
+2026-07-13 17:35:04,039 [INFO] Workers: 1 (sequencial)
+2026-07-13 17:35:04,039 [INFO] Testando conexao com o banco...
+2026-07-13 17:35:04,211 [INFO] Conexao com o banco estabelecida.
+2026-07-13 17:35:04,761 [INFO] Nivel 1/1: programas_especiais
+2026-07-13 17:35:04,762 [INFO] ============================================================
+2026-07-13 17:35:04,762 [INFO] Processando tabela: programas_especiais [v2]
+2026-07-13 17:35:04,762 [INFO] ============================================================
+2026-07-13 17:35:04,762 [INFO]   [v2] Iniciando fetch de 'programas_especiais' (carga completa)...
+2026-07-13 17:35:05,303 [INFO]   [v2] Total em 'programas_especiais': 15 (1 página(s))
+2026-07-13 17:35:05,304 [INFO]   [v2] Página 1/1: 15 registros acumulados de 'programas_especiais'...
+2026-07-13 17:35:05,304 [INFO]   [v2] Fetch concluído: 15 registros de 'programas_especiais'.
+2026-07-13 17:35:05,314 [INFO]   Lote 1: 15 registros processados.
+2026-07-13 17:35:05,314 [INFO]   OK 'programas_especiais': 15 registros na API, 15 upserted no banco.
+2026-07-13 17:35:05,318 [INFO] 
+============================================================
+2026-07-13 17:35:05,318 [INFO] RESUMO DA INGESTÃO
+2026-07-13 17:35:05,318 [INFO] ============================================================
+2026-07-13 17:35:05,319 [INFO]   programas_especiais: OK
+2026-07-13 17:35:05,319 [INFO] 
+Total: 1/1 tabelas com sucesso.

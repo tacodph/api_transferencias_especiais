@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>api-transferegov.api_transferegov_especiais</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="bower/html5shiv/html5shiv.min.js"></script>
+        <script src="bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="index.html" class="navbar-brand"><b>api-transferegov</b></a><span class="navbar-brand" style="padding-left: 0">.api_transferegov_especiais</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <!-- <li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li> -->
+                                <li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>All Relationships</h1>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 class="box-title">Diagrams</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom">
+                                <!-- Tabs within a box -->
+                                <h5>By default only columns that are primary keys, foreign keys or indexes are shown.</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#compactDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact</a></li>
+                                    <li class=""><a href="#largeDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large</a></li>
+                                    <li class=""><a href="#compactimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact Implied</a></li>
+                                    <li class=""><a href="#largeimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large Implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="compactDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactRelationshipsDiagram" name="compactRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/gestao_financeira_subtransacoes__4b78587.html" target="_top" title="gestao_financeira_subtransacoes_especiais" alt="" coords="787,5,1475,269">
+<area shape="rect" id="node9" href="tables/gestao_financeira_lancamentos_especiais.html" target="_top" title="gestao_financeira_lancamentos_especiais" alt="" coords="127,123,743,416">
+<area shape="rect" id="node2" href="tables/empenhos_especiais.html" target="_top" title="empenhos_especiais" alt="" coords="1273,2285,1680,2843">
+<area shape="rect" id="node13" href="tables/planos_acao_especiais.html" target="_top" title="planos_acao_especiais" alt="" coords="575,1715,1151,2067">
+<area shape="rect" id="node3" href="tables/planos_trabalho_especiais.html" target="_top" title="planos_trabalho_especiais" alt="" coords="1236,937,1717,1201">
+<area shape="rect" id="node4" href="tables/orgaos_analises_pendentes_especiais.html" target="_top" title="orgaos_analises_pendentes_especiais" alt="" coords="1827,563,2277,744">
+<area shape="rect" id="node5" href="tables/relatorios_gestao_novos_especiais.html" target="_top" title="relatorios_gestao_novos_especiais" alt="" coords="1260,1219,1693,1453">
+<area shape="rect" id="node6" href="tables/beneficiarios_especiais.html" target="_top" title="beneficiarios_especiais" alt="" coords="113,1823,423,2028">
+<area shape="rect" id="node7" href="tables/planos_acao_historico_especiais.html" target="_top" title="planos_acao_historico_especiais" alt="" coords="1279,1471,1675,1705">
+<area shape="rect" id="node8" href="tables/finalidade_pt_especiais.html" target="_top" title="finalidade_pt_especiais" alt="" coords="1461,2996,1823,3207">
+<area shape="rect" id="node10" href="tables/programas_especiais.html" target="_top" title="programas_especiais" alt="" coords="5,2045,531,2309">
+<area shape="rect" id="node11" href="tables/meta_especiais.html" target="_top" title="meta_especiais" alt="" coords="1704,152,2148,416">
+<area shape="rect" id="node12" href="tables/pt_analise_historico_especiais.html" target="_top" title="pt_analise_historico_especiais" alt="" coords="855,3031,1244,3207">
+<area shape="rect" id="node14" href="tables/ordens_pagamentos_ordens_bancar_c896a4ff.html" target="_top" title="ordens_pagamentos_ordens_bancarias_especiais" alt="" coords="2345,1581,2904,1992">
+<area shape="rect" id="node20" href="tables/documentos_habeis_especiais.html" target="_top" title="documentos_habeis_especiais" alt="" coords="1803,1875,2301,2403">
+<area shape="rect" id="node15" href="tables/relatorios_gestao_especiais.html" target="_top" title="relatorios_gestao_especiais" alt="" coords="1289,1723,1665,1957">
+<area shape="rect" id="node16" href="tables/executor_especiais.html" target="_top" title="executor_especiais" alt="" coords="1195,1975,1759,2268">
+<area shape="rect" id="node17" href="tables/planos_trabalho_analises_especiais.html" target="_top" title="planos_trabalho_analises_especiais" alt="" coords="1839,761,2265,1055">
+<area shape="rect" id="node18" href="tables/saldo_conta_gestao_financeira_especiais.html" target="_top" title="saldo_conta_gestao_financeira_especiais" alt="" coords="2311,211,2791,416">
+<area shape="rect" id="node19" href="tables/pt_historico_especiais.html" target="_top" title="pt_historico_especiais" alt="" coords="1849,1072,2255,1248">
+</map>
+                                        <a name='diagram'><img id="compactDegreeImg" src="diagrams/summary/relationships.real.compact.png" usemap="#compactRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeRelationshipsDiagram" name="largeRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/gestao_financeira_subtransacoes__4b78587.html" target="_top" title="gestao_financeira_subtransacoes_especiais" alt="" coords="3857,5,4545,480">
+<area shape="rect" id="node9" href="tables/gestao_financeira_lancamentos_especiais.html" target="_top" title="gestao_financeira_lancamentos_especiais" alt="" coords="3197,357,3813,1419">
+<area shape="rect" id="node2" href="tables/empenhos_especiais.html" target="_top" title="empenhos_especiais" alt="" coords="1273,3981,1680,4749">
+<area shape="rect" id="node13" href="tables/planos_acao_especiais.html" target="_top" title="planos_acao_especiais" alt="" coords="575,3119,1151,4151">
+<area shape="rect" id="node3" href="tables/planos_trabalho_especiais.html" target="_top" title="planos_trabalho_especiais" alt="" coords="1236,1991,1717,2465">
+<area shape="rect" id="node4" href="tables/orgaos_analises_pendentes_especiais.html" target="_top" title="orgaos_analises_pendentes_especiais" alt="" coords="1827,1528,2277,1709">
+<area shape="rect" id="node5" href="tables/relatorios_gestao_novos_especiais.html" target="_top" title="relatorios_gestao_novos_especiais" alt="" coords="1260,2483,1693,2781">
+<area shape="rect" id="node6" href="tables/beneficiarios_especiais.html" target="_top" title="beneficiarios_especiais" alt="" coords="113,3767,423,3977">
+<area shape="rect" id="node7" href="tables/planos_acao_historico_especiais.html" target="_top" title="planos_acao_historico_especiais" alt="" coords="1279,2799,1675,3039">
+<area shape="rect" id="node8" href="tables/finalidade_pt_especiais.html" target="_top" title="finalidade_pt_especiais" alt="" coords="3197,2880,3559,3091">
+<area shape="rect" id="node10" href="tables/programas_especiais.html" target="_top" title="programas_especiais" alt="" coords="5,3995,531,4763">
+<area shape="rect" id="node11" href="tables/meta_especiais.html" target="_top" title="meta_especiais" alt="" coords="3197,1645,3641,2179">
+<area shape="rect" id="node12" href="tables/pt_analise_historico_especiais.html" target="_top" title="pt_analise_historico_especiais" alt="" coords="3197,3277,3587,3547">
+<area shape="rect" id="node14" href="tables/ordens_pagamentos_ordens_bancar_c896a4ff.html" target="_top" title="ordens_pagamentos_ordens_bancarias_especiais" alt="" coords="2345,2925,2904,3371">
+<area shape="rect" id="node20" href="tables/documentos_habeis_especiais.html" target="_top" title="documentos_habeis_especiais" alt="" coords="1803,3277,2301,4075">
+<area shape="rect" id="node15" href="tables/relatorios_gestao_especiais.html" target="_top" title="relatorios_gestao_especiais" alt="" coords="1289,3056,1665,3384">
+<area shape="rect" id="node16" href="tables/executor_especiais.html" target="_top" title="executor_especiais" alt="" coords="1195,3401,1759,3964">
+<area shape="rect" id="node17" href="tables/planos_trabalho_analises_especiais.html" target="_top" title="planos_trabalho_analises_especiais" alt="" coords="1839,1727,2265,2084">
+<area shape="rect" id="node18" href="tables/saldo_conta_gestao_financeira_especiais.html" target="_top" title="saldo_conta_gestao_financeira_especiais" alt="" coords="3197,2424,3677,2635">
+<area shape="rect" id="node19" href="tables/pt_historico_especiais.html" target="_top" title="pt_historico_especiais" alt="" coords="1849,2101,2255,2312">
+</map>
+                                        <a name='diagram'><img id="largeDegreeImg" src="diagrams/summary/relationships.real.large.png" usemap="#largeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="compactimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactImpliedRelationshipsDiagram" name="compactImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/gestao_financeira_subtransacoes__4b78587.html" target="_top" title="gestao_financeira_subtransacoes_especiais" alt="" coords="1235,941,1923,1205">
+<area shape="rect" id="node9" href="tables/gestao_financeira_lancamentos_especiais.html" target="_top" title="gestao_financeira_lancamentos_especiais" alt="" coords="575,1472,1191,1765">
+<area shape="rect" id="node2" href="tables/empenhos_especiais.html" target="_top" title="empenhos_especiais" alt="" coords="1375,1223,1782,1780">
+<area shape="rect" id="node13" href="tables/planos_acao_especiais.html" target="_top" title="planos_acao_especiais" alt="" coords="595,2196,1171,2548">
+<area shape="rect" id="node3" href="tables/planos_trabalho_especiais.html" target="_top" title="planos_trabalho_especiais" alt="" coords="1338,1797,1819,2061">
+<area shape="rect" id="node4" href="tables/orgaos_analises_pendentes_especiais.html" target="_top" title="orgaos_analises_pendentes_especiais" alt="" coords="1991,1423,2441,1604">
+<area shape="rect" id="node5" href="tables/relatorios_gestao_novos_especiais.html" target="_top" title="relatorios_gestao_novos_especiais" alt="" coords="1362,2079,1795,2313">
+<area shape="rect" id="node6" href="tables/beneficiarios_especiais.html" target="_top" title="beneficiarios_especiais" alt="" coords="113,2304,423,2509">
+<area shape="rect" id="node7" href="tables/planos_acao_historico_especiais.html" target="_top" title="planos_acao_historico_especiais" alt="" coords="1381,2331,1777,2565">
+<area shape="rect" id="node8" href="tables/finalidade_pt_especiais.html" target="_top" title="finalidade_pt_especiais" alt="" coords="5,59,367,269">
+<area shape="rect" id="node18" href="tables/saldo_conta_gestao_financeira_especiais.html" target="_top" title="saldo_conta_gestao_financeira_especiais" alt="" coords="28,1777,508,1983">
+<area shape="rect" id="node10" href="tables/programas_especiais.html" target="_top" title="programas_especiais" alt="" coords="5,2527,531,2791">
+<area shape="rect" id="node11" href="tables/meta_especiais.html" target="_top" title="meta_especiais" alt="" coords="720,5,1164,269">
+<area shape="rect" id="node12" href="tables/pt_analise_historico_especiais.html" target="_top" title="pt_analise_historico_especiais" alt="" coords="2594,1563,2983,1739">
+<area shape="rect" id="node17" href="tables/planos_trabalho_analises_especiais.html" target="_top" title="planos_trabalho_analises_especiais" alt="" coords="2003,1621,2429,1915">
+<area shape="rect" id="node14" href="tables/ordens_pagamentos_ordens_bancar_c896a4ff.html" target="_top" title="ordens_pagamentos_ordens_bancarias_especiais" alt="" coords="2509,519,3068,929">
+<area shape="rect" id="node20" href="tables/documentos_habeis_especiais.html" target="_top" title="documentos_habeis_especiais" alt="" coords="1967,812,2465,1340">
+<area shape="rect" id="node15" href="tables/relatorios_gestao_especiais.html" target="_top" title="relatorios_gestao_especiais" alt="" coords="1391,2583,1767,2817">
+<area shape="rect" id="node16" href="tables/executor_especiais.html" target="_top" title="executor_especiais" alt="" coords="1297,2835,1861,3128">
+<area shape="rect" id="node19" href="tables/pt_historico_especiais.html" target="_top" title="pt_historico_especiais" alt="" coords="2013,1932,2419,2108">
+</map>
+                                        <a name='diagram'><img id="compactimpliedDegreeImg" src="diagrams/summary/relationships.implied.compact.png" usemap="#compactImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeImpliedRelationshipsDiagram" name="largeImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/gestao_financeira_subtransacoes__4b78587.html" target="_top" title="gestao_financeira_subtransacoes_especiais" alt="" coords="1235,751,1923,1225">
+<area shape="rect" id="node9" href="tables/gestao_financeira_lancamentos_especiais.html" target="_top" title="gestao_financeira_lancamentos_especiais" alt="" coords="575,1375,1191,2436">
+<area shape="rect" id="node2" href="tables/empenhos_especiais.html" target="_top" title="empenhos_especiais" alt="" coords="1375,1243,1782,2011">
+<area shape="rect" id="node13" href="tables/planos_acao_especiais.html" target="_top" title="planos_acao_especiais" alt="" coords="595,2725,1171,3757">
+<area shape="rect" id="node3" href="tables/planos_trabalho_especiais.html" target="_top" title="planos_trabalho_especiais" alt="" coords="1338,2028,1819,2503">
+<area shape="rect" id="node4" href="tables/orgaos_analises_pendentes_especiais.html" target="_top" title="orgaos_analises_pendentes_especiais" alt="" coords="1991,1565,2441,1747">
+<area shape="rect" id="node5" href="tables/relatorios_gestao_novos_especiais.html" target="_top" title="relatorios_gestao_novos_especiais" alt="" coords="1362,2520,1795,2819">
+<area shape="rect" id="node6" href="tables/beneficiarios_especiais.html" target="_top" title="beneficiarios_especiais" alt="" coords="113,3373,423,3584">
+<area shape="rect" id="node7" href="tables/planos_acao_historico_especiais.html" target="_top" title="planos_acao_historico_especiais" alt="" coords="1381,2836,1777,3076">
+<area shape="rect" id="node8" href="tables/finalidade_pt_especiais.html" target="_top" title="finalidade_pt_especiais" alt="" coords="3385,779,3747,989">
+<area shape="rect" id="node18" href="tables/saldo_conta_gestao_financeira_especiais.html" target="_top" title="saldo_conta_gestao_financeira_especiais" alt="" coords="28,2260,508,2471">
+<area shape="rect" id="node10" href="tables/programas_especiais.html" target="_top" title="programas_especiais" alt="" coords="5,3601,531,4369">
+<area shape="rect" id="node11" href="tables/meta_especiais.html" target="_top" title="meta_especiais" alt="" coords="3385,5,3829,539">
+<area shape="rect" id="node12" href="tables/pt_analise_historico_especiais.html" target="_top" title="pt_analise_historico_especiais" alt="" coords="2594,1588,2983,1857">
+<area shape="rect" id="node17" href="tables/planos_trabalho_analises_especiais.html" target="_top" title="planos_trabalho_analises_especiais" alt="" coords="2003,1764,2429,2121">
+<area shape="rect" id="node14" href="tables/ordens_pagamentos_ordens_bancar_c896a4ff.html" target="_top" title="ordens_pagamentos_ordens_bancarias_especiais" alt="" coords="2509,187,3068,632">
+<area shape="rect" id="node20" href="tables/documentos_habeis_especiais.html" target="_top" title="documentos_habeis_especiais" alt="" coords="1967,539,2465,1336">
+<area shape="rect" id="node15" href="tables/relatorios_gestao_especiais.html" target="_top" title="relatorios_gestao_especiais" alt="" coords="1391,3093,1767,3421">
+<area shape="rect" id="node16" href="tables/executor_especiais.html" target="_top" title="executor_especiais" alt="" coords="1297,3439,1861,4001">
+<area shape="rect" id="node19" href="tables/pt_historico_especiais.html" target="_top" title="pt_historico_especiais" alt="" coords="2013,2139,2419,2349">
+</map>
+                                        <a name='diagram'><img id="largeimpliedDegreeImg" src="diagrams/summary/relationships.implied.large.png" usemap="#largeImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy @project.version@</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="bower/pdfmake/pdfmake.min.js"></script>
+        <script src="bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="bower/codemirror/codemirror.js"></script>
+        <script src="bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="relationships.js"></script>
+        <script src="schemaSpy.js"></script>
+    </body>
+</html>
