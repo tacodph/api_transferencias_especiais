@@ -1,0 +1,56 @@
+2026-11-12 10:09:42,829 [INFO] Iniciando ingestão: 1 tabela(s)
+2026-11-12 10:09:42,829 [INFO] API: https://api-publica.transferegov.gestao.gov.br/especiais
+2026-11-12 10:09:42,830 [INFO] Destino: localhost/transferepro schema=se_api_transferencias_especiais
+2026-11-12 10:09:42,830 [INFO] Workers: 4 (paralelo por nivel)
+2026-11-12 10:09:42,830 [INFO] Modo incremental ativo: ultimos 7 dia(s)
+2026-11-12 10:09:42,830 [INFO] Testando conexao com o banco...
+2026-11-12 10:09:43,024 [INFO] Conexao com o banco estabelecida.
+2026-11-12 10:09:43,240 [INFO] Controle dia id=10 seq=2 iniciado.
+2026-11-12 10:09:43,240 [INFO] Nivel 1/1: 1 tabela(s), 1 worker(s) — empenhos_especiais
+2026-11-12 10:09:43,506 [INFO] ============================================================
+2026-11-12 10:09:43,507 [INFO] Processando tabela: empenhos_especiais [v2]
+2026-11-12 10:09:43,507 [INFO] ============================================================
+2026-11-12 10:09:43,507 [INFO]   Carga incremental v2: data_emissao_empenho dia a dia (7 dias)
+2026-11-12 10:09:43,507 [INFO]   [v2] Janela diária em 'empenhos_especiais': data_emissao_empenho de 2026-11-05 a 2026-11-12 (7 dia(s) + hoje)
+2026-11-12 10:09:43,508 [INFO]   [v2] Iniciando fetch de 'empenhos_especiais' (carga filtrada)...
+2026-11-12 10:09:44,013 [INFO]   [v2] Total em 'empenhos_especiais': 0 (0 página(s))
+2026-11-12 10:09:44,013 [INFO]   [v2] Fetch concluído: 0 registros de 'empenhos_especiais'.
+2026-11-12 10:09:44,014 [INFO]   [v2] 2026-11-05: 0 registro(s)
+2026-11-12 10:09:44,014 [INFO]   [v2] Iniciando fetch de 'empenhos_especiais' (carga filtrada)...
+2026-11-12 10:09:44,494 [INFO]   [v2] Total em 'empenhos_especiais': 0 (0 página(s))
+2026-11-12 10:09:44,495 [INFO]   [v2] Fetch concluído: 0 registros de 'empenhos_especiais'.
+2026-11-12 10:09:44,496 [INFO]   [v2] 2026-11-06: 0 registro(s)
+2026-11-12 10:09:44,497 [INFO]   [v2] Iniciando fetch de 'empenhos_especiais' (carga filtrada)...
+2026-11-12 10:09:45,008 [INFO]   [v2] Total em 'empenhos_especiais': 0 (0 página(s))
+2026-11-12 10:09:45,009 [INFO]   [v2] Fetch concluído: 0 registros de 'empenhos_especiais'.
+2026-11-12 10:09:45,009 [INFO]   [v2] 2026-11-07: 0 registro(s)
+2026-11-12 10:09:45,009 [INFO]   [v2] Iniciando fetch de 'empenhos_especiais' (carga filtrada)...
+2026-11-12 10:09:45,508 [INFO]   [v2] Total em 'empenhos_especiais': 0 (0 página(s))
+2026-11-12 10:09:45,508 [INFO]   [v2] Fetch concluído: 0 registros de 'empenhos_especiais'.
+2026-11-12 10:09:45,509 [INFO]   [v2] 2026-11-08: 0 registro(s)
+2026-11-12 10:09:45,509 [INFO]   [v2] Iniciando fetch de 'empenhos_especiais' (carga filtrada)...
+2026-11-12 10:09:46,699 [INFO]   [v2] Total em 'empenhos_especiais': 0 (0 página(s))
+2026-11-12 10:09:46,699 [INFO]   [v2] Fetch concluído: 0 registros de 'empenhos_especiais'.
+2026-11-12 10:09:46,699 [INFO]   [v2] 2026-11-09: 0 registro(s)
+2026-11-12 10:09:46,700 [INFO]   [v2] Iniciando fetch de 'empenhos_especiais' (carga filtrada)...
+2026-11-12 10:09:47,185 [INFO]   [v2] Total em 'empenhos_especiais': 0 (0 página(s))
+2026-11-12 10:09:47,185 [INFO]   [v2] Fetch concluído: 0 registros de 'empenhos_especiais'.
+2026-11-12 10:09:47,185 [INFO]   [v2] 2026-11-10: 0 registro(s)
+2026-11-12 10:09:47,185 [INFO]   [v2] Iniciando fetch de 'empenhos_especiais' (carga filtrada)...
+2026-11-12 10:09:47,640 [INFO]   [v2] Total em 'empenhos_especiais': 0 (0 página(s))
+2026-11-12 10:09:47,640 [INFO]   [v2] Fetch concluído: 0 registros de 'empenhos_especiais'.
+2026-11-12 10:09:47,640 [INFO]   [v2] 2026-11-11: 0 registro(s)
+2026-11-12 10:09:47,641 [INFO]   [v2] Iniciando fetch de 'empenhos_especiais' (carga filtrada)...
+2026-11-12 10:09:48,295 [INFO]   [v2] Total em 'empenhos_especiais': 0 (0 página(s))
+2026-11-12 10:09:48,296 [INFO]   [v2] Fetch concluído: 0 registros de 'empenhos_especiais'.
+2026-11-12 10:09:48,296 [INFO]   [v2] 2026-11-12: 0 registro(s)
+2026-11-12 10:09:48,296 [INFO]   [v2] Janela diária concluída: 0 registros de 'empenhos_especiais'.
+2026-11-12 10:09:48,296 [WARNING]   Nenhum registro retornado para 'empenhos_especiais'.
+2026-11-12 10:09:49,056 [INFO] Controle dia id=10 finalizado: status=SUCESSO ok=1 erro=0
+2026-11-12 10:09:49,056 [INFO] 
+============================================================
+2026-11-12 10:09:49,056 [INFO] RESUMO DA INGESTÃO
+2026-11-12 10:09:49,056 [INFO] ============================================================
+2026-11-12 10:09:49,057 [INFO]   empenhos_especiais: OK
+2026-11-12 10:09:49,057 [INFO] 
+Total: 1/1 tabelas com sucesso.

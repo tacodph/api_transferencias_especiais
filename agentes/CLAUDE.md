@@ -26,6 +26,9 @@ Schema: se_api_transferencias_especiais
 | `ingest_transferencias.py` | Script principal de ingestão (fetch + upsert) |
 | `data/04_ddl_schema_novo.sql` | DDL das 20 tabelas do modelo atual |
 | `data/07_controle_carga_v2.sql` | Controle de carga (`controle_carga` / `controle_carga_dia`) |
+| `data/09_hash_inativacao_parlamentar.sql` | `row_hash` / `fl_ativo` / `dt_inativacao` nas 20 tabelas + `vw_emendas_especiais_parlamentar` |
+| `parlamentar_especiais.py` | Liga as emendas dos planos de ação ao parlamentar pelo código do autor |
+| `docs/EMENDAS_PARLAMENTAR.md` | Regras do upsert com hash, da inativação e do parlamentar |
 | `requirements.txt` | Dependências Python |
 | `agentes/CLAUDE.md` | Este arquivo — contexto do projeto |
 
@@ -46,7 +49,11 @@ Ver mapa completo em `docs/prompt1_mapa_e_chaves_v2.md`. Exemplos:
 - **Host**: campinas.cidades.gov.br
 - **Schema**: `se_api_transferencias_especiais`
 - **Banco**: configurar via variável de ambiente `DB_NAME`
-- **Estratégia de carga**: UPSERT (INSERT ... ON CONFLICT DO UPDATE)
+- **Estratégia de carga**: UPSERT (INSERT ... ON CONFLICT DO UPDATE) só quando o `row_hash` muda;
+  carga completa inativa (`fl_ativo = false`) o que sumiu da API. Consultas devem filtrar `fl_ativo`.
+  Ver `docs/EMENDAS_PARLAMENTAR.md`
+- **Parlamentar**: pelo código do autor, em `transfere_pro_transferegov.tab_autores_emendas` /
+  `tab_parlamentares` (mesmo banco). Consulta: `vw_emendas_especiais_parlamentar`
 - **Coluna de controle**: `dt_carga TIMESTAMP` em todas as tabelas
 - **Log de execução**: `controle_carga` + `controle_carga_dia`
 
@@ -79,6 +86,7 @@ Ou edite as constantes diretamente no início de `ingest_transferencias.py`.
 \i data/04_ddl_schema_novo.sql
 \i data/07_controle_carga_v2.sql
 \i data/08_fix_tipos_gestao_financeira.sql
+\i data/09_hash_inativacao_parlamentar.sql
 ```
 
 ### 4. Executar a ingestão
@@ -93,6 +101,9 @@ python ingest_transferencias.py --tabela programas_especiais
 # Carga incremental (ultimos N dias; ver docs/carga_incremental.md)
 python ingest_transferencias.py --dias
 python ingest_transferencias.py --dias 14 --tabela empenhos_especiais
+
+# Só religar as emendas ao parlamentar (código do autor), sem chamar a API
+python ingest_transferencias.py --parlamentares
 
 # Paralelismo por nivel hierarquico (padrao: 4 workers)
 python ingest_transferencias.py --workers 4

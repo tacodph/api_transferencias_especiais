@@ -16,6 +16,9 @@ Uso:
     python ingest_transferencias.py --dias 7
     python ingest_transferencias.py --dias 7 --tabela empenhos_especiais
 
+    # Só religar as emendas ao parlamentar (código do autor), sem chamar a API
+    python ingest_transferencias.py --parlamentares
+
     # Paralelismo (respeita hierarquia; padrao: 4 workers)
     python ingest_transferencias.py --workers 4
     python ingest_transferencias.py --workers 1   # sequencial
@@ -28,6 +31,8 @@ Variáveis de ambiente (arquivo .env na raiz do projeto ou edite as constantes a
 import os
 import sys
 import time
+import json
+import hashlib
 import logging
 import argparse
 import traceback
@@ -43,6 +48,8 @@ import psycopg2
 load_dotenv()
 from psycopg2.extras import execute_values
 
+import parlamentar_especiais
+
 # ─────────────────────────────────────────────
 # CONFIGURAÇÃO
 # ─────────────────────────────────────────────
@@ -53,6 +60,10 @@ API_PAGE_SIZE_V2 = 200        # API v2: máximo aceito (acima disso → HTTP 422
 API_TIMEOUT   = 60            # segundos por requisição
 API_MAX_RETRIES = 3           # tentativas em caso de falha
 API_RETRY_DELAY = 10          # segundos entre tentativas
+
+# Só inativa o que sumiu da API se a carga completa trouxe ao menos esta fração
+# das linhas ativas (protege contra resposta parcial da API).
+INATIVACAO_MIN_RATIO = 0.8
 
 DB_HOST     = os.getenv("DB_HOST",     "campinas.cidades.gov.br")
 DB_PORT     = os.getenv("DB_PORT",     "5432")
@@ -465,13 +476,19 @@ def _make_request_v2(endpoint: str, params: dict, tentativa: int = 1) -> dict:
         raise
 
 
-def fetch_all_v2(endpoint: str, filtros: dict | None = None) -> list:
+class ListaApi(list):
+    """Registros de uma varredura v2; `completa` = sem filtro e contagem igual ao total_items da API."""
+
+    completa = False
+
+
+def fetch_all_v2(endpoint: str, filtros: dict | None = None) -> ListaApi:
     """
     Busca todos os registros de um endpoint v2 paginando pelo envelope.
     filtros: igualdade exata (ex: {"data_emissao_empenho": "2026-07-01"}).
     Sem suporte a gte./intervalo — use fetch_janela_diaria_v2 para --dias.
     """
-    todos: list = []
+    todos = ListaApi()
     pagina = 1
     total_items = None
     total_pages = None
@@ -523,6 +540,7 @@ def fetch_all_v2(endpoint: str, filtros: dict | None = None) -> list:
         )
     else:
         log.info(f"  [v2] Fetch concluído: {len(todos):,} registros de '{endpoint}'.")
+    todos.completa = not filtros and total_items is not None and len(todos) == total_items
     return todos
 
 
@@ -605,11 +623,17 @@ def _normalizar_valor_api(valor):
     return valor
 
 
+def _row_hash(valores: tuple) -> str:
+    """md5 dos valores da API na ordem das colunas (detecta alteração no upsert)."""
+    texto = json.dumps(valores, default=str, ensure_ascii=False, separators=(",", ":"))
+    return hashlib.md5(texto.encode("utf-8")).hexdigest()
+
+
 def upsert_dados(conn, tabela: str, pk_cols: list, registros: list) -> tuple[int, int]:
     """
     Insere ou atualiza registros usando INSERT ... ON CONFLICT DO UPDATE.
-    Retorna (inseridos, atualizados) — nota: o PostgreSQL não diferencia facilmente,
-    então retornamos (total_upserted, 0) para simplificar.
+    Só regrava a linha quando o row_hash muda ou quando ela estava inativa,
+    reativando-a. Retorna (inseridos, atualizados); linhas iguais não contam.
     """
     if not registros:
         return 0, 0
@@ -624,32 +648,71 @@ def upsert_dados(conn, tabela: str, pk_cols: list, registros: list) -> tuple[int
     # Descobre as colunas a partir do primeiro registro
     colunas = list(registros[0].keys())
 
-    # Adiciona dt_carga
+    # Valores da API + row_hash + dt_carga
     agora = datetime.now()
+    valores = []
     for r in registros:
-        r["dt_carga"] = agora
-    colunas_com_carga = colunas + ["dt_carga"]
-
-    # Monta os valores
-    valores = [
-        tuple(_normalizar_valor_api(r.get(c)) for c in colunas_com_carga)
-        for r in registros
-    ]
+        dados = tuple(_normalizar_valor_api(r.get(c)) for c in colunas)
+        valores.append(dados + (_row_hash(dados), agora))
+    colunas_com_carga = colunas + ["row_hash", "dt_carga"]
 
     # Monta a cláusula SET para atualização (exclui PKs)
     set_cols = [c for c in colunas if c not in pk_cols]
-    set_clause = ", ".join(f"{c} = EXCLUDED.{c}" for c in set_cols + ["dt_carga"])
+    set_clause = ", ".join(
+        f"{c} = EXCLUDED.{c}" for c in set_cols + ["row_hash", "dt_carga"]
+    )
 
     sql = f"""
-        INSERT INTO {DB_SCHEMA}.{tabela} ({', '.join(colunas_com_carga)})
+        INSERT INTO {DB_SCHEMA}.{tabela} AS t ({', '.join(colunas_com_carga)})
         VALUES %s
         ON CONFLICT ({', '.join(pk_cols)})
-        DO UPDATE SET {set_clause}
+        DO UPDATE SET {set_clause}, fl_ativo = true, dt_inativacao = NULL
+        WHERE t.row_hash IS DISTINCT FROM EXCLUDED.row_hash OR NOT t.fl_ativo
+        RETURNING (xmax = 0)
     """
 
     with conn.cursor() as cur:
-        execute_values(cur, sql, valores, page_size=500)
-        return cur.rowcount, 0
+        linhas = execute_values(cur, sql, valores, page_size=500, fetch=True)
+    inseridos = sum(1 for (novo,) in linhas if novo)
+    return inseridos, len(linhas) - inseridos
+
+
+def inativar_ausentes(conn, tabela: str, pk_cols: list, registros: list) -> int | None:
+    """
+    Depois de uma carga completa, marca fl_ativo = false nas chaves ativas que
+    não vieram da API. Devolve quantas inativou, ou None se pulou (foto pequena).
+    """
+    registros, _ = deduplicar_por_pk(registros, pk_cols)
+    pk_sql = ", ".join(pk_cols)
+    with conn.cursor() as cur:
+        cur.execute(f"SELECT COUNT(*) FROM {DB_SCHEMA}.{tabela} WHERE fl_ativo")
+        ativos = cur.fetchone()[0]
+        if ativos and len(registros) < ativos * INATIVACAO_MIN_RATIO:
+            log.warning(
+                f"  '{tabela}': API trouxe {len(registros):,} para {ativos:,} ativos; "
+                "inativação pulada (possível resposta parcial)."
+            )
+            return None
+        cur.execute(
+            f"CREATE TEMP TABLE tmp_chaves_api ON COMMIT DROP AS "
+            f"SELECT {pk_sql} FROM {DB_SCHEMA}.{tabela} WITH NO DATA"
+        )
+        execute_values(
+            cur,
+            f"INSERT INTO tmp_chaves_api ({pk_sql}) VALUES %s",
+            [tuple(_normalizar_valor_api(r.get(c)) for c in pk_cols) for r in registros],
+            page_size=5000,
+        )
+        cur.execute("ANALYZE tmp_chaves_api")
+        match = " AND ".join(f"k.{c} = t.{c}" for c in pk_cols)
+        cur.execute(
+            f"""
+            UPDATE {DB_SCHEMA}.{tabela} AS t
+            SET fl_ativo = false, dt_inativacao = NOW()
+            WHERE t.fl_ativo AND NOT EXISTS (SELECT 1 FROM tmp_chaves_api AS k WHERE {match})
+            """
+        )
+        return cur.rowcount
 
 
 def iniciar_controle_dia(conn, log_arquivo: str | None = None) -> int:
@@ -875,6 +938,7 @@ def processar_tabela(
     dt_inicio = datetime.now()
     registros = []
     total_inseridos = 0
+    total_atualizados = 0
     modo_carga = "completa"
     endpoint_ctrl = config.get("endpoint", nome_tabela) if api_v2 else nome_tabela
     id_controle = iniciar_controle_endpoint(conn, id_controle_carga_dia, endpoint_ctrl)
@@ -925,14 +989,24 @@ def processar_tabela(
         BATCH_SIZE = 5000
         for i in range(0, len(registros), BATCH_SIZE):
             lote = registros[i:i + BATCH_SIZE]
-            inseridos, _ = upsert_dados(conn, nome_tabela, config["pk"], lote)
+            inseridos, atualizados = upsert_dados(conn, nome_tabela, config["pk"], lote)
             total_inseridos += inseridos
+            total_atualizados += atualizados
             conn.commit()
             log.info(f"  Lote {i//BATCH_SIZE + 1}: {len(lote)} registros processados.")
 
+        # Carga completa e íntegra: o que não veio da API foi removido na origem
+        inativados = None
+        if getattr(registros, "completa", False):
+            inativados = inativar_ausentes(conn, nome_tabela, config["pk"], registros)
+            conn.commit()
+        if inativados is not None:
+            modo_carga += f", inativados {inativados}"
+
         log.info(
             f"  OK '{nome_tabela}': {len(registros):,} registros na API, "
-            f"{total_inseridos:,} upserted no banco."
+            f"{total_inseridos:,} novos, {total_atualizados:,} alterados"
+            + (f", {inativados:,} inativados." if inativados is not None else ".")
         )
         finalizar_controle_endpoint(
             conn,
@@ -940,7 +1014,7 @@ def processar_tabela(
             "SUCESSO",
             len(registros),
             total_inseridos,
-            0,
+            total_atualizados,
             modo_carga,
         )
         return True, ""
@@ -957,7 +1031,7 @@ def processar_tabela(
                 "ERRO",
                 len(registros),
                 total_inseridos,
-                0,
+                total_atualizados,
                 str(e)[:2000],
             )
         except Exception:
@@ -1080,6 +1154,22 @@ def executar_carga(
     return resultados, falhas
 
 
+def sincronizar_parlamentares() -> bool:
+    """Liga as emendas dos planos de ação ao parlamentar (código do autor). Nunca derruba a carga."""
+    conn = get_connection()
+    try:
+        resumo = parlamentar_especiais.sincronizar(conn, DB_SCHEMA)
+        if resumo is not None:
+            log.info(f"Parlamentares (código do autor): {resumo}")
+        return resumo is not None
+    except Exception:
+        conn.rollback()
+        log.exception("Falha ao sincronizar parlamentares; os dados carregados não foram afetados")
+        return False
+    finally:
+        conn.close()
+
+
 # ─────────────────────────────────────────────
 # MAIN
 # ─────────────────────────────────────────────
@@ -1108,6 +1198,11 @@ def main():
         help="Threads paralelas por nivel hierarquico (padrao: 4). Use 1 para sequencial.",
     )
     parser.add_argument(
+        "--parlamentares",
+        action="store_true",
+        help="Só religa as emendas ao parlamentar (código do autor), sem chamar a API.",
+    )
+    parser.add_argument(
         "--v2",
         action="store_true",
         help=argparse.SUPPRESS,  # compatibilidade; o modelo novo e o padrao
@@ -1117,6 +1212,9 @@ def main():
     if args.workers < 1:
         log.error("--workers deve ser >= 1")
         sys.exit(1)
+
+    if args.parlamentares:
+        sys.exit(0 if sincronizar_parlamentares() else 1)
 
     # Modelo atual (API publica + tabelas *_especiais)
     catalogo = TABELAS_V2
@@ -1178,6 +1276,9 @@ def main():
         finalizar_controle_dia(conn_ctrl, id_dia, resultados)
     finally:
         conn_ctrl.close()
+
+    if resultados.get(parlamentar_especiais.TABELA_ORIGEM) == "OK":
+        sincronizar_parlamentares()
 
     # Resumo final
     log.info(f"\n{'='*60}")
